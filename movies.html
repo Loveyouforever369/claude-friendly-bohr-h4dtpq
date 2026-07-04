@@ -32,15 +32,15 @@
   </div>
 </nav>
 
-<header class="hero container" data-narrate data-narrate-script="Welcome to the Screening Room — dim the lights. Five films play here, and every one of them is about your business. The feature presentation, Meet the Family, runs fifteen minutes: one owner at midnight, the shift that changed everything, and a department-by-department introduction to the one hundred eighteen specialists who can grow a business while its owner sleeps. Then come the ninety-day chronicles — four short films following Sam Reyes of Summit Signs from breaking point to a business that runs without burning its owner. The Diagnosis. The Liberation. The Engines. The Compound. Each film plays with deep audio narration, chapters, and cast cards introducing the characters as they enter the story. Headphones on. Feature first. Press play.">
+<header class="hero container" data-narrate data-narrate-script="Welcome to the Screening Room — dim the lights. Five films play here, and every one of them is about your business. The feature presentation, Meet the Family, runs about seventeen minutes: one owner at midnight, the shift that changed everything, and a dedicated scene for every one of the thirteen departments — one hundred eighteen specialists who can grow a business while its owner sleeps. Then come the ninety-day chronicles — four short films following Sam Reyes of Summit Signs from breaking point to a business that runs without burning its owner. The Diagnosis. The Liberation. The Engines. The Compound. Each film plays with deep audio narration, chapters, and cast cards introducing the characters as they enter the story. Headphones on. Feature first. Press play.">
   <span class="eyebrow">🎬 THE SCREENING ROOM · DEEP NARRATION · CHAPTERS · CAST CARDS</span>
   <h1>Five films about <span class="gradient-text">your business</span></h1>
-  <p class="tagline">A 15-minute feature introducing the AI Family — every department, every kind of help they bring — plus the 90-Day Chronicles: four short movies following one owner from midnight breaking point to a business that runs itself. Headphones recommended.</p>
+  <p class="tagline">A ~17-minute feature introducing the AI Family — all 13 departments, each with its own scene — plus the 90-Day Chronicles: four short movies following one owner from midnight breaking point to a business that runs itself. Turn on 🍿 cinema mode and the films play back-to-back. Headphones recommended.</p>
   <div class="hero-badges">
-    <span class="hero-badge"><b>1</b> feature film · <b>~15</b> min</span>
+    <span class="hero-badge"><b>1</b> feature film · <b id="mb-feat-min">~17</b> min</span>
     <span class="hero-badge"><b>4</b> phase movies · <b>~7</b> min each</span>
-    <span class="hero-badge"><b>43</b> narrated scenes</span>
-    <span class="hero-badge"><b>Deep-voice</b> cinematic narration</span>
+    <span class="hero-badge"><b id="mb-scenes">59</b> narrated scenes</span>
+    <span class="hero-badge"><b>🍿</b> cinema mode: films auto-play in sequence</span>
   </div>
 </header>
 
@@ -65,7 +65,8 @@
     <div class="card"><span class="icon">🎧</span><h3>Headphones on</h3><p>Movies narrate in a deeper, slower voice than the lessons. Tune voice &amp; speed in the Audio Command Deck once a film is playing.</p></div>
     <div class="card"><span class="icon">📖</span><h3>Chapters &amp; scenes</h3><p>The chapter name shows under the screen. Click any progress segment to jump; ←/→ steps scenes; Space pauses.</p></div>
     <div class="card"><span class="icon">🎭</span><h3>Watch for cast cards</h3><p>When agents enter the story, their cards appear on screen — name, role, superpower. Every one is hireable in the <a href="family.html">AI Family</a>.</p></div>
-    <div class="card"><span class="icon">🎯</span><h3>Then run the play</h3><p>Each film ends pointing at the exact tool Sam used — the <a href="dna.html">scan</a>, the <a href="time-audit.html">audit</a>, the <a href="profit.html">sprint</a>. Watching is step zero.</p></div>
+    <div class="card"><span class="icon">🍿</span><h3>Cinema mode</h3><p>The 🍿 button in the player auto-plays the next film with a countdown — watch the entire saga (~45 min) back-to-back like a series binge.</p></div>
+    <div class="card"><span class="icon">🎯</span><h3>Then run the play</h3><p>Each film ends pointing at the exact tool Sam used — the <a href="dna.html">scan</a>, the <a href="time-audit.html">audit</a>, the <a href="profit.html">sprint</a>. Watching is step zero — and every film's full script downloads as a spreadsheet.</p></div>
   </div>
 </section>
 
@@ -74,6 +75,7 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/sheets.js"></script>
 <script src="assets/js/data/lessons.js"></script>
 <script src="assets/js/data/movies.js"></script>
 <script src="assets/js/player.js"></script>
@@ -81,6 +83,11 @@
 (function renderPosters() {
   const feature = window.MOVIES.find(m => m.id === "mv-intro");
   const chronicles = window.MOVIES.filter(m => m.id !== "mv-intro");
+
+  // Counts computed from data, never hardcoded (see CLAUDE.md)
+  document.getElementById("mb-feat-min").textContent = "~" + feature.minutes;
+  document.getElementById("mb-scenes").textContent =
+    window.MOVIES.reduce((a, m) => a + m.slides.length, 0);
 
   function posterHTML(m, big) {
     return `
@@ -91,13 +98,37 @@
         <div class="poster-meta"><span>🎬 ${m.slides.length} scenes</span><span>🎧 ~${m.minutes} min</span><span>📖 ${m.chapters.length} chapters</span></div>
         <p>${m.blurb}</p>
         <div class="poster-chapters">${m.chapters.map((c, i) => `${i + 1}. ${c}`).join(" &nbsp;·&nbsp; ")}</div>
-        <button class="btn btn-primary" onclick="Player.open('${m.id}')">▶ ${big ? "Play the feature" : "Play"}</button>
+        <div class="poster-actions">
+          <button class="btn btn-primary" onclick="Player.open('${m.id}')">▶ ${big ? "Play the feature" : "Play"}</button>
+          <button class="btn btn-ghost btn-sm" onclick="movieScript('${m.id}')" style="align-self:center">📜 Script (.xls)</button>
+        </div>
       </div>`;
   }
 
   document.getElementById("feature-slot").innerHTML = posterHTML(feature, true);
   document.getElementById("chronicles-slot").innerHTML = chronicles.map(m => posterHTML(m, false)).join("");
 })();
+
+/* Download a film's full script/transcript as a spreadsheet */
+function movieScript(id) {
+  const m = window.MOVIES.find(x => x.id === id);
+  if (!m) return;
+  const rows = [
+    ["AI BUSINESS ACADEMY — FILM SCRIPT / TRANSCRIPT"],
+    ["Film", m.title], ["Series", m.phase], ["Runtime", "~" + m.minutes + " min"],
+    ["Chapters", m.chapters.join(" · ")], [],
+    ["Scene", "Chapter", "Scene title", "On-screen points", "Narration (transcript)"]
+  ];
+  m.slides.forEach((s, i) => rows.push([
+    i + 1,
+    s.chapter || "",
+    s.title,
+    (s.bullets || (s.cast || []).map(c => c.name + " — " + c.role)).join(" • "),
+    s.narration
+  ]));
+  Sheets.downloadXLS(m.title.toLowerCase().replace(/\W+/g, "-") + "-script.xls",
+    [{ name: "Script", rows }]);
+}
 </script>
 </body>
 </html>

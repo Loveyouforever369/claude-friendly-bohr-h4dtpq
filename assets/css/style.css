@@ -576,3 +576,6 @@ footer.site-footer a { color: var(--text-secondary); font-size: 0.85rem; }
 .poster .poster-meta { display: flex; gap: 14px; font-size: .76rem; color: var(--text-muted); margin: 4px 0 10px; }
 .poster .poster-chapters { font-size: .78rem; color: var(--text-secondary); border-left: 2px solid var(--border-bright); padding-left: 12px; margin: 8px 0; }
 .poster .btn { margin-top: auto; align-self: flex-start; }
+#pl-auto.off { opacity: .4; }
+.poster .poster-actions { margin-top: auto; display: flex; flex-wrap: wrap; gap: 10px; }
+.poster .poster-actions .btn { margin-top: 0; }

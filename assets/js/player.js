@@ -7,6 +7,7 @@
 
 window.Player = (function () {
   let lesson = null, idx = 0, playing = false, overlay = null, isMovie = false;
+  let autoNext = true, nextTimer = null;
   const synth = window.speechSynthesis;
 
   function catalog() {
@@ -30,6 +31,7 @@ window.Player = (function () {
           <button id="pl-next" title="Next scene">⏭</button>
           <div class="player-progress" id="pl-progress"></div>
           <button id="pl-cc" title="Toggle captions">CC</button>
+          <button id="pl-auto" title="Cinema mode: auto-play the next film">🍿</button>
         </div>
         <div class="player-meta">
           <span id="pl-title"></span>
@@ -46,6 +48,12 @@ window.Player = (function () {
     overlay.querySelector("#pl-cc").onclick = () => {
       const cap = overlay.querySelector("#player-caption");
       cap.style.display = cap.style.display === "none" ? "flex" : "none";
+    };
+    overlay.querySelector("#pl-auto").onclick = () => {
+      autoNext = !autoNext;
+      overlay.querySelector("#pl-auto").classList.toggle("off", !autoNext);
+      clearNextTimer();
+      if (window.toast) toast(autoNext ? "🍿 Cinema mode ON — films play back-to-back" : "Cinema mode off");
     };
     document.addEventListener("keydown", e => {
       if (!overlay.classList.contains("open")) return;
@@ -114,10 +122,39 @@ window.Player = (function () {
     go(0);
   }
 
+  function clearNextTimer() {
+    if (nextTimer) { clearInterval(nextTimer); nextTimer = null; }
+  }
+
+  /* End of a movie: queue the next film with an on-screen countdown */
+  function queueNext() {
+    if (!isMovie || !autoNext || !window.MOVIES) return false;
+    const order = window.MOVIES;
+    const at = order.findIndex(m => m.id === lesson.id);
+    const next = at >= 0 ? order[at + 1] : null;
+    const cap = overlay.querySelector("#player-caption");
+    if (!next) { cap.textContent = "🎬 The End — you've watched the whole saga. Now go run the play: scan your DNA, audit your time, hire agent #1."; return false; }
+    let s = 6;
+    const tick = () => {
+      s--;
+      if (s <= 0) { clearNextTimer(); open(next.id); return; }
+      cap.textContent = `🍿 Up next: ${next.title} (~${next.minutes} min) — starting in ${s}… (press 🍿 to cancel)`;
+    };
+    cap.textContent = `🍿 Up next: ${next.title} — starting in 6…`;
+    clearNextTimer();
+    nextTimer = setInterval(tick, 1000);
+    return true;
+  }
+
   function go(i) {
     if (!lesson) return;
+    clearNextTimer();
     if (i < 0) i = 0;
-    if (i >= lesson.slides.length) { stopNarration(); playing = false; overlay.querySelector("#pl-play").textContent = "▶"; return; }
+    if (i >= lesson.slides.length) {
+      stopNarration(); playing = false; overlay.querySelector("#pl-play").textContent = "▶";
+      queueNext();
+      return;
+    }
     stopNarration();
     idx = i;
 
@@ -186,6 +223,7 @@ window.Player = (function () {
 
   function close() {
     playing = false;
+    clearNextTimer();
     stopNarration();
     if (overlay) overlay.classList.remove("open");
   }

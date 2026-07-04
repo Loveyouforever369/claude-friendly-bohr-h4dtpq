@@ -14,7 +14,7 @@ straight from the site.
 |---|---|
 | `index.html` | Futuristic landing hub, the 4-step system, free Starter Pack (3-tab spreadsheet, emailable) |
 | `academy.html` | 8 cinematic training modules · 40 scenes with deep audio narration, captions, keyboard controls |
-| `movies.html` | **The Screening Room** — a 15-min feature film introducing the AI Family (cast cards, chapters, deep-voice narration) + the 90-Day Chronicles: four phase movies following one owner's transformation |
+| `movies.html` | **The Screening Room** — a ~17-min feature film introducing all 13 AI Family departments (cast cards, chapters, deep-voice narration, 🍿 auto-play cinema mode, downloadable scripts) + the 90-Day Chronicles: four phase movies following one owner's transformation |
 | `dna.html` | Business DNA Scan — 12 questions → 6 strand scores, archetype, DNA code, animated helix, gap prescriptions, report export/email |
 | `time-audit.html` | Time Gap Analyzer — hours in, reclaimable hours/dollars out, stacked-bar chart, agent deployment plan, export/email |
 | `profit.html` | Profit Lab — 5 AI profit levers, playbooks by business type, conservative ROI calculator with chart, export/email |
@@ -95,7 +95,7 @@ python3 -m http.server 8080
         └── data/
             ├── agents.js        # the AI Family (118 agents, 13 departments)
             ├── lessons.js       # 8 modules · 40 narrated scenes
-            └── movies.js        # 5 movies · 43 scenes (feature + 90-Day Chronicles)
+            └── movies.js        # 5 movies · 59 scenes (feature + 90-Day Chronicles)
 ```
 
 ---

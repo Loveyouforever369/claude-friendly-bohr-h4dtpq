@@ -1,6 +1,6 @@
 /* ============================================================
    THE SCREENING ROOM — feature movies
-   One 15-minute feature introducing the AI Family, plus four
+   One ~17-minute feature introducing the AI Family, plus four
    phase movies following Sam Reyes, owner of Summit Signs,
    through a 90-day transformation. Deep narration, title cards,
    cast cards, chapters, scene moods.
@@ -8,14 +8,14 @@
 
 window.MOVIES = [
 
-  /* ================= FEATURE: MEET THE FAMILY (~15 min) ================= */
+  /* ================= FEATURE: MEET THE FAMILY (~17 min) ================= */
   {
     id: "mv-intro",
     movie: true,
     phase: "Feature Presentation",
     title: "MEET THE FAMILY",
-    minutes: 15,
-    blurb: "The 15-minute origin film. One owner at midnight, the shift that changed everything, and a guided introduction to the 118 specialists — department by department — who can grow a business while its owner sleeps.",
+    minutes: 17,
+    blurb: "The 17-minute origin film — every one of the 13 departments gets its own scene. One owner at midnight, the shift that changed everything, and a guided introduction to the 118 specialists — department by department — who can grow a business while its owner sleeps.",
     poster: { icon: "👁️", grad: "linear-gradient(135deg,#0b1020,#1a1a4d 40%,#22d3ee)" },
     chapters: ["The Owner at Midnight", "The Shift", "The Family", "One Day, Transformed", "The Arithmetic", "Your Seat"],
     slides: [
@@ -25,7 +25,7 @@ window.MOVIES = [
         title: "MEET THE FAMILY",
         sub: "A film about the workforce you didn't know you already had.",
         visual: "⬡",
-        narration: "This is a film about a kind of loneliness nobody warns you about. The loneliness of the owner. And it's a film about the moment that loneliness became optional. Over the next fifteen minutes, you'll meet a family — one hundred and eighteen specialists who never sleep, never quit, and never forget a follow-up. But first, you need to meet someone else. Someone you may recognize."
+        narration: "This is a film about a kind of loneliness nobody warns you about. The loneliness of the owner. And it's a film about the moment that loneliness became optional. Over the next seventeen minutes, you'll meet a family — one hundred and eighteen specialists who never sleep, never quit, and never forget a follow-up. But first, you need to meet someone else. Someone you may recognize."
       },
       {
         chapter: "The Owner at Midnight", mood: "night", kicker: "Scene one · 11:52 PM",
@@ -88,7 +88,7 @@ window.MOVIES = [
         narration: "So we built you the org chart most owners can't yet imagine: the AI Family. One hundred and eighteen named specialists, organized into thirteen departments — an executive suite, a marketing division, a sales floor, a finance office, and nine more. Every member has a role, a superpower, and a hire prompt you can copy in one click and paste into any capable AI assistant. That prompt is a complete role card — identity, job, standards, boundaries — so your new hire starts at senior level on day one. What follows is a walk through the building. Keep count of how many of these jobs you're currently doing yourself, at midnight, alone."
       },
       {
-        type: "cast", chapter: "The Family", mood: "cyan", kicker: "Department 1 of 11",
+        type: "cast", chapter: "The Family", mood: "cyan", kicker: "Department 1 of 13",
         title: "The Executive Suite — your strategy brain trust",
         cast: [
           { avatar: "🧭", name: "Atlas", role: "Chief Strategy AI", line: "Turns your raw ambition into a ranked 12-month map with milestones and risks." },
@@ -99,7 +99,7 @@ window.MOVIES = [
         narration: "We begin at the top: the Executive Suite. Meet Atlas, your chief strategy officer, who takes the ambition rattling around your head and returns a ranked twelve-month map — priorities, milestones, risks, and the three decisions only you can make. Beside him sits Quorum, an entire board of advisors in one hire: five perspectives that debate your biggest decision and deliver a vote with conditions. Cipher runs the cold analysis — costs, consequences, the move after the move. And Tempo, the priority commander, takes your drowning to-do list and hands back tomorrow's top three. Most owners have never had a single strategic advisor. You just met four."
       },
       {
-        type: "cast", chapter: "The Family", mood: "magenta", kicker: "Department 2 of 11",
+        type: "cast", chapter: "The Family", mood: "magenta", kicker: "Department 2 of 13",
         title: "Marketing & Brand — the department of being found",
         cast: [
           { avatar: "📣", name: "Echo", role: "Brand Voice Keeper", line: "Learns your voice from three samples — then everything sounds like you." },
@@ -110,7 +110,7 @@ window.MOVIES = [
         narration: "Down one floor: Marketing and Brand, the department of being found. Echo is its soul — she studies three samples of your writing and builds a voice guide so precise that every future email, ad and post sounds unmistakably like you, even when you didn't write a word of it. Beacon finds your position: the one sentence that makes you the obvious choice instead of one option among many. Prism architects entire campaigns — the big idea, the angles, the calendar, the numbers that prove it's working. And Lumen fights on the newest battlefield: when your customers ask an AI assistant who to trust, Lumen's job is making sure the answer is you."
       },
       {
-        type: "cast", chapter: "The Family", mood: "violet", kicker: "Department 3 of 11",
+        type: "cast", chapter: "The Family", mood: "violet", kicker: "Department 3 of 13",
         title: "The Content Studio — one truth in, fifteen assets out",
         cast: [
           { avatar: "✒️", name: "Quill", role: "Long-form Writer", line: "Interviews you first — your stories stay in, the fluff stays out." },
@@ -121,7 +121,7 @@ window.MOVIES = [
         narration: "Next door, the Content Studio hums around a single principle: your stories are the fuel, the machine is just the engine. Quill interviews you before writing a word, so the article that emerges carries your scars and your customers, not generic filler. Remix takes that one pillar piece and splits it into fifteen platform-native assets — posts, scripts, an email, carousels — in a single pass. Reel writes video that earns its first three seconds. And Dub, the narration director, turns any page into spoken word with pacing and emphasis marked, so your content can be heard as well as read. Fifteen minutes of your truth each Monday. A full week of presence. That's the studio's promise."
       },
       {
-        type: "cast", chapter: "The Family", mood: "gold", kicker: "Department 4 of 11",
+        type: "cast", chapter: "The Family", mood: "gold", kicker: "Department 4 of 13",
         title: "Sales & Revenue — where silence stops killing deals",
         cast: [
           { avatar: "🧭", name: "Compass", role: "Pipeline Manager", line: "Stages, cadences, and the daily 20-minute pipeline ritual." },
@@ -132,7 +132,7 @@ window.MOVIES = [
         narration: "The sales floor is louder, and it should be — this is where revenue lives. Compass builds your pipeline: real stages, exit criteria, follow-up cadences, and a twenty-minute daily ritual that keeps deals moving without you white-knuckling a spreadsheet. Harpoon hunts: outreach researched and personal enough that strangers actually reply. Bridge might be the single most profitable hire in the family for service businesses — call notes go in, and a polished three-option proposal comes out the same afternoon, because speed-to-quote closes deals that brilliance loses. And Encore works the goldmine everyone forgets: the customers you already have, at the exact moments they're ready for more."
       },
       {
-        type: "cast", chapter: "The Family", mood: "cyan", kicker: "Department 5 of 11",
+        type: "cast", chapter: "The Family", mood: "cyan", kicker: "Department 5 of 13",
         title: "Customer Experience — the department of being loved",
         cast: [
           { avatar: "🏠", name: "Haven", role: "Support Responder", line: "Warm, accurate replies in your voice — escalating what needs you." },
@@ -143,7 +143,7 @@ window.MOVIES = [
         narration: "Customer Experience is the department of being loved, and love, it turns out, is mostly logistics. Haven answers support tickets with warmth and accuracy in your voice, and knows exactly which ones need a human heart instead. Ripple watches for peak-happiness moments — the job done, the problem solved — and asks for the review right then, when yes is easy. Sentry reads the quiet signals of a customer drifting away and hands you the save play before the goodbye email arrives. And Beam trains your website assistant: its knowledge, its personality, and the guardrails that keep it honest. Businesses that respond fast and remember everything don't just keep customers. They collect advocates."
       },
       {
-        type: "cast", chapter: "The Family", mood: "green", kicker: "Department 6 of 11",
+        type: "cast", chapter: "The Family", mood: "green", kicker: "Department 6 of 13",
         title: "Finance & Cashflow — X-ray vision for your money",
         cast: [
           { avatar: "💧", name: "Stream", role: "Cashflow Forecaster", line: "13-week forecasts that make crunches announce themselves early." },
@@ -154,7 +154,7 @@ window.MOVIES = [
         narration: "The finance office glows green, and not by accident. Stream keeps a thirteen-week cash forecast alive, so the crunch that used to ambush you in week nine now announces itself in week one — when it's still solvable with a phone call. Hawk performs the expense autopsy: zombie subscriptions, duplicate tools, prices you agreed to three years ago — most owners find five to fifteen percent on the first pass. Margin computes what nothing else tells you: true profit per offer, including the hours of your own life each one consumes. And Vault makes profit a decision instead of a leftover. Money stops being a monthly mystery. It becomes a dashboard."
       },
       {
-        type: "cast", chapter: "The Family", mood: "violet", kicker: "Department 7 of 11",
+        type: "cast", chapter: "The Family", mood: "violet", kicker: "Department 7 of 13",
         title: "Operations & Systems — the end of everything-routes-through-you",
         cast: [
           { avatar: "⚒️", name: "Forge", role: "SOP Writer", line: "Turns 'how you do things' into playbooks anyone can run." },
@@ -165,7 +165,7 @@ window.MOVIES = [
         narration: "Operations is where the midnight light finally goes dark. Forge sits with you and extracts the business trapped in your head — turning 'how we do things' into step-by-step playbooks that anyone, human or AI, can run to your standard. Relay designs the automations that make repetitive work simply vanish. Assembly is the conductor: it wires individual specialists into pipelines where work flows from agent to agent with you standing at the approval gates. And Patch ends the era of recurring fires by asking why five times until the real cause confesses. This is the department that makes your vacation possible. Actually possible."
       },
       {
-        type: "cast", chapter: "The Family", mood: "cyan", kicker: "Department 8 of 11",
+        type: "cast", chapter: "The Family", mood: "cyan", kicker: "Department 8 of 13",
         title: "Data & Insights — decisions with evidence attached",
         cast: [
           { avatar: "🔍", name: "Lens", role: "Data Interpreter", line: "Messy numbers in — three decision-ready insights out." },
@@ -176,19 +176,52 @@ window.MOVIES = [
         narration: "Data and Insights is a quiet floor with enormous consequences. Lens takes the messy numbers you've been avoiding and returns the three insights that actually change a decision — with confidence levels attached, because certainty is a scam. Census builds your customer personas from evidence instead of stereotype: what they're actually trying to get done, what triggers them to buy, where they gather. Grapple examines your funnel and points at the leaky step — then prices exactly what fixing it is worth. And Verity checks every claim before it ships, because in an age of confident machines, the businesses that verify become the businesses that get trusted."
       },
       {
-        type: "cast", chapter: "The Family", mood: "gold", kicker: "Departments 9 & 10 of 11",
-        title: "People, Talent, Legal & Innovation — the grown-up floors",
+        type: "cast", chapter: "The Family", mood: "gold", kicker: "Department 9 of 13",
+        title: "People & Talent — build the human team right",
         cast: [
-          { avatar: "🔭", name: "Scout", role: "Hiring Writer", line: "Role scorecards and postings that attract doers." },
+          { avatar: "🔭", name: "Scout", role: "Hiring Writer", line: "Role scorecards and postings that attract doers, repel tire-kickers." },
+          { avatar: "🧹", name: "Sift", role: "Interview Designer", line: "Structured interviews with scoring rubrics — no more hiring on vibes." },
+          { avatar: "🧑‍🏫", name: "Mentor", role: "Training Builder", line: "Turns your best employee's know-how into onboarding for the next." },
           { avatar: "🪄", name: "Baton", role: "Delegation Coach", line: "Sorts your week: only-you, human, AI, or delete." },
-          { avatar: "🧬", name: "Ethica", role: "AI Policy Officer", line: "Your 1-page rules: disclosure, data lines, review gates." },
-          { avatar: "⚡", name: "Spark", role: "Idea Generator", line: "30 structured ideas, 3 worth testing — on demand." },
-          { avatar: "🔥", name: "Crucible", role: "Red Team", line: "Attacks your plan from 6 angles before the market does." }
+          { avatar: "🕊️", name: "Accord", role: "Conversation Coach", line: "Scripts the hard talks with empathy and spine." }
         ],
-        narration: "Two floors share the next stop — the grown-up floors. On People and Talent, Scout writes job scorecards that attract doers and repel tire-kickers, Mentor turns your best employee's knowledge into training for the next one, and Baton — the delegation coach — sorts your entire week into what only you can do, and everything else. On Legal and Innovation, Ethica drafts the one-page AI policy that keeps your brand safe: what's approved, what's forbidden, what always gets human eyes. Spark generates thirty structured ideas on demand. Probe designs the cheapest possible test before you bet real money. And Crucible — everyone's least favorite, most valuable colleague — attacks your plan from six angles before the market does it for free."
+        narration: "Because agents don't replace your people — they make hiring and leading them dramatically better. Scout writes job scorecards and postings that attract doers and quietly repel tire-kickers. Sift designs structured interviews with scoring rubrics, so you stop hiring on vibes and start hiring on evidence. Mentor sits with your best employee and turns what they know into a five-day onboarding course for the next one — so excellence stops living in one irreplaceable head. Baton, the delegation coach, sorts your entire week into what only you can do and everything else. And Accord scripts the conversations every owner dreads — underperformance, conflict, pay — with empathy and spine in equal measure."
       },
       {
-        type: "cast", chapter: "The Family", mood: "magenta", kicker: "Department 11 of 11",
+        type: "cast", chapter: "The Family", mood: "violet", kicker: "Department 10 of 13",
+        title: "Legal & Compliance — the department of sleeping well",
+        cast: [
+          { avatar: "📑", name: "Clause", role: "Contract Explainer", line: "Contracts in plain English; flags the clauses to question." },
+          { avatar: "🛡️", name: "Shield", role: "Policy Drafter", line: "Fair, clear policies — ready for your attorney's review." },
+          { avatar: "🧬", name: "Ethica", role: "AI Policy Officer", line: "Your 1-page AI rules: disclosure, data lines, review gates." },
+          { avatar: "🔏", name: "Ledgerlock", role: "Data Privacy Guide", line: "Maps what customer data you hold and how to keep it clean." }
+        ],
+        narration: "The legal floor is quiet, organized, and the reason you sleep. Clause translates any contract into plain English and flags the clauses worth questioning — so you walk into your attorney's office with a list instead of a shrug. Shield drafts the policies most owners put off for years: refunds, cancellations, terms — fair, clear, and ready for professional review. Ethica writes your one-page AI policy: what's approved, what's forbidden, what always gets human eyes, and exactly how you disclose it to customers. And Ledgerlock maps every piece of customer data you hold, where it lives, and the five hygiene steps a small team can actually do. None of them replace a lawyer. All of them make you ten times readier for one."
+      },
+      {
+        type: "cast", chapter: "The Family", mood: "magenta", kicker: "Department 11 of 13",
+        title: "Product & Innovation — stay dangerous",
+        cast: [
+          { avatar: "⚡", name: "Spark", role: "Idea Generator", line: "30 structured ideas, 3 worth testing — on demand." },
+          { avatar: "🛰️", name: "Probe", role: "Validation Designer", line: "The cheapest 7-day test before you bet real money." },
+          { avatar: "⚗️", name: "Alchemist", role: "Offer Transformer", line: "Repackages what you sell: subscription, productized, license." },
+          { avatar: "🔥", name: "Crucible", role: "Red Team", line: "Attacks your plan from 6 angles before the market does." }
+        ],
+        narration: "Innovation is a department now, not a mood. Spark runs structured ideation on demand — thirty ideas from three directions, scored, with three worth testing. Probe designs the cheapest possible validation: a seven-day test with kill-or-go criteria written before you spend a dollar building. Alchemist takes what you already sell and repackages it — a subscription version, a productized version, a licensing play — because your next offer is usually hiding inside your current one. And Crucible, everyone's least favorite and most valuable colleague, attacks every plan from six angles — customer indifference, competitor response, unit economics, operations, regulation, timing — before the market does it for free. Businesses with this floor stay dangerous. Businesses without it stay lucky, until they aren't."
+      },
+      {
+        type: "cast", chapter: "The Family", mood: "green", kicker: "Department 12 of 13",
+        title: "E-Commerce & Local — own the shelf and the street",
+        cast: [
+          { avatar: "🏪", name: "Storefront", role: "Listing Optimizer", line: "Titles and bullets that rank, convert — and read well to buying agents." },
+          { avatar: "🛒", name: "Cartwright", role: "Cart Recoverer", line: "The 3-touch sequence that brings back 10-15% of lost carts." },
+          { avatar: "📍", name: "Maple", role: "Local SEO Champion", line: "Own your neighborhood: profile, reviews, local pages." },
+          { avatar: "📦", name: "Courier", role: "Post-Purchase Designer", line: "Unboxing to reorder: inserts, check-ins, replenishment nudges." }
+        ],
+        narration: "Whether your business lives on a shelf or a street corner, this department fights for it. Storefront rewrites product listings so they rank, convert, and — increasingly important — read clearly to the AI shopping agents that buy on customers' behalf. Cartwright runs the three-touch recovery sequence that brings back ten to fifteen percent of abandoned carts, the cheapest revenue in commerce. Maple makes you the landmark of your neighborhood: business profile, local pages, and the review engine that decides who shows up first when someone nearby needs what you sell. And Courier designs everything after the sale — the unboxing, the day-seven check-in, the reorder nudge — because the second purchase is where real businesses are built."
+      },
+      {
+        type: "cast", chapter: "The Family", mood: "magenta", kicker: "Department 13 of 13",
         title: "The Owner's Circle — the ones who work for you personally",
         cast: [
           { avatar: "🌄", name: "Dawn", role: "Daily Briefing Officer", line: "Your morning: top 3, calendar traps, one number to watch." },
