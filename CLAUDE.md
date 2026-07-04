@@ -59,7 +59,13 @@ spreadsheets and can email them. Deep audio narration everywhere via Web Speech 
 - `actions/configure-pages` with `enablement: true` fails on user repos:
   GITHUB_TOKEN gets "Resource not accessible by integration" when creating the
   Pages site. *Deploy by force-syncing the default branch to `gh-pages` instead —
-  public repos auto-serve it with zero settings.*
+  confirmed working: pushing gh-pages auto-enabled Pages on this public repo.*
+- Polled the public github.io URL for 12 minutes to confirm deploy — but this
+  sandbox's proxy can't reach *.github.io AT ALL (curl 000, control site also 000),
+  so the poll could never succeed. *Before trusting any poll, run a control probe
+  against a known-good target. The real deploy signal here is GitHub's own
+  "pages build and deployment" workflow run (visible via actions_list) — use that,
+  not HTTP, as the source of truth for Pages deploys.*
 
 **Went right (keep doing):**
 - Role-card pattern for agents (identity/context/job/standards/boundaries) — reused
