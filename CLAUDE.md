@@ -56,6 +56,10 @@ spreadsheets and can email them. Deep audio narration everywhere via Web Speech 
   preinstalled executablePath; never `playwright install` here.*
 - First chart palette attempt failed the dark-mode lightness band (neon hues too
   light). *Validate BEFORE styling charts; snap to passing steps.*
+- `actions/configure-pages` with `enablement: true` fails on user repos:
+  GITHUB_TOKEN gets "Resource not accessible by integration" when creating the
+  Pages site. *Deploy by force-syncing the default branch to `gh-pages` instead —
+  public repos auto-serve it with zero settings.*
 
 **Went right (keep doing):**
 - Role-card pattern for agents (identity/context/job/standards/boundaries) — reused
