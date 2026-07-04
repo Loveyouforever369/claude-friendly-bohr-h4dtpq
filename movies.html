@@ -44,6 +44,21 @@
   </div>
 </header>
 
+<section class="section container" id="trailer-sec">
+  <span class="eyebrow">▶ OFFICIAL TRAILER · REAL RENDERED VIDEO</span>
+  <h2>Watch the trailer</h2>
+  <div class="viz-root" style="padding:10px">
+    <video controls preload="metadata" playsinline
+           poster="assets/video/trailer-poster.jpg"
+           style="width:100%;border-radius:10px;display:block;background:#000"
+           onerror="document.getElementById('trailer-sec').style.display='none'">
+      <source src="assets/video/meet-the-family-trailer.mp4" type="video/mp4">
+      <source src="assets/video/meet-the-family-trailer.webm" type="video/webm">
+    </video>
+  </div>
+  <p class="muted mt-1">46-second cinematic trailer — a real MP4 rendered frame-by-frame from the academy's own design system, with a synthesized score. Captions carry the narration; press play on the feature below for the full deep-voice experience. Want avatar-presented films? Grab a <b>Production pack</b> from any poster — see <code>PRODUCTION.md</code> in the repo.</p>
+</section>
+
 <section class="section container">
   <span class="eyebrow">FEATURE PRESENTATION</span>
   <div id="feature-slot" class="grid" style="grid-template-columns:1fr"></div>
@@ -100,7 +115,7 @@
         <div class="poster-chapters">${m.chapters.map((c, i) => `${i + 1}. ${c}`).join(" &nbsp;·&nbsp; ")}</div>
         <div class="poster-actions">
           <button class="btn btn-primary" onclick="Player.open('${m.id}')">▶ ${big ? "Play the feature" : "Play"}</button>
-          <button class="btn btn-ghost btn-sm" onclick="movieScript('${m.id}')" style="align-self:center">📜 Script (.xls)</button>
+          <button class="btn btn-ghost btn-sm" onclick="movieScript('${m.id}')" style="align-self:center">🎬 Production pack (.xls)</button>
         </div>
       </div>`;
   }
@@ -109,25 +124,52 @@
   document.getElementById("chronicles-slot").innerHTML = chronicles.map(m => posterHTML(m, false)).join("");
 })();
 
-/* Download a film's full script/transcript as a spreadsheet */
+/* Download a film's full PRODUCTION PACK: script + shot list with avatar
+   direction & b-roll prompts + voice/style guide. See PRODUCTION.md. */
 function movieScript(id) {
   const m = window.MOVIES.find(x => x.id === id);
   if (!m) return;
-  const rows = [
-    ["AI BUSINESS ACADEMY — FILM SCRIPT / TRANSCRIPT"],
-    ["Film", m.title], ["Series", m.phase], ["Runtime", "~" + m.minutes + " min"],
-    ["Chapters", m.chapters.join(" · ")], [],
-    ["Scene", "Chapter", "Scene title", "On-screen points", "Narration (transcript)"]
+
+  const MOODCOLOR = { cyan: "neon cyan (#22d3ee)", violet: "neon violet (#a78bfa)", magenta: "neon magenta (#f472b6)", gold: "warm amber gold (#fbbf24)", green: "emerald green (#34d399)", night: "cold moonlight blue" };
+
+  function avatarDir(s) {
+    if (s.type === "title") return "NO PRESENTER — full-screen title card, slow push-in; VO only.";
+    if (s.type === "cast") return "OPTIONAL HOST: licensed HeyGen avatar (waist-up, right third, dark studio) introduces the department for the first sentence, then cut to animated cast cards for the roll call.";
+    return "PRESENTER SCENE: licensed HeyGen avatar, centered or left third, dark studio backdrop lit in the scene's mood color; deliver narration to camera, slow deliberate pace, minimal gestures.";
+  }
+  function brollPrompt(s) {
+    const c = MOODCOLOR[s.mood] || "neon cyan";
+    return `Cinematic shot: ${s.title.replace(/[—·]/g, ",")}. Dark futuristic setting, deep navy (#0b1020) atmosphere with ${c} glow accents, volumetric light, letterboxed 2.39:1, slow dolly movement, photorealistic, 4K. No on-screen text (titles added in edit).`;
+  }
+
+  const script = [
+    ["AI BUSINESS ACADEMY — PRODUCTION PACK · " + m.title],
+    ["Series", m.phase], ["Runtime", "~" + m.minutes + " min"], ["Chapters", m.chapters.join(" · ")], [],
+    ["Scene", "Chapter", "Scene title", "On-screen text/points", "Narration (VO script)"]
   ];
-  m.slides.forEach((s, i) => rows.push([
-    i + 1,
-    s.chapter || "",
-    s.title,
-    (s.bullets || (s.cast || []).map(c => c.name + " — " + c.role)).join(" • "),
-    s.narration
-  ]));
-  Sheets.downloadXLS(m.title.toLowerCase().replace(/\W+/g, "-") + "-script.xls",
-    [{ name: "Script", rows }]);
+  const shots = [
+    ["SHOT LIST — one row per scene. Avatar clips: HeyGen. B-roll: Veo/Runway with the prompt column."], [],
+    ["Scene", "Type", "Mood", "Avatar direction", "B-roll prompt (Veo/Runway)", "Est. duration (sec)"]
+  ];
+  m.slides.forEach((s, i) => {
+    const onscreen = (s.bullets || (s.cast || []).map(c => c.name + " — " + c.role)).join(" • ") || (s.sub || "");
+    script.push([i + 1, s.chapter || "", s.title, onscreen, s.narration]);
+    shots.push([i + 1, s.type || "standard", s.mood || "cyan", avatarDir(s), brollPrompt(s),
+      Math.round(s.narration.split(/\s+/).length / 2.4)]);
+  });
+  const voice = [
+    ["VOICE & STYLE GUIDE"], [],
+    ["Voice", "Deep, gravelly, cinematic narrator. Use a LICENSED voice only: HeyGen stock voices or ElevenLabs Voice Library (search 'deep narrator'). NEVER clone a real actor's voice without documented consent."],
+    ["Pace", "Slow and deliberate, ~140 wpm. Let pauses land after em-dashes and ellipses."],
+    ["Avatar casting", "ONE host avatar for the whole film (consistency beats variety). Chronicles may add one 'Sam Reyes' avatar. Pick from HeyGen's licensed library."],
+    ["Palette", "bg #05070f / surface #0b1020 · cyan #22d3ee · violet #a78bfa · magenta #f472b6 · gold #fbbf24 · green #34d399"],
+    ["Type", "Futuristic wide-tracked uppercase for titles (Orbitron-style); humanist sans for body."],
+    ["Frame", "16:9 master, letterboxed 2.39:1 look; slow dollies; no whip cuts except the montage."],
+    ["Assembly", "CapCut/Descript: avatar clips + b-roll + on-screen text column as titles. Export H.264 1080p, CRF 21-23, ≤50MB per film for GitHub Pages."],
+    ["Full guide", "See PRODUCTION.md in the repository."]
+  ];
+  Sheets.downloadXLS(m.title.toLowerCase().replace(/\W+/g, "-") + "-production-pack.xls",
+    [{ name: "Script", rows: script }, { name: "Shot List", rows: shots }, { name: "Voice & Style", rows: voice }]);
 }
 </script>
 </body>

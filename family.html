@@ -42,6 +42,13 @@
   </div>
 </header>
 
+<section class="section container" data-narrate data-narrate-script="The family never stops learning. Every month, agents study what's new — from the future radar, from tool research, from real production work — and lock the skills into their role cards. This month's upgrades came from mastering long-form AI video: anchor-scene planning, identity-anchored characters, licensed voice casting, and the draft-cheap, finish-expensive rendering strategy. Scroll the upgrade feed to see who learned what, and exactly how to use each new skill in your business today.">
+  <span class="eyebrow">🆕 FAMILY UPGRADES · <span id="upg-month"></span></span>
+  <h2>New skills the Family learned this month</h2>
+  <p class="section-lead">The Family studies constantly — Future Radar signals, tool research, real production runs — and every lesson becomes a skill locked into an agent's role card. Newest upgrades first.</p>
+  <div id="upgrades" class="grid grid-2"></div>
+</section>
+
 <section class="section container">
   <input type="text" id="family-search" placeholder="🔍 Search agents — try 'cashflow', 'proposal', 'reviews', 'churn'…">
   <div class="chip-row" id="family-chips"></div>
@@ -70,6 +77,26 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/sheets.js"></script>
 <script src="assets/js/data/agents.js"></script>
+<script src="assets/js/data/upgrades.js"></script>
 <script src="assets/js/family.js"></script>
+<script>
+(function renderUpgrades() {
+  const U = window.SKILL_UPGRADES || [];
+  document.getElementById("upg-month").textContent =
+    U.length ? U[0].date.replace("2026-07", "JULY 2026") : "";
+  document.getElementById("upgrades").innerHTML = U.map(u => `
+    <div class="card">
+      <div class="agent-top" style="margin-bottom:8px">
+        <div class="avatar">${u.avatar}</div>
+        <div>
+          <div class="agent-name">${u.agent} <span class="muted" style="font-weight:400">leveled up</span></div>
+          <div class="agent-role">🆕 ${u.skill}</div>
+        </div>
+      </div>
+      <p style="font-size:.88rem"><b>What was learned:</b> ${u.learned}</p>
+      <p style="font-size:.88rem;margin-top:6px;border-left:3px solid var(--status-good);padding-left:10px"><b>Use it today:</b> ${u.use}</p>
+    </div>`).join("");
+})();
+</script>
 </body>
 </html>

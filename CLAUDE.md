@@ -67,6 +67,43 @@ spreadsheets and can email them. Deep audio narration everywhere via Web Speech 
   "pages build and deployment" workflow run (visible via actions_list) — use that,
   not HTTP, as the source of truth for Pages deploys.*
 
+**Video production — locked in (researched + tested July 2026):**
+- HeyGen HyperFrames MCP `compose`/`render_video` are HARD-DISABLED for CLI/coding
+  agents (verified by calling — returns a rejection). They work from claude.ai CHAT
+  with the HeyGen connector. Don't retry from here; route avatar renders through
+  the user's HeyGen account or a claude.ai chat.
+- REAL MP4s can be rendered entirely in this repo: seekable HTML composition
+  (`window.seek(t)`, all animation a pure function of t — never CSS animations),
+  Playwright JPEG frames at 24fps (~1100 frames ≈ 51s capture), score synthesized
+  via ffmpeg `aevalsrc` (drone + riser + exp-decay hits at scene changes), assembled
+  with libx264. Template: `scratchpad/render-trailer.js`. ffmpeg via
+  `@ffmpeg-installer/ffmpeg` (npm) — `ffmpeg-static`'s postinstall download FAILS here.
+- VOICE CONSENT RULE: never clone a real actor's/person's voice from online material —
+  consent required, full stop. Licensed sources: HeyGen stock voices, ElevenLabs
+  Voice Library. Deep "trailer narrator" voices exist in both.
+- Tool research (2026): HeyGen Avatar IV = best expressive avatars/lip-sync & volume;
+  Synthesia = enterprise training pick (4-hr videos, top licensing scores);
+  Veo 3.x = best generative b-roll quality. Full stack + pipeline in PRODUCTION.md.
+
+**Long-form video craft — studied & locked (July 2026):**
+- Character consistency is the central long-form challenge (models have no memory
+  between clips). Rules: anchor scene first; identity block repeated in every prompt
+  (Higgsfield 2.0: 3–5 reference images); ONE variable changed per generation;
+  persistent presenter identity for spokesperson content; draft cheap (Kling/MiniMax),
+  finish expensive (Veo/Seedance). Full playbook in PRODUCTION.md.
+- Higgsfield/SocialClaw have NO MCP connectors (registry searched — nothing). Higgsfield
+  is used via its web app; our production-pack b-roll prompts are written to paste
+  straight into it.
+- The Family Upgrades convention: agents must keep learning. Every study session
+  appends entries to `assets/js/data/upgrades.js` (agent, new skill, what was
+  learned, how to use it today) — rendered on family.html. Never let it go stale.
+- Headless Playwright Chromium has NO H.264/AAC codecs — an MP4 that won't load
+  metadata in tests plays fine in real browsers. Ship MP4 + WebM(VP9/Opus) dual
+  sources; verify playback via the WebM.
+- The stale-server trap, refined: `curl || start-server` passes on a 404 because
+  curl exits 0 on any HTTP response. Guard on the STATUS CODE (expect 200 from a
+  real page), not on connectivity.
+
 **Went right (keep doing):**
 - Role-card pattern for agents (identity/context/job/standards/boundaries) — reused
   across lessons, movies, family page; keeps all content consistent.
