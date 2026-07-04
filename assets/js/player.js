@@ -1,12 +1,17 @@
 /* ============================================================
-   CINEMATIC PLAYER — video-style narrated training lessons
-   Slides animate in sequence; narration drives auto-advance;
-   captions, per-slide progress segments, keyboard controls.
+   CINEMATIC PLAYER — video-style narrated trainings & movies
+   Lessons (LESSONS) and feature movies (MOVIES) share one player.
+   Movie extras: title cards, cast cards, chapters, scene moods,
+   letterboxing, deeper narration pitch.
    ============================================================ */
 
 window.Player = (function () {
-  let lesson = null, idx = 0, playing = false, overlay = null;
+  let lesson = null, idx = 0, playing = false, overlay = null, isMovie = false;
   const synth = window.speechSynthesis;
+
+  function catalog() {
+    return [...(window.LESSONS || []), ...(window.MOVIES || [])];
+  }
 
   function build() {
     if (overlay) return;
@@ -20,15 +25,15 @@ window.Player = (function () {
           <div class="player-caption" id="player-caption"></div>
         </div>
         <div class="player-bar">
-          <button id="pl-prev" title="Previous slide">⏮</button>
+          <button id="pl-prev" title="Previous scene">⏮</button>
           <button id="pl-play" class="big" title="Play / pause">▶</button>
-          <button id="pl-next" title="Next slide">⏭</button>
+          <button id="pl-next" title="Next scene">⏭</button>
           <div class="player-progress" id="pl-progress"></div>
           <button id="pl-cc" title="Toggle captions">CC</button>
         </div>
         <div class="player-meta">
           <span id="pl-title"></span>
-          <span id="pl-count"></span>
+          <span><span class="player-chapter" id="pl-chapter"></span> <span id="pl-count"></span></span>
         </div>
       </div>`;
     document.body.appendChild(overlay);
@@ -51,20 +56,48 @@ window.Player = (function () {
     });
   }
 
-  function open(lessonId) {
-    lesson = (window.LESSONS || []).find(l => l.id === lessonId);
+  function slideHTML(s, i) {
+    const mood = s.mood ? " mood-" + s.mood : "";
+    if (s.type === "title") {
+      return `<div class="player-slide slide-title${mood}" data-i="${i}">
+        <div class="slide-kicker">${s.kicker || ""}</div>
+        <h3>${s.title}</h3>
+        ${s.sub ? `<div class="title-sub">${s.sub}</div>` : ""}
+        ${s.visual ? `<div class="slide-visual" style="position:static;margin-top:18px;opacity:.85">${s.visual}</div>` : ""}
+      </div>`;
+    }
+    if (s.type === "cast") {
+      return `<div class="player-slide${mood}" data-i="${i}">
+        <div class="slide-kicker">${s.kicker || ""}</div>
+        <h3>${s.title}</h3>
+        <div class="cast-grid">${(s.cast || []).map(c => `
+          <div class="cast-card">
+            <div class="cast-ava">${c.avatar}</div>
+            <div class="cast-name">${c.name}</div>
+            <div class="cast-role">${c.role}</div>
+            <div class="cast-line">${c.line}</div>
+          </div>`).join("")}
+        </div>
+      </div>`;
+    }
+    return `<div class="player-slide${mood}" data-i="${i}">
+      <div class="slide-kicker">${s.kicker || ""}</div>
+      <h3>${s.title}</h3>
+      <ul>${(s.bullets || []).map(b => `<li>${b}</li>`).join("")}</ul>
+      ${s.visual ? `<div class="slide-visual">${s.visual}</div>` : ""}
+    </div>`;
+  }
+
+  function open(id) {
+    lesson = catalog().find(l => l.id === id);
     if (!lesson) return;
+    isMovie = !!lesson.movie;
     build();
     if (window.Narrator) Narrator.stop();
 
-    const slidesEl = overlay.querySelector("#player-slides");
-    slidesEl.innerHTML = lesson.slides.map((s, i) => `
-      <div class="player-slide" data-i="${i}">
-        <div class="slide-kicker">${s.kicker}</div>
-        <h3>${s.title}</h3>
-        <ul>${s.bullets.map(b => `<li>${b}</li>`).join("")}</ul>
-        <div class="slide-visual">${s.visual}</div>
-      </div>`).join("");
+    overlay.querySelector(".player-screen").classList.toggle("movie", isMovie);
+    overlay.querySelector("#player-slides").innerHTML =
+      lesson.slides.map((s, i) => slideHTML(s, i)).join("");
 
     const prog = overlay.querySelector("#pl-progress");
     prog.innerHTML = lesson.slides.map((_, i) =>
@@ -72,7 +105,8 @@ window.Player = (function () {
     prog.querySelectorAll(".seg").forEach(seg =>
       seg.addEventListener("click", () => go(parseInt(seg.dataset.i))));
 
-    overlay.querySelector("#pl-title").textContent = lesson.phase + " — " + lesson.title;
+    overlay.querySelector("#pl-title").textContent =
+      (lesson.phase ? lesson.phase + " — " : "") + lesson.title + (lesson.minutes ? ` · ~${lesson.minutes} min` : "");
     overlay.classList.add("open");
     idx = -1;
     playing = true;
@@ -91,7 +125,8 @@ window.Player = (function () {
       el.classList.toggle("active", parseInt(el.dataset.i) === idx));
     overlay.querySelectorAll("#pl-progress .seg .fill").forEach((f, j) =>
       f.style.width = j < idx ? "100%" : j === idx ? "8%" : "0%");
-    overlay.querySelector("#pl-count").textContent = `Scene ${idx + 1} / ${lesson.slides.length}`;
+    overlay.querySelector("#pl-count").textContent = `· Scene ${idx + 1} / ${lesson.slides.length}`;
+    overlay.querySelector("#pl-chapter").textContent = lesson.slides[idx].chapter || "";
     overlay.querySelector("#player-caption").textContent = lesson.slides[idx].narration;
 
     if (playing) narrate();
@@ -109,13 +144,14 @@ window.Player = (function () {
       if (!playing || !overlay.classList.contains("open")) return;
       if (ci >= chunks.length) {
         if (fill) fill.style.width = "100%";
-        setTimeout(() => { if (playing) go(idx + 1); }, 700);
+        setTimeout(() => { if (playing) go(idx + 1); }, isMovie ? 1000 : 700);
         return;
       }
       const u = new SpeechSynthesisUtterance(chunks[ci]);
       const st = window.Narrator ? Narrator.state : { rate: 0.95, pitch: 0.82, voice: null };
       if (st.voice) u.voice = st.voice;
-      u.rate = st.rate; u.pitch = st.pitch;
+      u.rate = st.rate * (isMovie ? 0.97 : 1);          // movies breathe a little slower
+      u.pitch = isMovie ? Math.min(st.pitch, 0.78) : st.pitch; // and speak deeper
       u.onend = () => {
         ci++;
         if (fill) fill.style.width = Math.round(ci / chunks.length * 100) + "%";

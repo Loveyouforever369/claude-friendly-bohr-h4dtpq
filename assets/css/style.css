@@ -369,11 +369,17 @@ details.acc .acc-body { padding: 0 22px 22px 74px; }
 .player-slide li::before { content: "▸"; position: absolute; left: 4px; color: var(--neon-magenta); }
 .player-slide .slide-visual { position: absolute; right: 4%; bottom: 6%; font-size: clamp(2.5rem, 8vw, 5rem); opacity: .55; filter: drop-shadow(0 0 18px rgba(34,211,238,.5)); }
 .player-caption {
-  position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 20px;
-  background: linear-gradient(transparent, rgba(3,5,12,.92) 40%);
-  font-size: 0.84rem; color: var(--text-secondary); text-align: center;
-  min-height: 58px; display: flex; align-items: flex-end; justify-content: center;
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 20px 16px;
+  background: linear-gradient(transparent, rgba(3,5,12,.96) 26%);
+  font-size: 0.8rem; line-height: 1.5; color: var(--text-secondary); text-align: center;
+  min-height: 54px; max-height: 24%; overflow-y: auto; z-index: 6;
+  display: flex; align-items: flex-end; justify-content: center;
 }
+.player-caption::-webkit-scrollbar { width: 4px; }
+.player-screen.movie .player-caption { padding-bottom: calc(5.5% + 10px); }
+.player-slide { padding-bottom: clamp(96px, 27%, 170px); }
+.cast-card .cast-line { display: none; }
+@media (min-height: 500px) { .cast-card .cast-line { display: block; } }
 .player-bar { display: flex; align-items: center; gap: 10px; margin-top: 14px; }
 .player-bar button {
   background: var(--card); border: 1px solid var(--border); color: var(--text-primary);
@@ -509,3 +515,64 @@ footer.site-footer a { color: var(--text-secondary); font-size: 0.85rem; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
   html { scroll-behavior: auto; }
 }
+
+/* ---------- Screening Room: movie mode ---------- */
+.player-screen.movie::before, .player-screen.movie::after {
+  content: ""; position: absolute; left: 0; right: 0; height: 5.5%;
+  background: #01030a; z-index: 5; pointer-events: none;
+}
+.player-screen.movie::before { top: 0; }
+.player-screen.movie::after { bottom: 0; }
+
+.player-slide.slide-title { align-items: center; text-align: center; justify-content: center; }
+.player-slide.slide-title h3 {
+  font-size: clamp(1.6rem, 5vw, 3rem); letter-spacing: .06em;
+  background: var(--grad-hero); -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  text-shadow: none; margin-bottom: 10px;
+}
+.player-slide.slide-title .title-sub { color: var(--text-secondary); font-size: clamp(.85rem, 2vw, 1.05rem); max-width: 34em; }
+.player-slide.slide-title .slide-kicker { letter-spacing: .4em; }
+
+.cast-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.cast-card {
+  flex: 1 1 150px; max-width: 210px; background: rgba(5,8,18,.55);
+  border: 1px solid var(--border-bright); border-radius: 12px; padding: 10px 12px;
+  backdrop-filter: blur(4px); animation: castIn .6s both;
+}
+.cast-card:nth-child(2) { animation-delay: .15s; } .cast-card:nth-child(3) { animation-delay: .3s; }
+.cast-card:nth-child(4) { animation-delay: .45s; } .cast-card:nth-child(5) { animation-delay: .6s; }
+@keyframes castIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.cast-card .cast-ava { font-size: 1.7rem; filter: drop-shadow(0 0 10px rgba(34,211,238,.55)); }
+.cast-card .cast-name { font-family: var(--font-display); font-weight: 700; font-size: .92rem; color: var(--text-primary); }
+.cast-card .cast-role { font-size: .68rem; color: var(--neon-cyan); text-transform: uppercase; letter-spacing: .08em; }
+.cast-card .cast-line { font-size: .74rem; color: var(--text-secondary); margin-top: 4px; line-height: 1.45; }
+
+/* Scene moods (radial "lighting") */
+.player-slide.mood-cyan    { background: radial-gradient(ellipse at 75% 15%, rgba(34,211,238,.22), transparent 60%), radial-gradient(ellipse at 15% 85%, rgba(8,162,196,.14), transparent 55%), var(--surface-1); }
+.player-slide.mood-violet  { background: radial-gradient(ellipse at 70% 20%, rgba(167,139,250,.24), transparent 60%), radial-gradient(ellipse at 20% 90%, rgba(144,133,233,.12), transparent 55%), var(--surface-1); }
+.player-slide.mood-magenta { background: radial-gradient(ellipse at 80% 10%, rgba(244,114,182,.2), transparent 60%), radial-gradient(ellipse at 10% 80%, rgba(213,81,129,.12), transparent 55%), var(--surface-1); }
+.player-slide.mood-gold    { background: radial-gradient(ellipse at 75% 15%, rgba(251,191,36,.17), transparent 60%), radial-gradient(ellipse at 15% 85%, rgba(201,133,0,.12), transparent 55%), var(--surface-1); }
+.player-slide.mood-green   { background: radial-gradient(ellipse at 75% 15%, rgba(52,211,153,.18), transparent 60%), radial-gradient(ellipse at 20% 85%, rgba(25,158,112,.12), transparent 55%), var(--surface-1); }
+.player-slide.mood-night   { background: radial-gradient(ellipse at 50% 0%, rgba(59,68,120,.32), transparent 65%), #05070f; }
+
+.player-chapter { color: var(--neon-magenta); font-family: var(--font-display); letter-spacing: .1em; }
+
+/* Poster cards */
+.poster { position: relative; overflow: hidden; display: flex; flex-direction: column; min-height: 320px; }
+.poster .poster-art {
+  height: 130px; border-radius: 10px; margin-bottom: 14px; position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center; font-size: 3.2rem;
+  border: 1px solid var(--border-bright);
+}
+.poster .poster-art .glow { position: absolute; inset: 0; opacity: .9; }
+.poster .poster-art span { position: relative; filter: drop-shadow(0 0 18px rgba(255,255,255,.35)); }
+.poster .poster-badge {
+  position: absolute; top: 26px; right: 26px; z-index: 2;
+  font-family: var(--font-display); font-size: .62rem; letter-spacing: .18em;
+  background: rgba(3,5,12,.75); border: 1px solid var(--border-bright);
+  padding: 4px 10px; border-radius: 999px; color: var(--neon-cyan);
+}
+.poster .poster-meta { display: flex; gap: 14px; font-size: .76rem; color: var(--text-muted); margin: 4px 0 10px; }
+.poster .poster-chapters { font-size: .78rem; color: var(--text-secondary); border-left: 2px solid var(--border-bright); padding-left: 12px; margin: 8px 0; }
+.poster .btn { margin-top: auto; align-self: flex-start; }
