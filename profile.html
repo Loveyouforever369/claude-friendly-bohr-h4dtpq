@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Business Profile — Tell Us How to Serve You | AI Business Academy</title>
+<meta name="description" content="Create your business profile with your real photo, tell us how you want your business served, share ideas for how AI can help you — or complaints. Deep and personal.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><span class="hex">⬡</span> AI BUSINESS ACADEMY</a>
+    <button class="nav-burger" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="academy.html">🎓 Academy</a>
+      <a href="dna.html">🧬 Business DNA</a>
+      <a href="time-audit.html">⏱️ Time Audit</a>
+      <a href="profit.html">💎 Profit Lab</a>
+      <a href="family.html">🤖 AI Family</a>
+      <a href="characters.html">🎭 Character Forge</a>
+      <a href="top10.html">🔟 Top 10</a>
+      <a href="future.html">🔭 Future Radar</a>
+      <a href="profile.html">👤 My Profile</a>
+      <a href="community.html">🌐 Community</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero container" data-narrate data-narrate-script="This is your command center — your personal business profile. Build it once and the whole academy bends around you: your photo, your business details, your goals, and most importantly, how you want to be served. Tell us where it hurts, what you wish existed, and what would make this the most valuable room you walk into each week. Your DNA scan and time audit results appear here automatically as your Owner Card. And the message center below is a straight line to us: send feedback, send ideas about how AI could help you, and yes — send complaints. We read them as blueprints. Your photo and profile are stored only on your device; nothing leaves it until you choose to send a message.">
+  <span class="eyebrow">YOUR COMMAND CENTER</span>
+  <h1>My <span class="gradient-text">Business Profile</span></h1>
+  <p class="tagline">Make this academy yours. Add your real photo, decode what your business needs, tell us exactly how you want to be served — and use the direct line below for ideas, feedback and complaints. We read everything.</p>
+</header>
+
+<section class="section container">
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>👤 Owner identity</h3>
+      <div style="display:flex;gap:18px;align-items:center;margin-top:12px;flex-wrap:wrap">
+        <div>
+          <img id="pf-photo-img" alt="Your photo" style="display:none;width:96px;height:96px;border-radius:16px;object-fit:cover;border:2px solid var(--neon-cyan)">
+          <div id="pf-photo-empty" class="avatar" style="width:96px;height:96px;font-size:2.6rem">📷</div>
+        </div>
+        <div>
+          <label class="btn btn-ghost btn-sm" style="cursor:pointer">🖼 Add my real photo
+            <input type="file" accept="image/*" style="display:none" onchange="profilePhoto(this)">
+          </label>
+          <p class="muted mt-1" style="max-width:280px">Stored only on this device (never uploaded). It also appears on your community posts.</p>
+        </div>
+      </div>
+      <label class="field-label" for="pf-name">Your name</label>
+      <input type="text" id="pf-name" placeholder="e.g. Jordan Rivera" autocomplete="name">
+      <label class="field-label" for="pf-biz">Business name</label>
+      <input type="text" id="pf-biz" placeholder="e.g. Rivera Roofing Co.">
+      <div class="grid grid-2">
+        <div>
+          <label class="field-label" for="pf-industry">Industry</label>
+          <select id="pf-industry">
+            <option>Services</option><option>E-commerce / Retail</option><option>Food & Hospitality</option>
+            <option>Health & Wellness</option><option>Construction & Trades</option><option>Creative & Media</option>
+            <option>Tech & Software</option><option>Education & Coaching</option><option>Finance & Professional</option>
+          </select>
+        </div>
+        <div>
+          <label class="field-label" for="pf-size">Team size</label>
+          <select id="pf-size"><option>Just me</option><option>2–5</option><option>6–20</option><option>21–50</option><option>50+</option></select>
+        </div>
+      </div>
+      <label class="field-label" for="pf-email">Email (for your reports)</label>
+      <input type="email" id="pf-email" placeholder="you@yourbusiness.com" autocomplete="email">
+    </div>
+
+    <div class="card">
+      <h3>🎯 How we should serve your business</h3>
+      <label class="field-label" for="pf-goals">Your top goals for the next 12 months</label>
+      <textarea id="pf-goals" rows="3" placeholder="e.g. reclaim 10 hours a week, launch a second offer, get to $1M…"></textarea>
+      <label class="field-label" for="pf-serve">How do you want this academy to serve you?</label>
+      <textarea id="pf-serve" rows="3" placeholder="e.g. short trainings I can do at 6am, agents for my trade, help me with local marketing…"></textarea>
+      <label class="field-label" for="pf-challenges">Your biggest current challenges</label>
+      <textarea id="pf-challenges" rows="3" placeholder="e.g. drowning in admin, inconsistent leads, cashflow whiplash…"></textarea>
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="profileSave()">💾 Save my profile</button>
+        <button class="btn btn-ghost" onclick="profileDownload()">📥 Download profile (.xls)</button>
+      </div>
+      <p class="muted mt-1">Saved to this browser only. Download the spreadsheet to move it between devices.</p>
+    </div>
+  </div>
+
+  <div class="card glow-card mt-2">
+    <h3>🪪 Your Owner Card</h3>
+    <div id="pf-card"><p class="muted">Save your profile to see your Owner Card here.</p></div>
+    <p class="muted mt-1">Missing stats? Run the <a href="dna.html">DNA scan</a> and <a href="time-audit.html">Time Audit</a> — results attach automatically.</p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <span class="eyebrow">DIRECT LINE</span>
+    <h2>Write to us — ideas, feedback, complaints</h2>
+    <p class="section-lead">Tell us what could be better, how you feel AI could help your specific business, or what went wrong. Complaints get read first — they're blueprints for what we build next.</p>
+    <div class="grid grid-2">
+      <div class="card">
+        <label class="field-label" for="msg-type">Message type</label>
+        <select id="msg-type">
+          <option value="serve">🤝 How to serve my business better</option>
+          <option value="idea">💡 "AI could help me with…" (idea/request)</option>
+          <option value="feedback">💬 Feedback on the academy</option>
+          <option value="complaint">🚩 Complaint — make it right</option>
+        </select>
+        <label class="field-label" for="msg-text">Your message</label>
+        <textarea id="msg-text" rows="6" placeholder="Be specific — the more real detail, the better we can act on it."></textarea>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="profileSend()">📨 Send it</button>
+        </div>
+        <p class="muted mt-1">Sends via your email so you keep a copy. Attach the downloaded file if your mail app asks.</p>
+      </div>
+      <div>
+        <h3 class="mb-2">📜 Your message history <span class="muted">(this device)</span></h3>
+        <div id="msg-history"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container"><p>⬡ AI Business Academy — Your command center. Private by default: profile data lives on your device.</p></div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/sheets.js"></script>
+<script src="assets/js/profile.js"></script>
+</body>
+</html>

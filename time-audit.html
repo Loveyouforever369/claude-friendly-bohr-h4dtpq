@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time Gap Analyzer — Find Your Hidden Hours | AI Business Academy</title>
+<meta name="description" content="Enter your real week and watch the analyzer compute the hours AI agents can reclaim, price them at your rate, chart the leaks and email you the audit spreadsheet.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><span class="hex">⬡</span> AI BUSINESS ACADEMY</a>
+    <button class="nav-burger" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="academy.html">🎓 Academy</a>
+      <a href="dna.html">🧬 Business DNA</a>
+      <a href="time-audit.html">⏱️ Time Audit</a>
+      <a href="profit.html">💎 Profit Lab</a>
+      <a href="family.html">🤖 AI Family</a>
+      <a href="characters.html">🎭 Character Forge</a>
+      <a href="top10.html">🔟 Top 10</a>
+      <a href="future.html">🔭 Future Radar</a>
+      <a href="profile.html">👤 My Profile</a>
+      <a href="community.html">🌐 Community</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero container" data-narrate data-narrate-script="This is the Time Gap Analyzer — the forensic tool from Module 3. Here's how to use it. For each task category, enter the hours you honestly spend in a typical week. The automation percentage is pre-set from what today's agents reliably achieve, but you can tune it — lower it where your work needs heavy judgment, raise it where it's pure routine. Set your target hourly value: what an hour of your time should earn, not what it currently earns. Then press analyze. The chart shows where your reclaimable hours live, the tiles price them in dollars and days, and every task lists the exact agents to deploy against it. Download the spreadsheet when you're done — it's your before photo, and in thirty days you'll want proof of how far you've come.">
+  <span class="eyebrow">DIAGNOSTIC LAB 02</span>
+  <h1>The <span class="gradient-text">Time Gap</span> Analyzer</h1>
+  <p class="tagline">The average owner spends 21 hours a week on work AI agents can draft or run. Enter your real week below — the analyzer finds your hidden hours, prices them, charts them, and names the agents that take them off your plate.</p>
+</header>
+
+<section class="section container">
+  <div class="card">
+    <div class="grid grid-2">
+      <div>
+        <label class="field-label" for="hourly-value">Your target owner-hour value ($/hr)</label>
+        <input type="number" id="hourly-value" value="150" min="10" step="10">
+        <p class="muted mt-1">Rule of thumb: target annual income ÷ 2,000 hours. $300K goal → $150/hr.</p>
+      </div>
+      <div style="display:flex;align-items:flex-end">
+        <button class="btn btn-primary" id="audit-run" style="width:100%">⚡ Analyze my week</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrap mt-2">
+    <table class="data-table">
+      <thead><tr><th>Task (and the agents who take it)</th><th>Your hrs/week</th><th>Automation potential</th><th>Reclaimable</th></tr></thead>
+      <tbody id="audit-rows"></tbody>
+    </table>
+  </div>
+
+  <div class="stat-row mt-2">
+    <div class="stat-tile"><div class="stat-value accent" id="stat-hours">—</div><div class="stat-label">hours reclaimable / week</div></div>
+    <div class="stat-tile"><div class="stat-value accent" id="stat-week">—</div><div class="stat-label">value reclaimed / week</div></div>
+    <div class="stat-tile"><div class="stat-value accent" id="stat-year">—</div><div class="stat-label">value reclaimed / year</div></div>
+    <div class="stat-tile"><div class="stat-value accent" id="stat-days">—</div><div class="stat-label">working days returned / year</div></div>
+  </div>
+
+  <div id="audit-chart" class="viz-root mt-2"></div>
+
+  <div class="card glow-card mt-2">
+    <h3>🧭 Verdict &amp; deployment plan</h3>
+    <div id="audit-verdict"><p class="muted">Press “Analyze my week” to generate your verdict.</p></div>
+    <button class="narrate-btn" onclick="auditNarrate(this)">🎧 Hear my audit results</button>
+  </div>
+
+  <div class="card mt-2">
+    <h3>📤 Take the audit with you</h3>
+    <label class="field-label" for="audit-email-to">Email the audit to</label>
+    <input type="email" id="audit-email-to" placeholder="you@yourbusiness.com" autocomplete="email">
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="auditEmail()">📧 Email my audit</button>
+      <button class="btn btn-ghost" onclick="auditDownload()">📥 Download spreadsheet (.xls)</button>
+    </div>
+    <p class="muted mt-1">Next: hire the agents for your top 3 leaks → <a href="family.html">open the AI Family</a> · learn the method in <a href="academy.html">Module 3</a>.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container"><p>⬡ AI Business Academy — Time Lab. Re-audit every 30 days; the delta is your dividend.</p></div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/sheets.js"></script>
+<script src="assets/js/audit.js"></script>
+</body>
+</html>

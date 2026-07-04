@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Owners' Network — What Worked For Real Owners | AI Business Academy</title>
+<meta name="description" content="The community wall where owners share what actually worked: time reclaimed, profit found, brand characters customers love, and complex problems solved with AI.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><span class="hex">⬡</span> AI BUSINESS ACADEMY</a>
+    <button class="nav-burger" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="academy.html">🎓 Academy</a>
+      <a href="dna.html">🧬 Business DNA</a>
+      <a href="time-audit.html">⏱️ Time Audit</a>
+      <a href="profit.html">💎 Profit Lab</a>
+      <a href="family.html">🤖 AI Family</a>
+      <a href="characters.html">🎭 Character Forge</a>
+      <a href="top10.html">🔟 Top 10</a>
+      <a href="future.html">🔭 Future Radar</a>
+      <a href="profile.html">👤 My Profile</a>
+      <a href="community.html">🌐 Community</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero container" data-narrate data-narrate-script="Welcome to the Owners' Network — the wall where owners show their work. Every post follows the same honest format: what we tried, what actually happened, and the one thing that worked, so you can copy it. Filter by what you need right now: time reclaimed, profit found, brand characters, market edge, or complex problems solved. When you land your own win — and you will — post it. Your photo from your profile rides along, and the best stories get featured across the academy. Owners learn fastest from owners. Read three stories, steal one tactic, and go run it this week.">
+  <span class="eyebrow">OWNERS HELPING OWNERS</span>
+  <h1>The <span class="gradient-text">Owners' Network</span></h1>
+  <p class="tagline">Real owners, real numbers, one honest format: what we tried → what happened → the one thing that worked. Read three, steal one tactic, run it this week — then post your own win.</p>
+</header>
+
+<section class="section container">
+  <div class="chip-row" id="wall-chips"></div>
+  <div class="grid" style="grid-template-columns: 1fr; max-width: 860px">
+    <div id="wall"></div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container" style="max-width:860px">
+    <span class="eyebrow">YOUR TURN</span>
+    <h2>Post your win to the wall</h2>
+    <p class="section-lead">What did you try with AI, and what actually happened? Include a number if you have one — hours, dollars, percent. Your profile photo appears with your post.</p>
+    <div class="card">
+      <div class="grid grid-2">
+        <div><label class="field-label" for="wp-name">Your name</label><input type="text" id="wp-name" placeholder="e.g. Jordan R."></div>
+        <div><label class="field-label" for="wp-biz">Your business</label><input type="text" id="wp-biz" placeholder="e.g. Rivera Roofing Co."></div>
+      </div>
+      <label class="field-label" for="wp-tag">Category</label>
+      <select id="wp-tag">
+        <option>Time Reclaimed</option><option>Profit Found</option><option>AI Agents</option>
+        <option>Brand Character</option><option>Market Edge</option><option>Complex Problems</option>
+      </select>
+      <label class="field-label" for="wp-text">Your story (what you tried → what happened)</label>
+      <textarea id="wp-text" rows="5" placeholder="e.g. Deployed an inbox agent from the AI Family. Week 1 was rough until I added examples of my best replies. By week 3…"></textarea>
+      <label class="field-label" for="wp-worked">✅ The one thing that worked (your advice to other owners)</label>
+      <input type="text" id="wp-worked" placeholder="e.g. Test the agent on emails you've already answered — grade it before it goes live.">
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="wallPost()">🚀 Post to the wall</button>
+        <button class="btn btn-ghost" onclick="wallSubmitFeature()">🌟 Submit my story to be featured</button>
+      </div>
+      <p class="muted mt-1">Posts save to this device instantly. "Submit to be featured" sends your story to the academy for the site-wide wall. (Site owners: see the README to wire a shared community backend.)</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container"><p>⬡ AI Business Academy — Owners' Network. Show your work; lift the room.</p></div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/sheets.js"></script>
+<script src="assets/js/community.js"></script>
+</body>
+</html>

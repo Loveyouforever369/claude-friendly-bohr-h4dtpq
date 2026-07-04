@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business DNA Scan — Decode Your Six Strands | AI Business Academy</title>
+<meta name="description" content="A 12-question scan that decodes your business across six strands — Vision, Operations, Marketing, Sales, Finance, Innovation — and prescribes the AI agents to repair your gaps.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><span class="hex">⬡</span> AI BUSINESS ACADEMY</a>
+    <button class="nav-burger" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="academy.html">🎓 Academy</a>
+      <a href="dna.html">🧬 Business DNA</a>
+      <a href="time-audit.html">⏱️ Time Audit</a>
+      <a href="profit.html">💎 Profit Lab</a>
+      <a href="family.html">🤖 AI Family</a>
+      <a href="characters.html">🎭 Character Forge</a>
+      <a href="top10.html">🔟 Top 10</a>
+      <a href="future.html">🔭 Future Radar</a>
+      <a href="profile.html">👤 My Profile</a>
+      <a href="community.html">🌐 Community</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero container">
+  <span class="eyebrow">DIAGNOSTIC LAB 01</span>
+  <h1>The <span class="gradient-text">Business DNA</span> Scan</h1>
+  <p class="tagline">Every business is built from six strands: Vision, Operations, Marketing, Sales, Finance and Innovation. Twelve honest questions decode yours — revealing your archetype, your dormant genes, and the exact AI agents that repair them.</p>
+</header>
+
+<section class="section container">
+  <div id="dna-intro" class="card glow-card" data-narrate data-narrate-script="Before the scan, three things to know. First: answer for the business you have today, not the one you're planning — the scan only works on truth. Second: there are no bad results. A dormant strand isn't a verdict; it's a map reference showing where treatment starts, and every gap comes with a prescription of specific AI agents from our family. Third: your results become a real spreadsheet you can download or email to yourself, and your DNA code becomes your baseline — re-scan in ninety days and watch it evolve. Twelve questions. About four minutes. Begin when ready.">
+    <h2>🧬 Before you scan</h2>
+    <ul class="acc-body" style="padding:10px 0 0 18px">
+      <li><strong>Answer for today,</strong> not for the business you're planning. The scan runs on honesty.</li>
+      <li><strong>There are no bad results</strong> — a dormant strand is a map reference, and every gap gets a prescription: specific agents from the AI Family.</li>
+      <li><strong>Your results become a spreadsheet</strong> you can download or email to yourself, plus a DNA code to re-test against in 90 days.</li>
+    </ul>
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="DNA.start()">🧬 Begin the scan — 12 questions</button>
+      <a class="btn btn-ghost" href="academy.html">🎬 Watch Module 2 first</a>
+    </div>
+  </div>
+
+  <div id="dna-quiz" class="card" style="display:none"></div>
+
+  <div id="dna-result" style="display:none">
+    <div class="card glow-card center">
+      <span class="eyebrow">SCAN COMPLETE</span>
+      <div class="helix-wrap"><div class="helix" id="dna-helix"></div></div>
+      <h2 style="letter-spacing:.2em" id="dna-code">—</h2>
+      <p class="muted">YOUR BUSINESS DNA CODE</p>
+      <h3 class="gradient-text mt-2" style="font-size:1.6rem" id="dna-archetype">—</h3>
+      <p id="dna-arch-desc" class="section-lead" style="margin:8px auto 0"></p>
+      <p class="mt-1"><b>Overall DNA vitality:</b> <span id="dna-avg" style="color:var(--neon-cyan);font-family:var(--font-display)">—</span></p>
+      <button class="narrate-btn" id="dna-narrate">🎧 Hear your diagnosis</button>
+    </div>
+
+    <div class="viz-root mt-2">
+      <div class="viz-title">Your six strands</div>
+      <div class="viz-sub">0–100 per strand · Dormant &lt; 25 · Emerging &lt; 60 · Active &lt; 90 · Evolved 90+</div>
+      <div id="dna-strands"></div>
+    </div>
+
+    <h2 class="mt-3">🩺 Gap analysis &amp; prescriptions</h2>
+    <div id="dna-gaps" class="grid grid-2 mt-1"></div>
+
+    <div class="card mt-2">
+      <h3>📤 Take your DNA report with you</h3>
+      <label class="field-label" for="dna-email-to">Email the report to</label>
+      <input type="email" id="dna-email-to" placeholder="you@yourbusiness.com" autocomplete="email">
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="dnaEmail()">📧 Email my DNA report</button>
+        <button class="btn btn-ghost" onclick="dnaDownload()">📥 Download spreadsheet (.xls)</button>
+        <button class="btn btn-ghost" onclick="DNA.start()">🔁 Re-scan</button>
+      </div>
+      <p class="muted mt-1">Next steps: deploy one prescribed agent this week → <a href="family.html">open the AI Family</a> · then run the <a href="time-audit.html">Time Audit</a>.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container"><p>⬡ AI Business Academy — Diagnostic Lab. DNA evolves: re-scan every 90 days.</p></div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/sheets.js"></script>
+<script src="assets/js/dna.js"></script>
+</body>
+</html>

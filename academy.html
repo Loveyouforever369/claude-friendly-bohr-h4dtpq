@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Academy — Cinematic AI Trainings for Owners | AI Business Academy</title>
+<meta name="description" content="8 deep, narrated training modules: AI foundations, business DNA, time liberation, agent workforces, complex problem-solving pipelines, marketing machines, profit engineering and the 90-day plan.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><span class="hex">⬡</span> AI BUSINESS ACADEMY</a>
+    <button class="nav-burger" aria-label="Menu">☰</button>
+    <div class="nav-links">
+      <a href="academy.html">🎓 Academy</a>
+      <a href="dna.html">🧬 Business DNA</a>
+      <a href="time-audit.html">⏱️ Time Audit</a>
+      <a href="profit.html">💎 Profit Lab</a>
+      <a href="family.html">🤖 AI Family</a>
+      <a href="characters.html">🎭 Character Forge</a>
+      <a href="top10.html">🔟 Top 10</a>
+      <a href="future.html">🔭 Future Radar</a>
+      <a href="profile.html">👤 My Profile</a>
+      <a href="community.html">🌐 Community</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero container" data-narrate data-narrate-script="Welcome to the Academy — eight cinematic modules that take you from AI-curious to commander of a digital workforce. Each module plays like a short film: animated scenes, deep audio narration, and captions, ending with a mission you execute in your real business the same week. Phase one builds foundations: what AI really is now, and how to read your business DNA. Phase two liberates your time: the forensic audit and your first five agent hires. Phase three builds growth engines: multi-agent pipelines that solve complex problems, and the always-on marketing machine. Phase four engineers profit and locks in the ninety-day transformation. Press play on module one. Your future org chart is watching.">
+  <span class="eyebrow">CINEMATIC TRAININGS · DEEP AUDIO NARRATION</span>
+  <h1>The <span class="gradient-text">Academy</span></h1>
+  <p class="tagline">8 modules · 40 narrated scenes · every lesson ends with a mission you run in your real business that week. Press ▶ on any module — it plays like a film, narrates like a mentor, and works even better with headphones.</p>
+  <div class="hero-badges">
+    <span class="hero-badge"><b>Phase 1</b> Foundations</span>
+    <span class="hero-badge"><b>Phase 2</b> Time Liberation</span>
+    <span class="hero-badge"><b>Phase 3</b> Growth Engines</span>
+    <span class="hero-badge"><b>Phase 4</b> Profit &amp; Mastery</span>
+  </div>
+</header>
+
+<section class="section container">
+  <div id="modules" class="grid grid-2"></div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <span class="eyebrow">HOW TO TRAIN</span>
+    <h2>Get the most from every module</h2>
+    <div class="grid grid-4 mt-2">
+      <div class="card"><span class="icon">🎧</span><h3>Headphones on</h3><p>Every scene is narrated. Use the Audio Command Deck (bottom-right) to change voice and speed.</p></div>
+      <div class="card"><span class="icon">⌨️</span><h3>Keyboard control</h3><p>Space = play/pause · ←/→ = scenes · Esc = close. Click any progress segment to jump.</p></div>
+      <div class="card"><span class="icon">🎯</span><h3>One mission per week</h3><p>Don't binge. Each module ends with a mission — run it in your business before starting the next.</p></div>
+      <div class="card"><span class="icon">🔁</span><h3>Revisit quarterly</h3><p>Module 2 (DNA) and Module 7 (Profit) are designed to be re-run every 90 days as your business evolves.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container"><p>⬡ AI Business Academy — Academy wing. Watch, listen, then go build.</p></div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/data/lessons.js"></script>
+<script src="assets/js/player.js"></script>
+<script>
+document.getElementById("modules").innerHTML = window.LESSONS.map((m, i) => `
+  <div class="card module-card reveal">
+    <span class="mod-phase">${m.phase}</span>
+    <h3 class="mt-1">Module ${i + 1} — ${m.title}</h3>
+    <p>${m.blurb}</p>
+    <div class="mod-len"><span>🎬 ${m.slides.length} scenes</span><span>🎧 ~${m.minutes} min narrated</span></div>
+    <button class="btn btn-primary btn-sm" onclick="Player.open('${m.id}')">▶ Play module</button>
+  </div>`).join("");
+document.querySelectorAll("#modules .reveal").forEach(el => el.classList.add("in"));
+</script>
+</body>
+</html>
