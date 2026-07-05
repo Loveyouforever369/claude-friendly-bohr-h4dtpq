@@ -116,6 +116,22 @@ spreadsheets and can email them. Deep audio narration everywhere via Web Speech 
   68% use it regularly; adopters report 20+ hrs and $500–$2,000 saved monthly; 86%
   raising AI budgets. Use these in ROI content; sources on the Future Radar page.
 
+**Study cycle 2026-07-05 (video HSON-SoFz7s + open-source hunt):**
+- The video's topic (identified via web search — YouTube pages/oEmbed are
+  proxy-blocked; search the video ID instead): LLM-as-director + Seedance 4K
+  short films. Director grammar locked into PRODUCTION.md and the packs.
+- Piper TTS: installs here, but voice-model downloads (HuggingFace tunnel) are
+  403-blocked in this sandbox. Path: run in an open env once or commit the .onnx
+  voice; then our videos get REAL local voiceover. Wire into the video-render skill.
+- OpenMontage (AGPL) independently converged on our exact architecture
+  (compositions + FFmpeg + Piper + agent skills) — validation + a mine for ideas.
+- "Program yourself" mechanism that works: project skills in `.claude/skills/`
+  (video-render is the first). Encode every proven pipeline as a skill so future
+  sessions execute instead of rediscover.
+- Cannot create YouTube/Facebook accounts (human identity/login required) — the
+  honest bridge is MARKETING.md (full launch kit) + Zapier connector once the
+  user links accounts. Never claim social posting ability without a connected path.
+
 **Went right (keep doing):**
 - Role-card pattern for agents (identity/context/job/standards/boundaries) — reused
   across lessons, movies, family page; keeps all content consistent.

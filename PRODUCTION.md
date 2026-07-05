@@ -96,6 +96,37 @@ no memory between clips. The rules that solve it:
 These rules are baked into every film's Production pack (Shot List columns) and
 into the Family Upgrades feed (`assets/js/data/upgrades.js`) so the agents teach them.
 
+## Seedance 2.0 director grammar — studied 2026-07-05
+
+For ultra-realistic film scenes (the "AI short film" workflow: an LLM writes the
+shot list, Seedance renders it in 4K):
+
+1. **Write technical shot lists, not prose.** Subject + action + shot type +
+   camera movement + lighting. Prose gets you stock footage; shot lists get cinema.
+2. **Camera direction is mandatory** — omitting it defaults to a static fixed
+   angle ("surveillance footage"). Use: dolly, rack focus, tracking, POV, handheld.
+3. **Reserve the last 15–20 words for lighting + camera**, e.g. "— backlit
+   silhouette, camera slowly pans right."
+4. **Reference files are the consistency engine:** text alone ≈ 60–70% character
+   consistency; reference images push it above 90%. Seedance accepts up to 12
+   files; call them explicitly: `@Character1` (face lock), `@Video1` (motion
+   transfer), `@Audio1` (beat sync).
+5. **At 4K, call out detail**: "ultra-sharp detail", "crisp texture" — macro,
+   product, skin-texture and nature shots benefit most.
+
+Our production-pack b-roll prompts already follow rules 1–3; add the @tags when
+rendering in Seedance/Higgsfield.
+
+## Open-source stack — adopt/watch list (studied 2026-07-05)
+
+| Tool | What it is | Status for us |
+|---|---|---|
+| **Piper TTS** (rhasspy/piper) | Fast local neural text-to-speech, CPU-only, free | ⚡ ADOPT — gives our videos REAL voiceover with no cloud service. Installs here (`pip install piper-tts`) but voice-model download is 403-blocked in this sandbox: run in an open environment once, or commit the ~60MB `.onnx` voice into the repo, then wire into the video-render skill. |
+| **Kokoro-82M** | Apache-2.0 TTS, 82M params, runs on CPU | Watch — quality alternative to Piper |
+| **Remotion** | React-based programmatic video rendering | Watch — the "grown-up" version of our seek(t) pipeline; adopt if compositions get complex |
+| **OpenMontage** | Open-source agentic video production system (12 pipelines, FFmpeg+Remotion+Piper, AGPL-3.0) | Study — it formalizes exactly our architecture; mine its pipelines for upgrades |
+| **awesome-seedance-2-prompts** (GitHub) | 2,000+ curated cinematic prompts + consistency guides | Use as prompt reference when rendering film scenes |
+
 ## Poster & key art — Gemini / Nano Banana 2 prompts (paste-ready)
 
 Google's Gemini image models ("Nano Banana 2") excel at typographic poster art and

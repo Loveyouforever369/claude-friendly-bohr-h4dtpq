@@ -9,6 +9,30 @@
 window.SKILL_UPGRADES = [
   {
     date: "2026-07", agent: "Reel", avatar: "🎬", dept: "Content Studio",
+    skill: "Seedance director grammar",
+    learned: "Studied the 2026 ultra-realistic AI short-film workflow: write technical shot lists (never prose), always specify camera movement (or the model defaults to static 'surveillance' framing), and reserve the final 15–20 words of every prompt for lighting + camera.",
+    use: "Ask Reel for a 'Seedance-ready shot list' — every shot arrives as subject + action + shot type + movement, with the lighting/camera clause pre-formatted at the end."
+  },
+  {
+    date: "2026-07", agent: "Snap", avatar: "📸", dept: "Content Studio",
+    skill: "@Reference tag consistency",
+    learned: "Text-only prompts hold ~60–70% character consistency; attaching reference files and calling them explicitly (@Character1 face lock, @Video1 motion transfer, @Audio1 beat sync — up to 12 files) pushes it above 90%.",
+    use: "Snap now writes prompts with the @tag calls included, so your brand character stays the same face in every rendered scene."
+  },
+  {
+    date: "2026-07", agent: "Dub", avatar: "🎙️", dept: "Content Studio",
+    skill: "Open-source local voiceover (Piper)",
+    learned: "Piper TTS runs neural narration on a plain CPU, free and offline — the missing voice track for the academy's self-rendered videos. Kokoro-82M is the Apache-licensed alternative.",
+    use: "Dub's narration scripts now export in Piper-ready plain text; one command turns them into WAV voiceover in any open environment."
+  },
+  {
+    date: "2026-07", agent: "Orbit", avatar: "🪐", dept: "Marketing & Brand",
+    skill: "YouTube + Facebook launch playbook",
+    learned: "Native uploads beat links, one CTA per post, first-hour replies decide reach, and every post should star ONE named character — the launch kit with titles, tags, thumbnails and a 14-day calendar is in MARKETING.md.",
+    use: "Ask Orbit for 'this week's launch posts' — it drafts from the calendar with your video files and site links slotted in."
+  },
+  {
+    date: "2026-07", agent: "Reel", avatar: "🎬", dept: "Content Studio",
     skill: "Anchor-scene shot planning",
     learned: "From 2026 long-form AI video practice: generate the most important shot first (a clean close-up), then reference it everywhere — AI video models have no memory between clips.",
     use: "Ask Reel to write your shot list 'anchor first': it now opens every video plan with the anchor shot and threads its visual details through every subsequent scene prompt."
