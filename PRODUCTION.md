@@ -127,6 +127,31 @@ rendering in Seedance/Higgsfield.
 | **OpenMontage** | Open-source agentic video production system (12 pipelines, FFmpeg+Remotion+Piper, AGPL-3.0) | Study — it formalizes exactly our architecture; mine its pipelines for upgrades |
 | **awesome-seedance-2-prompts** (GitHub) | 2,000+ curated cinematic prompts + consistency guides | Use as prompt reference when rendering film scenes |
 
+## Voices & likenesses — what OpenMontage is (and isn't) for
+
+OpenMontage's voice layer is **Piper local TTS** — synthetic voices generated from
+open models. It is NOT a tool for extracting movie characters' voices or images,
+and we don't do that under any tool: film characters' voices and likenesses are
+copyrighted performances and protected likenesses — recreating them for our
+content is off-limits, full stop. Our better play (already built): **original
+characters from the Character Forge** + licensed voices (HeyGen/ElevenLabs) or
+Piper synthesis. Original characters are also a business advantage — we OWN them.
+
+## 3D features — vetted open-source upgrade path (next cycle)
+
+| Repo | What it gives us | Where it fits |
+|---|---|---|
+| **mrdoob/three.js** | The canonical WebGL 3D library (MIT) | True 3D DNA helix on the scan-results screen; 3D agent-card gallery |
+| **google/model-viewer** | `<model-viewer>` web component — drop-in 3D/AR models (Apache-2.0) | Showcase a 3D "⬡" emblem / agent busts on the home page |
+| **pmndrs/drei + react-three-fiber** | Helpers if we ever go React | Later, only with a framework move |
+| **vantajs/vanta** | Animated 3D backgrounds (MIT) | Hero background upgrade — but validate perf on mobile first |
+
+Constraints learned: the artifact preview blocks CDNs → **vendor the library into
+`assets/js/vendor/`** (three.module.js ≈ 600KB — acceptable on Pages, heavy in the
+artifact bundle; ship 3D on the live site, graceful static fallback in preview).
+First target: replace the CSS DNA helix with a three.js helix built from the
+user's six strand scores (color per strand, rotation speed = vitality).
+
 ## Poster & key art — Gemini / Nano Banana 2 prompts (paste-ready)
 
 Google's Gemini image models ("Nano Banana 2") excel at typographic poster art and

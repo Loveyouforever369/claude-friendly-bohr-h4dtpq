@@ -132,6 +132,21 @@ spreadsheets and can email them. Deep audio narration everywhere via Web Speech 
   honest bridge is MARKETING.md (full launch kit) + Zapier connector once the
   user links accounts. Never claim social posting ability without a connected path.
 
+**Teaser + outreach cycle (2026-07-05, later):**
+- Right: 3rd derivation of the render template (chronicles teaser, 42s) — zero
+  failures; the video-render skill governed the whole run. Pipeline is mature.
+- Right: verify counts durations of ALL videos on a page in one evaluate (46s+42s).
+- Policy locked: movie characters' voices/images are NEVER source material — 
+  copyrighted performances/likenesses. OpenMontage's voice layer is Piper TTS
+  (synthetic), not extraction. Our originals from the Character Forge are the asset.
+- 3D path vetted (three.js vendored, model-viewer, vanta) — implement the WebGL
+  DNA helix next cycle; ship on Pages, static fallback in the artifact preview.
+- Social truth: no posting APIs without the user's connected accounts. Deliverable
+  = SOCIAL-POSTS.md (14 finished posts) + MARKETING.md; Zapier once accounts link.
+- The 8 "owner worries" (data leaks, hallucination, replacement, complexity, cost,
+  customer distaste, generic output, churn fatigue) now have a permanent answered
+  section on community.html — reuse them as content seeds everywhere.
+
 **Went right (keep doing):**
 - Role-card pattern for agents (identity/context/job/standards/boundaries) — reused
   across lessons, movies, family page; keeps all content consistent.
