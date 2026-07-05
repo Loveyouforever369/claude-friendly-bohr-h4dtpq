@@ -86,6 +86,29 @@
   </div>
 </section>
 
+<section class="section container" id="roi-reel-sec">
+  <span class="eyebrow">▶ THE ROI REEL · 32 SECONDS</span>
+  <h2>Watch what AI returns for a typical owner</h2>
+  <div class="grid grid-2">
+    <div>
+      <div class="viz-root" style="padding:10px">
+        <video controls preload="metadata" playsinline
+               poster="assets/video/roi-poster.jpg"
+               style="width:100%;border-radius:10px;display:block;background:#000"
+               onerror="this.closest('.viz-root').style.display='none'">
+          <source src="assets/video/roi-reel.mp4" type="video/mp4">
+          <source src="assets/video/roi-reel.webm" type="video/webm">
+        </video>
+      </div>
+      <p class="muted mt-1">Real rendered video. 2026 state of play: <b>42%</b> of small businesses now use AI in at least one process (up from 23% in 2024), <b>68%</b> use it regularly, and adopters report <b>20+ hours</b> and <b>$500–$2,000</b> saved monthly. <b>86%</b> plan to raise AI budgets this year.</p>
+    </div>
+    <div>
+      <div id="roi-static-chart" class="viz-root"></div>
+      <p class="muted mt-1">Same conservative model as the calculator below — change the inputs and make it yours.</p>
+    </div>
+  </div>
+</section>
+
 <section class="section container">
   <span class="eyebrow">CALCULATOR</span>
   <h2>Project your first-year AI upside</h2>
@@ -133,5 +156,20 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/sheets.js"></script>
 <script src="assets/js/profit.js"></script>
+<script>
+Charts.hbars(document.getElementById("roi-static-chart"), {
+  title: "First-year AI value — typical $500K owner (conservative)",
+  subtitle: "Assumptions: 40% margin · 10 hrs/wk reclaimed @ $150/hr · $120/mo tools · payback ≈ 5 days · net ≈ $103,560",
+  series: [{ name: "Annual value", color: "#08a2c4" }],
+  rows: [
+    { label: "Reclaimed owner time", values: [78000] },
+    { label: "Leaks & AR recovered", values: [15000] },
+    { label: "Follow-up lift", values: [8000] },
+    { label: "Pricing intelligence", values: [4000] },
+    { label: "AI tools cost (deduct)", values: [1440] }
+  ],
+  fmt: v => "$" + Math.round(v).toLocaleString()
+});
+</script>
 </body>
 </html>

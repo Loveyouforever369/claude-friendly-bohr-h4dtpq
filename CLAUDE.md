@@ -104,6 +104,18 @@ spreadsheets and can email them. Deep audio narration everywhere via Web Speech 
   curl exits 0 on any HTTP response. Guard on the STATUS CODE (expect 200 from a
   real page), not on connectivity.
 
+**ROI Reel cycle (2026-07-05):**
+- Right: the render pipeline is now a TEMPLATE — deriving render-roi.js from
+  render-trailer.js via sed took one try; a 32s video rendered in ~35s total.
+  Any new video = write a seekable HTML + derive the render script.
+- Right: registry-check BEFORE promising tools (Gemini/Nano Banana 2 have no MCP —
+  paste-ready prompts in PRODUCTION.md are the honest bridge).
+- Wrong: `cd $SCRATCHPAD && cp … assets/video/` — relative path landed in the wrong
+  tree. Use ABSOLUTE repo paths in every cross-directory copy.
+- Data locked (2026 SMB surveys): 42% of SMBs use AI in ≥1 process (23% in 2024);
+  68% use it regularly; adopters report 20+ hrs and $500–$2,000 saved monthly; 86%
+  raising AI budgets. Use these in ROI content; sources on the Future Radar page.
+
 **Went right (keep doing):**
 - Role-card pattern for agents (identity/context/job/standards/boundaries) — reused
   across lessons, movies, family page; keeps all content consistent.

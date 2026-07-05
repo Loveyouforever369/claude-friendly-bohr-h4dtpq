@@ -96,6 +96,33 @@ no memory between clips. The rules that solve it:
 These rules are baked into every film's Production pack (Shot List columns) and
 into the Family Upgrades feed (`assets/js/data/upgrades.js`) so the agents teach them.
 
+## Poster & key art — Gemini / Nano Banana 2 prompts (paste-ready)
+
+Google's Gemini image models ("Nano Banana 2") excel at typographic poster art and
+photoreal stills — no connector exists for coding agents (registry-verified), so
+paste these into the Gemini app / AI Studio directly. One prompt per film; keep the
+identity block identical across regenerations:
+
+**Identity block (append to every prompt):** `Style: cinematic sci-fi movie poster,
+deep space-navy background #05070f, neon glow accents cyan #22d3ee violet #a78bfa
+magenta #f472b6, futuristic thin uppercase sans-serif title with wide letter-spacing,
+subtle hexagon ⬡ emblem, letterboxed composition, volumetric light, film grain.`
+
+- **MEET THE FAMILY:** "Movie poster: a lone owner silhouetted before a giant glowing
+  doorway of light, 118 faint glowing agent-card silhouettes rising beyond it like a
+  constellation org-chart. Title: MEET THE FAMILY." + identity block
+- **THE DIAGNOSIS:** "Poster: a glowing DNA double-helix scanned by a beam of cyan
+  light over a small sign-shop storefront at midnight. Title: THE DIAGNOSIS." + block
+- **THE LIBERATION:** "Poster: an hourglass shattering into glowing birds escaping a
+  dark office window at dusk. Title: THE LIBERATION." + block
+- **THE ENGINES:** "Poster: three interlocking luminous gear-rings (content, intel,
+  council) turning above a city at dawn. Title: THE ENGINES." + block
+- **THE COMPOUND:** "Poster: a vault door opening to warm golden light, coins rising
+  as glowing graphs. Title: THE COMPOUND." + block
+
+Save results to `assets/video/` as `<film>-poster.jpg` and set them as the poster
+art on the Screening Room page.
+
 ## Order of production (recommended)
 
 1. ✅ Trailer (done — rendered in-repo)
