@@ -147,6 +147,17 @@ spreadsheets and can email them. Deep audio narration everywhere via Web Speech 
   customer distaste, generic output, churn fatigue) now have a permanent answered
   section on community.html — reuse them as content seeds everywhere.
 
+**LTX wiring cycle (2026-07-05, later still):**
+- User pasted an MCP config for `@lightricks/ltx-mcp` — package is a 404 on npm
+  (hallucinated/template config; they circulate). *Rule: `npm view <pkg>` BEFORE
+  adding anything to .mcp.json — a nonexistent command breaks every session start.*
+- The REAL LTX path needs no MCP: LTX-2.3 REST API (key from the user's ltx.io
+  account) called directly; open weights exist for self-hosting; LTX-Desktop for
+  local GPU. Key goes in the environment settings as LTX_API_KEY — NEVER in this
+  public repo, never echoed into files or logs.
+- Placeholder keys in pasted configs ("your_..._here") = the user hasn't supplied
+  a real credential; ask them to set the env var, don't fake-wire it.
+
 **Went right (keep doing):**
 - Role-card pattern for agents (identity/context/job/standards/boundaries) — reused
   across lessons, movies, family page; keeps all content consistent.

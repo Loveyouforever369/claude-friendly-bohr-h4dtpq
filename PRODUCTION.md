@@ -127,6 +127,29 @@ rendering in Seedance/Higgsfield.
 | **OpenMontage** | Open-source agentic video production system (12 pipelines, FFmpeg+Remotion+Piper, AGPL-3.0) | Study — it formalizes exactly our architecture; mine its pipelines for upgrades |
 | **awesome-seedance-2-prompts** (GitHub) | 2,000+ curated cinematic prompts + consistency guides | Use as prompt reference when rendering film scenes |
 
+## LTX (Lightricks) — verified integration path (2026-07-05)
+
+What's REAL: **LTX-2.3** text-to-video (HD/4K, custom fps/duration) with open
+weights on HuggingFace, a commercial **REST API** (ltx.io/model/api, key from your
+LTX account's API Keys page), and **LTX-Desktop** (open-source local app; NVIDIA
+GPU for local mode, API mode otherwise).
+What's NOT real: the `@lightricks/ltx-mcp` npm package seen in circulating config
+snippets — verified 404 on npm; do not add it to any `.mcp.json` (a nonexistent
+package breaks server startup on every session).
+
+**Setup (one time, by the owner):**
+1. Get an API key from your LTX account (Help Center → API Keys).
+2. Add it as environment variable `LTX_API_KEY` in the Claude Code **environment
+   settings** (claude.ai → this environment's configuration). NEVER commit a key —
+   this repository and its Pages site are PUBLIC.
+3. Start a fresh session and say "render with LTX" — Claude calls the REST API
+   with `$LTX_API_KEY` and drops generative b-roll into `assets/video/`.
+
+**Where LTX slots in:** generative b-roll for the film scenes (our production
+packs' prompts + the Seedance director grammar apply as-is), rendered clips
+composited with the in-repo pipeline's title/caption layers. LTX-2.3 open weights
+also join the open-source table below as the self-hostable option.
+
 ## Voices & likenesses — what OpenMontage is (and isn't) for
 
 OpenMontage's voice layer is **Piper local TTS** — synthetic voices generated from
