@@ -158,6 +158,23 @@ spreadsheets and can email them. Deep audio narration everywhere via Web Speech 
 - Placeholder keys in pasted configs ("your_..._here") = the user hasn't supplied
   a real credential; ask them to set the env var, don't fake-wire it.
 
+**Review Station cycle (2026-07-11):**
+- Wrong: one long `verify && git add && commit && push` chain got killed mid-run
+  (exit 144, zero output) — commit state was unknowable until the next session ran
+  `git status`. *Run verify, commit, and push as SEPARATE commands; a kill then
+  leaves an obvious state. On any resume, `git status --short` before redoing work.*
+- Right: push-then-check-the-Pages-run caught that the 2026-07-05 "pages build and
+  deployment" had silently FAILED (site was stale for 6 days; ~2 of 9 of these
+  GitHub-internal runs fail transiently). The next push healed it. *After EVERY
+  push to the default branch, confirm the pages run concluded `success` via
+  actions_get — never assume.*
+- Right: rate-before-deliver gate as a page (review.html) — 14 posts, stars +
+  notes → localStorage → .xls/email through the existing Sheets rails. New
+  owner-workflow pages should reuse those rails, not grow new export code.
+- review.html stays OUT of the artifact-preview bundle on purpose: sandboxed
+  iframes don't persist localStorage, so ratings only work on the live Pages URL.
+  Owner-only pages also stay out of the main nav (linked directly instead).
+
 **Went right (keep doing):**
 - Role-card pattern for agents (identity/context/job/standards/boundaries) — reused
   across lessons, movies, family page; keeps all content consistent.
