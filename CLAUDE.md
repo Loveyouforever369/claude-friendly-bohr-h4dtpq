@@ -198,6 +198,21 @@ spreadsheets and can email them. Deep audio narration everywhere via Web Speech 
   series, honest "not a guarantee" subtitle) + opportunity map + week-one plan
   export through the existing Sheets rails.
 
+**Preview tooling cycle (2026-07-12, same session):**
+- Gap CLOSED: the bundle builder now lives at `tools/build-preview.mjs` —
+  `node tools/build-preview.mjs [outDir]` regenerates the whole artifact preview
+  from any fresh clone (inlines CSS/JS, strips 30MB of video down to data-URI
+  posters, strips Google Fonts links since artifact CSP blocks external hosts,
+  injects the postMessage nav shim, excludes review.html).
+- Wrong (caught by in-shell verification): plain `#anchor` links inside a srcdoc
+  iframe NAVIGATE the frame away and blank it — they don't scroll. The shim must
+  intercept hash links and scrollIntoView locally. *Verify inside the bundled
+  shell, not just on the served site; srcdoc has its own navigation rules.*
+- Right: `Artifact action:list` recovered the live preview URL from a brand-new
+  cloud machine (it had only lived in a dead session's context) — same-URL
+  redeploy worked. *The artifact list is the durable record of preview URLs;
+  never assume a lost session means a lost link.*
+
 **Went right (keep doing):**
 - Role-card pattern for agents (identity/context/job/standards/boundaries) — reused
   across lessons, movies, family page; keeps all content consistent.
