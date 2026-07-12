@@ -175,6 +175,29 @@ spreadsheets and can email them. Deep audio narration everywhere via Web Speech 
   iframes don't persist localStorage, so ratings only work on the live Pages URL.
   Owner-only pages also stay out of the main nav (linked directly instead).
 
+**Playbooks deck cycle (2026-07-12, cloud session):**
+- Wrong: JS-injected cards carrying the `.reveal` class stay invisible forever —
+  main.js's IntersectionObserver only binds to elements present at load time.
+  DOM checks (locator counts) PASSED while the section rendered blank; only the
+  screenshot eyeball caught it. *Rule: JS-rendered content never gets `.reveal`
+  (family.js/future.js already follow this); and screenshot-eyeballing every new
+  section is non-negotiable — counts lie.*
+- Right: agent-canon enforcement as a script — node-require agents.js + the new
+  data file and diff crew names AND roles against the roster (caught nothing this
+  time because names were grep-verified first; keep the script, it's free).
+- Right: killed a stale hardcoded count found in passing (index badge said "6
+  tools that email spreadsheets"; 8 JS files already used Sheets). Reworded to a
+  countless claim ("every tool emails you its spreadsheet") — copy that can't
+  drift beats copy that must be maintained.
+- Gap to fix: the artifact-preview bundle builder lived only in a session
+  scratchpad and did NOT survive the machine change — a fresh clone cannot
+  rebuild the preview. *Commit build tooling into the repo (tools/ dir), never
+  leave it scratchpad-only.* Preview artifact not redeployed this cycle.
+- New page pattern that worked: playbooks.html = blueprint accordions (data-driven
+  from data/playbooks.js) + hbars range chart (conservative + upside as two fixed
+  series, honest "not a guarantee" subtitle) + opportunity map + week-one plan
+  export through the existing Sheets rails.
+
 **Went right (keep doing):**
 - Role-card pattern for agents (identity/context/job/standards/boundaries) — reused
   across lessons, movies, family page; keeps all content consistent.

@@ -579,3 +579,10 @@ footer.site-footer a { color: var(--text-secondary); font-size: 0.85rem; }
 #pl-auto.off { opacity: .4; }
 .poster .poster-actions { margin-top: auto; display: flex; flex-wrap: wrap; gap: 10px; }
 .poster .poster-actions .btn { margin-top: 0; }
+
+/* ---------- Playbooks deck ---------- */
+.pb-meta { margin-left: 10px; font-size: 0.75rem; font-family: var(--font-body); font-weight: 500; color: var(--text-muted); letter-spacing: 0; text-transform: none; }
+@media (max-width: 640px) { .pb-meta { display: none; } }
+.pb-pain { color: var(--text-secondary); font-style: italic; border-left: 3px solid var(--neon-violet); padding-left: 12px; margin: 10px 0 4px; }
+.pb-kpi { font-size: 0.85rem; color: var(--text-muted); margin-top: 10px; }
+.pb-where { font-size: 0.85rem; color: var(--text-muted); }
