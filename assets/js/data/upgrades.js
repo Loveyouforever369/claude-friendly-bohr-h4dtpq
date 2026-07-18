@@ -9,6 +9,18 @@
 window.SKILL_UPGRADES = [
   {
     date: "2026-07", agent: "Reel", avatar: "🎬", dept: "Content Studio",
+    skill: "Anthology teaser grammar (five-act)",
+    learned: "Rendered the Character Films teaser with the in-repo pipeline: one act per film, each act = title color + a single motif animated as a pure function of time (envelope pile, memo bars, price flip, word counter, voice waveform) + one-line hook in the caption band. The renderer now lives in tools/, not a scratchpad — any clone can re-render it.",
+    use: "Ask Reel for a 'five-act teaser board' on any series: you get per-act motif, hook line, act boundary times for score hits, and the render command."
+  },
+  {
+    date: "2026-07", agent: "Snap", avatar: "📸", dept: "Content Studio",
+    skill: "Original-character identity blocks",
+    learned: "Wrote locked identity blocks for five original film leads (Rosa, Sal, Amara & Josef, Ben, Lena) in PRODUCTION.md — reusable verbatim in every Higgsfield/Veo/Kling prompt so the character holds across scenes. Original characters only; never a real person's likeness.",
+    use: "Copy a lead's identity block from PRODUCTION.md into any image/video prompt, add ONE new variable (setting or angle), and the character stays the same face film-wide."
+  },
+  {
+    date: "2026-07", agent: "Reel", avatar: "🎬", dept: "Content Studio",
     skill: "Seedance director grammar",
     learned: "Studied the 2026 ultra-realistic AI short-film workflow: write technical shot lists (never prose), always specify camera movement (or the model defaults to static 'surveillance' framing), and reserve the final 15–20 words of every prompt for lighting + camera.",
     use: "Ask Reel for a 'Seedance-ready shot list' — every shot arrives as subject + action + shot type + movement, with the lighting/camera clause pre-formatted at the end."

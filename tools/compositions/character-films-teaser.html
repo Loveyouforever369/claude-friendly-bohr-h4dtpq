@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Character Films — Official Teaser (seekable composition)</title>
+<!--
+  Seekable composition for tools/render-character-teaser.mjs.
+  RULE: all animation is a pure function of t via window.seek(t).
+  No CSS animations, no Date.now(), no randomness at runtime
+  (the starfield uses a fixed seeded table).  1280x720 · 50s.
+-->
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1280px; height: 720px; overflow: hidden; background: #05070f; }
+  #stage {
+    position: relative; width: 1280px; height: 720px; overflow: hidden;
+    font-family: "DejaVu Sans", "Segoe UI", system-ui, sans-serif;
+    color: #eef2ff;
+  }
+  .act { position: absolute; inset: 0; opacity: 0; }
+  .bg { position: absolute; inset: 0; }
+  .letterbox { position: absolute; left: 0; right: 0; height: 62px; background: #000; z-index: 40; }
+  #lb-top { top: 0; } #lb-bot { bottom: 0; }
+  .kicker {
+    position: absolute; top: 96px; left: 0; right: 0; text-align: center;
+    font-size: 17px; letter-spacing: .34em; color: #22d3ee; text-transform: uppercase;
+  }
+  .film-title {
+    position: absolute; top: 150px; left: 0; right: 0; text-align: center;
+    font-size: 74px; font-weight: 800; letter-spacing: .12em;
+  }
+  .film-sub {
+    position: absolute; top: 250px; left: 0; right: 0; text-align: center;
+    font-size: 20px; letter-spacing: .16em; color: #aab3d0; text-transform: uppercase;
+  }
+  .art { position: absolute; top: 260px; left: 0; right: 0; height: 300px; }
+  .caption {
+    position: absolute; left: 0; right: 0; bottom: 78px; text-align: center; z-index: 30;
+    font-size: 25px; color: #eef2ff; text-shadow: 0 2px 14px rgba(0,0,0,.9);
+    padding: 0 140px; line-height: 1.45;
+  }
+  .caption b { color: #22d3ee; font-weight: 700; }
+  .starring {
+    position: absolute; bottom: 130px; left: 0; right: 0; text-align: center; z-index: 30;
+    font-size: 15px; letter-spacing: .28em; color: #a78bfa; text-transform: uppercase;
+  }
+  .glyph { position: absolute; font-size: 150px; text-align: center; width: 100%; top: 40px; }
+  .star { position: absolute; border-radius: 50%; background: #fff; }
+  .bignum {
+    position: absolute; top: 20px; left: 0; right: 0; text-align: center;
+    font-size: 200px; font-weight: 800; letter-spacing: .04em; color: #a78bfa;
+    font-variant-numeric: tabular-nums;
+  }
+  .envrow { position: absolute; left: 0; right: 0; text-align: center; font-size: 54px; letter-spacing: 18px; }
+  .spamwall {
+    position: absolute; top: 30px; left: 180px; right: 180px; text-align: center;
+    font-size: 15px; line-height: 2.1; color: #6b7699; letter-spacing: .05em;
+  }
+  .wavebars { position: absolute; top: 60px; left: 0; right: 0; height: 220px; display: flex; align-items: center; justify-content: center; gap: 7px; }
+  .wbar { width: 10px; border-radius: 5px; }
+  .rule-line {
+    position: absolute; left: 0; right: 0; text-align: center;
+    font-size: 40px; font-weight: 800; letter-spacing: .14em;
+  }
+  .price { position: absolute; top: 200px; left: 0; right: 0; text-align: center; font-size: 84px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .memo-bars { position: absolute; top: 210px; left: 0; right: 0; display: flex; justify-content: center; align-items: flex-end; gap: 6px; height: 90px; }
+  .mbar { width: 9px; border-radius: 4px; background: #fbbf24; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- ACT 0 · TITLE -->
+  <div class="act" id="a0">
+    <div class="bg" style="background:radial-gradient(900px 500px at 50% 32%, #101731 0%, #05070f 70%)"></div>
+    <div class="kicker">AI Business Academy presents</div>
+    <div class="film-title" id="a0-title" style="top:270px;background:linear-gradient(90deg,#22d3ee,#a78bfa,#f472b6);-webkit-background-clip:text;background-clip:text;color:transparent">THE CHARACTER FILMS</div>
+    <div class="film-sub" id="a0-sub" style="top:378px">Five agents get their close-up</div>
+    <div class="caption" id="a0-cap">Five owners. Five specialists. <b>One rule.</b></div>
+  </div>
+
+  <!-- ACT 1 · INBOX ZERO (Slate · cyan night) -->
+  <div class="act" id="a1">
+    <div class="bg" style="background:radial-gradient(900px 560px at 50% 40%, #0e2a4d 0%, #05070f 72%)"></div>
+    <div class="film-title" style="top:118px;color:#22d3ee">INBOX ZERO</div>
+    <div class="art">
+      <div class="envrow" id="a1-r1">✉️ ✉️ ✉️ ✉️ ✉️ ✉️ ✉️</div>
+      <div class="envrow" id="a1-r2">✉️ ✉️ ✉️ ✉️ ✉️ ✉️</div>
+      <div class="envrow" id="a1-r3">✉️ ✉️ <span id="a1-hot" style="display:inline-block">🚨</span> ✉️ ✉️</div>
+    </div>
+    <div class="starring">Starring Slate · Inbox Commander</div>
+    <div class="caption">A fleet-killing deadline, buried under <b>nine hundred unread</b>.</div>
+  </div>
+
+  <!-- ACT 2 · THE KEYS (Forge · gold) -->
+  <div class="act" id="a2">
+    <div class="bg" style="background:radial-gradient(900px 560px at 50% 40%, #3a2a0e 0%, #05070f 72%)"></div>
+    <div class="film-title" style="top:118px;color:#fbbf24">THE KEYS</div>
+    <div class="art">
+      <div class="glyph" id="a2-key" style="top:10px">🔑</div>
+      <div class="memo-bars" id="a2-bars"></div>
+    </div>
+    <div class="starring">Starring Forge · SOP Writer</div>
+    <div class="caption">Forty years of knowledge. <b>Eleven days</b> to hand it over.</div>
+  </div>
+
+  <!-- ACT 3 · THE FAMOUS LOAF (Margin · magenta) -->
+  <div class="act" id="a3">
+    <div class="bg" style="background:radial-gradient(900px 560px at 50% 40%, #4d1a35 0%, #05070f 72%)"></div>
+    <div class="film-title" style="top:118px;color:#f472b6">THE FAMOUS LOAF</div>
+    <div class="art">
+      <div class="glyph" style="top:0">🥐</div>
+      <div class="price" id="a3-price" style="color:#d55181">−$0.38 / unit</div>
+    </div>
+    <div class="starring">Starring Margin · Unit Economics Analyst</div>
+    <div class="caption">The best seller that <b>loses money</b> every time it sells.</div>
+  </div>
+
+  <!-- ACT 4 · NINETY WORDS (Harpoon · violet) -->
+  <div class="act" id="a4">
+    <div class="bg" style="background:radial-gradient(900px 560px at 50% 40%, #1a1a4d 0%, #05070f 72%)"></div>
+    <div class="film-title" style="top:118px;color:#a78bfa">NINETY WORDS</div>
+    <div class="art">
+      <div class="spamwall" id="a4-spam">Dear Sir/Madam, Ashworth Structural offers comprehensive engineering solutions for all your — Dear Sir/Madam, we provide end-to-end synergistic — Dear Sir/Madam, following up on my previous follow-up — Dear Sir/Madam, comprehensive solutions for all your needs — Dear Sir/Madam…</div>
+      <div class="bignum" id="a4-count">000</div>
+    </div>
+    <div class="starring">Starring Harpoon · Outbound Hunter</div>
+    <div class="caption">Four thousand strangers — or <b>ninety words</b> to the right one.</div>
+  </div>
+
+  <!-- ACT 5 · IN HER OWN VOICE (Echo · green) -->
+  <div class="act" id="a5">
+    <div class="bg" style="background:radial-gradient(900px 560px at 50% 40%, #0e3a2a 0%, #05070f 72%)"></div>
+    <div class="film-title" style="top:118px;color:#34d399">IN HER OWN VOICE</div>
+    <div class="art">
+      <div class="wavebars" id="a5-wave"></div>
+      <div class="glyph" style="top:190px;font-size:74px">🏺</div>
+    </div>
+    <div class="starring">Starring Echo · Brand Voice Keeper</div>
+    <div class="caption">A voice a guru almost erased — <b>rebuilt from eleven years of journals</b>.</div>
+  </div>
+
+  <!-- ACT 6 · OUTRO -->
+  <div class="act" id="a6">
+    <div class="bg" style="background:radial-gradient(900px 500px at 50% 40%, #101731 0%, #05070f 72%)"></div>
+    <div class="rule-line" id="a6-l1" style="top:216px;color:#eef2ff">AGENTS DRAFT.</div>
+    <div class="rule-line" id="a6-l2" style="top:286px;color:#22d3ee">YOU APPROVE.</div>
+    <div class="rule-line" id="a6-l3" style="top:356px;color:#a78bfa">NOTHING SENDS ITSELF.</div>
+    <div class="film-sub" id="a6-sub" style="top:460px">Now playing in the Screening Room · aibusinessacademy</div>
+    <div class="glyph" id="a6-hex" style="top:400px;font-size:56px;color:#22d3ee">⬡</div>
+  </div>
+
+  <div id="starfield"></div>
+  <div class="letterbox" id="lb-top"></div>
+  <div class="letterbox" id="lb-bot"></div>
+  <div id="fade" style="position:absolute;inset:0;background:#000;z-index:60;opacity:1"></div>
+</div>
+
+<script>
+/* ---------- deterministic helpers ---------- */
+function clamp01(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
+function ease(x) { x = clamp01(x); return x * x * (3 - 2 * x); }
+function seeded(i) { const s = Math.sin(i * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); }
+
+/* fixed starfield (positions from seed table; drift is f(t)) */
+const stars = [];
+(function () {
+  const sf = document.getElementById("starfield");
+  for (let i = 0; i < 70; i++) {
+    const el = document.createElement("div");
+    el.className = "star";
+    const size = 1 + seeded(i) * 2;
+    el.style.width = el.style.height = size + "px";
+    el.style.opacity = (0.25 + seeded(i + 500) * 0.5).toFixed(2);
+    sf.appendChild(el);
+    stars.push({ el, x: seeded(i + 100) * 1280, y: seeded(i + 200) * 720, v: 2 + seeded(i + 300) * 6 });
+  }
+})();
+
+/* memo bars (act 2) + wave bars (act 5) */
+const memoBars = [];
+(function () {
+  const host = document.getElementById("a2-bars");
+  for (let i = 0; i < 40; i++) { const b = document.createElement("div"); b.className = "mbar"; host.appendChild(b); memoBars.push(b); }
+})();
+const waveBars = [];
+(function () {
+  const host = document.getElementById("a5-wave");
+  for (let i = 0; i < 56; i++) { const b = document.createElement("div"); b.className = "wbar"; host.appendChild(b); waveBars.push(b); }
+})();
+
+/* ---------- timeline ---------- */
+const ACTS = [
+  { id: "a0", start: 0.0,  end: 6.5 },
+  { id: "a1", start: 6.5,  end: 14.0 },
+  { id: "a2", start: 14.0, end: 21.5 },
+  { id: "a3", start: 21.5, end: 29.0 },
+  { id: "a4", start: 29.0, end: 36.5 },
+  { id: "a5", start: 36.5, end: 44.0 },
+  { id: "a6", start: 44.0, end: 50.0 }
+];
+window.DURATION = 50.0;
+window.ACT_TIMES = ACTS.map(a => a.start).slice(1); // score hit points
+const XF = 0.55; // crossfade
+
+window.seek = function (t) {
+  /* global fade in/out */
+  const fade = document.getElementById("fade");
+  let f = 0;
+  if (t < 1.0) f = 1 - ease(t / 1.0);
+  if (t > window.DURATION - 1.2) f = ease((t - (window.DURATION - 1.2)) / 1.2);
+  fade.style.opacity = f.toFixed(3);
+
+  /* starfield drift */
+  for (const s of stars) {
+    s.el.style.left = ((s.x + s.v * t) % 1280) + "px";
+    s.el.style.top = (s.y + Math.sin(t * 0.35 + s.x) * 5) + "px";
+  }
+
+  for (const a of ACTS) {
+    const el = document.getElementById(a.id);
+    const on = t >= a.start - XF && t < a.end + XF;
+    let o = 0;
+    if (on) {
+      o = Math.min(ease((t - (a.start - XF)) / XF), 1 - ease((t - a.end) / XF + 0), 1);
+      o = Math.min(ease((t - (a.start - XF)) / XF), 1 - ease(clamp01((t - a.end) / XF)));
+    }
+    el.style.opacity = clamp01(o).toFixed(3);
+    el.style.visibility = o > 0.001 ? "visible" : "hidden";
+  }
+
+  const local = id => t - ACTS.find(a => a.id === id).start;
+
+  /* ACT 0: title tracking-in */
+  { const lt = local("a0");
+    const ti = document.getElementById("a0-title");
+    ti.style.letterSpacing = (0.34 - 0.20 * ease(lt / 2.2)) + "em";
+    ti.style.opacity = ease(lt / 0.9);
+    document.getElementById("a0-sub").style.opacity = ease((lt - 1.1) / 0.8);
+    document.getElementById("a0-cap").style.opacity = ease((lt - 2.0) / 0.8);
+  }
+
+  /* ACT 1: envelope rows rise; alarm pulses */
+  { const lt = local("a1");
+    [["a1-r1", 195, 0.0], ["a1-r2", 255, 0.35], ["a1-r3", 315, 0.7]].forEach(([id, top, d]) => {
+      const el = document.getElementById(id);
+      const p = ease((lt - d) / 1.1);
+      el.style.top = (top - 130 + 26 * (1 - p) + Math.sin(lt * 1.3 + top) * 4) + "px";
+      el.style.opacity = p;
+    });
+    const hot = document.getElementById("a1-hot");
+    const pulse = 1 + 0.16 * Math.max(0, Math.sin(lt * 5.2));
+    hot.style.transform = "scale(" + pulse.toFixed(3) + ")";
+  }
+
+  /* ACT 2: key rotates gently; memo bars equalize */
+  { const lt = local("a2");
+    const key = document.getElementById("a2-key");
+    key.style.transform = "rotate(" + (Math.sin(lt * 0.8) * 10).toFixed(2) + "deg)";
+    key.style.opacity = ease(lt / 0.8);
+    memoBars.forEach((b, i) => {
+      const h = 8 + 66 * Math.abs(Math.sin(lt * 2.0 + i * 0.55)) * (0.35 + 0.65 * seeded(i + 40));
+      b.style.height = h.toFixed(1) + "px";
+      b.style.opacity = ease((lt - 0.5 - i * 0.02) / 0.6);
+    });
+  }
+
+  /* ACT 3: price flips honest at 4.2s */
+  { const lt = local("a3");
+    const pr = document.getElementById("a3-price");
+    if (lt < 4.2) {
+      pr.textContent = "−$0.38 / unit";
+      pr.style.color = "#d55181";
+      pr.style.transform = "translateY(" + (Math.sin(lt * 9) * 2).toFixed(1) + "px)"; /* uneasy jitter */
+    } else {
+      pr.textContent = "+$1.12 / unit · repriced";
+      pr.style.color = "#199e70";
+      pr.style.transform = "scale(" + (1 + 0.08 * (1 - ease((lt - 4.2) / 0.5))).toFixed(3) + ")";
+    }
+    pr.style.opacity = ease((lt - 0.5) / 0.7);
+  }
+
+  /* ACT 4: spam wall fades as counter climbs to 090 */
+  { const lt = local("a4");
+    const n = Math.round(90 * ease((lt - 0.6) / 4.6));
+    document.getElementById("a4-count").textContent = String(n).padStart(3, "0");
+    document.getElementById("a4-spam").style.opacity = (0.65 * (1 - ease((lt - 1.0) / 4.0))).toFixed(3);
+  }
+
+  /* ACT 5: generic gray bars become an organic voice */
+  { const lt = local("a5");
+    const morph = ease((lt - 1.2) / 3.2);
+    waveBars.forEach((b, i) => {
+      const generic = 24 + 10 * (i % 2);
+      const organic = 16 + 92 * Math.abs(Math.sin(i * 0.42 + lt * 1.7) * (0.4 + 0.6 * Math.sin(i * 0.13 + 1.2)));
+      const h = generic * (1 - morph) + organic * morph;
+      b.style.height = h.toFixed(1) + "px";
+      const c1 = [107, 118, 153], c2 = [52, 211, 153];
+      const mix = c1.map((v, k) => Math.round(v + (c2[k] - v) * morph));
+      b.style.background = "rgb(" + mix.join(",") + ")";
+      b.style.opacity = ease((lt - i * 0.012) / 0.7);
+    });
+  }
+
+  /* ACT 6: rule lines land one by one */
+  { const lt = local("a6");
+    [["a6-l1", 0.2], ["a6-l2", 0.9], ["a6-l3", 1.6]].forEach(([id, d]) => {
+      const el = document.getElementById(id);
+      const p = ease((lt - d) / 0.6);
+      el.style.opacity = p;
+      el.style.transform = "translateY(" + (14 * (1 - p)).toFixed(1) + "px)";
+    });
+    document.getElementById("a6-sub").style.opacity = ease((lt - 2.6) / 0.8);
+    const hex = document.getElementById("a6-hex");
+    hex.style.opacity = ease((lt - 2.3) / 0.8);
+    hex.style.transform = "rotate(" + (lt * 18).toFixed(1) + "deg)";
+  }
+};
+window.seek(0);
+</script>
+</body>
+</html>

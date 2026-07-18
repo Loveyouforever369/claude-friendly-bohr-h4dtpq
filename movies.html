@@ -98,6 +98,16 @@
   <span class="eyebrow">THE CHARACTER FILMS · ONE AGENT · ONE BUSINESS · ONE JOB</span>
   <h2>Five agents get their close-up</h2>
   <p class="section-lead">Each short stars one specialist from the Family inside a business you haven't met — a towing company, a garage, a bakery, an engineering firm, a pottery studio — with its own owner, supporting cast and storm to weather. Watch the agent's actual job unfold scene by scene, then hire the same specialist from the <a href="family.html">roster</a> and run the matching <a href="playbooks.html">playbook</a>.</p>
+  <div class="viz-root mb-2" style="padding:10px;max-width:860px">
+    <video controls preload="metadata" playsinline
+           poster="assets/video/character-films-poster.jpg"
+           style="width:100%;border-radius:10px;display:block;background:#000"
+           onerror="this.closest('.viz-root').style.display='none'">
+      <source src="assets/video/character-films-teaser.mp4" type="video/mp4">
+      <source src="assets/video/character-films-teaser.webm" type="video/webm">
+    </video>
+  </div>
+  <p class="muted mb-2">50-second official teaser — a real MP4 rendered frame-by-frame by <code>tools/render-character-teaser.mjs</code> with a synthesized score, one act per film. Want the photoreal versions? <code>PRODUCTION.md</code> now carries paste-ready Higgsfield/Veo/Kling identity blocks and shot lists for all five films.</p>
   <div id="character-slot" class="grid grid-2 mt-2"></div>
 </section>
 

@@ -238,6 +238,26 @@ spreadsheets and can email them. Deep audio narration everywhere via Web Speech 
   quick-pick chips that open the matching film directly. Organization IS
   content here — each film row answers who it's for before it plays.
 
+**Teaser render cycle (2026-07-13, same session):**
+- The video pipeline is now COMMITTED: `tools/render-character-teaser.mjs` +
+  `tools/compositions/character-films-teaser.html` (deps resolved via
+  RENDER_DEPS=<any package.json with playwright + @ffmpeg-installer/ffmpeg>).
+  The old render-trailer.js/render-roi.js templates died with the scratchpad —
+  same failure as the bundle builder; same fix. 1,200 frames captured in 41s.
+- Spot-stills-first caught the one layout bug (envelope rows overlapping the
+  starring line in Act 1) before any full capture was wasted. The skill's
+  "look at stills before committing" step earns its keep every single time.
+- New verification wrinkle: headless page screenshots of a PLAYING <video>
+  composite BLACK even when the webm decodes fine (separate render surface).
+  Don't panic-debug the encode — extract frames from the file itself with
+  ffmpeg (-ss T -frames:v 1) and Read those. Bitrate is also a tell: a black
+  video would encode to a few kb/s; real content came out at 449 kb/s.
+- Higgsfield/Veo/Kling still have no agent-side APIs; the honest bridge got
+  stronger: PRODUCTION.md now carries per-film ORIGINAL-character identity
+  blocks (Rosa/Sal/Amara+Josef/Ben/Lena) + 3 hero shots each in the Seedance
+  grammar, so photoreal versions are one paste away in the user's accounts.
+  HyperFrames connector = claude.ai chat only, after the user authorizes it.
+
 **Went right (keep doing):**
 - Role-card pattern for agents (identity/context/job/standards/boundaries) — reused
   across lessons, movies, family page; keeps all content consistent.

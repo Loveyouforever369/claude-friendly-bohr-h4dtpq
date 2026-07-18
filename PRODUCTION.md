@@ -209,3 +209,61 @@ art on the Screening Room page.
 3. Chronicles I→IV — one per week, same avatar cast
 4. Per-industry cuts of the feature (restaurant / trades / e-commerce) — re-voice
    only the examples, reuse 80% of footage
+
+## Character Films — AI generation packs (Higgsfield / Veo / Kling / HeyGen) · added 2026-07-13
+
+The five Character Films (`mv-c1`–`mv-c5`) now have a rendered motion-graphics
+teaser (`assets/video/character-films-teaser.mp4`, produced by
+`tools/render-character-teaser.mjs` — the pipeline is committed, not
+scratchpad-only). To upgrade any film into photoreal AI video, use these packs.
+All five leads are **original characters** — no real person's likeness or voice,
+ever (see the voice rule above). Workflow per the studied playbook: **anchor the
+identity first (3–5 reference stills in Higgsfield), draft cheap (Kling/LTX),
+finish expensive (Veo/Seedance), one variable changed per generation.**
+
+> HeyGen note: the HyperFrames connector renders only from claude.ai chat after
+> you authorize it in your connector settings — coding agents are blocked by
+> design. Presenter scenes therefore go through your HeyGen account (Pipeline B).
+
+### Identity blocks (paste VERBATIM into every prompt for that film)
+
+- **ROSA** — `Rosa Delgado: mid-40s Latina tow-truck company owner, tired but commanding eyes, high-vis jacket over flannel, hair tied back, radio mic clipped to collar, night-shift face lit by dispatch screens`
+- **SAL** — `Sal Buonanno: late-60s Italian-American master mechanic, silver stubble, forearms like cable, navy work shirt with embroidered name patch, reading glasses pushed up on forehead, walks with a cane after surgery`
+- **AMARA & JOSEF** — `Amara Osei: 30s Ghanaian-British baker, flour-dusted apron over rolled sleeves, precise calm hands. Josef Lind: 40s Scandinavian baker, tall, quiet, lamination-scarred forearms, 3AM eyes`
+- **BEN** — `Ben Ashworth: 50s structural engineer, wire-rim glasses, pressed shirt with mechanical pencil in pocket, stands like a man checking load paths, uncomfortable in conversation, precise in everything`
+- **LENA** — `Lena Moreau: 50s ceramicist, clay-gray smock, silver-streaked bun, kiln-warmed complexion, hands that never stop turning an invisible pot, gallery-quiet voice`
+
+### Hero shots (Seedance grammar: subject + action + shot + movement; lighting last)
+
+**INBOX ZERO (mood: cold moonlight blue → cyan)**
+1. ROSA alone in a dispatch office at 3:47 AM, six radio monitors glowing, she scrolls an endless email list — medium close-up, slow push-in past a coffee mug — sodium streetlight leaking through blinds, monitor cyan on her face, deep shadow.
+2. A tow truck's amber beacons sweep an icy highway wreck at night — wide establishing, drone crane-down toward the truck — freezing rain streaks in headlights, cold blue night grade with amber accents.
+3. ROSA at dawn approving drafted replies on a tablet, coffee in hand, calm — over-the-shoulder rack focus from screen to her face — first warm daylight through the depot window, cyan UI glow.
+
+**THE KEYS (mood: amber workshop gold)**
+1. SAL narrates into a phone propped on a toolbox while his hands rebuild a transmission — locked-off close-up on hands, slow tilt up to his face mid-sentence — single work lamp, deep amber chiaroscuro, dust motes.
+2. Apprentice THEO alone in the bay, reading a step from a binder, then stopping mid-job at a faint sweet smell — medium shot, slow dolly-in on his decision — morning light through roll-up door, gold grade.
+3. SAL on a cane, handing THEO a worn set of keys across the counter — two-shot, static frame held long — late-afternoon sun flare through the shop window, warm gold, backlit dust.
+
+**THE FAMOUS LOAF (mood: hearth magenta/rose)**
+1. JOSEF laminating dough alone at 3 AM, fold after fold — top-down shot transitioning to slow orbital — single pendant lamp over marble, rose-warm highlights, everything else black.
+2. AMARA at the prep table at night, spreadsheet beside flour, the moment the number lands — extreme close-up on her eyes over the laptop glow, micro push-in — cool laptop light vs warm oven glow behind, magenta grade.
+3. DOT at the counter telling a regular the truth about the new price, both laughing — handheld two-shot, gentle sway — Saturday-morning sun through the shopfront, golden rose, queue bokeh behind.
+
+**NINETY WORDS (mood: violet blueprint)**
+1. BEN at a drafting table at night, deleting a 4,000-address spam list, one keystroke — close-up on the hesitating finger, then the ALMOST folder sliding into frame — blue monitor wash, violet shadows, blueprint pinned behind.
+2. The Route 9 bridge expansion joint in macro, frost in the gap — macro slider move along the joint, shallow focus — dawn fog, cold violet-blue, one bolt catching first light.
+3. MARISOL VEGA reading a short email, a slow smile, typing four words back — medium close-up over her county-office monitor, static — fluorescent office softened by window daylight, violet-cyan grade.
+
+**IN HER OWN VOICE (mood: kiln emerald/ember)**
+1. LENA opening a kiln to forty crawled-glaze mugs, steam rising, her face unreadable then resolute — medium shot through the kiln mouth, heat shimmer, slow pull-back — ember orange interior against studio green-gray, dramatic rim light.
+2. ZOE cross-legged on the studio floor reading eleven years of journals, pages fanned around her — overhead crane-down spiral — dusty afternoon shafts, emerald-tinted shadows, warm page highlights.
+3. LENA photographing a "ruined" riverbed-texture mug like a jewel — macro on the crawl texture, focus breathing, then her thumb pressing Post — soft north light, deep green grade, one ember accent.
+
+### Assembly recipe per film (≈1 evening each)
+1. Higgsfield: lock the lead with the identity block + 3–5 generated reference stills (Soul ID). One variable per generation after that.
+2. Draft all 9 scenes cheap (Kling/LTX 9:16 + 16:9); reshoot only keepers on Veo/Seedance via Higgsfield's workspace.
+3. Presenter/host beats: HeyGen avatar (Pipeline B), narration = the film's exact `narration` strings from `assets/js/data/movies.js` (they're already paced ~95–125 words/scene).
+4. VO: HeyGen/ElevenLabs licensed deep narrator (movies speak lower/slower — pitch ≤0.78 equivalent).
+5. CapCut: assemble over the teaser's title-card style; captions from narration; export MP4 + WebM per the dual-source rule.
+6. Wire into `movies.html` beside the film's poster; production pack (.xls) from the poster button carries the full per-scene script.
