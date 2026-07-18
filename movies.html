@@ -60,6 +60,17 @@
   <p class="muted mt-1">46-second cinematic trailer — a real MP4 rendered frame-by-frame from the academy's own design system, with a synthesized score. Captions carry the narration; press play on the feature below for the full deep-voice experience. Want avatar-presented films? Grab a <b>Production pack</b> from any poster — see <code>PRODUCTION.md</code> in the repo.</p>
 </section>
 
+<section class="section section-alt" id="viewing-path" data-narrate data-narrate-script="Before you press play on anything, here is the map. The Screening Room is organized as one ladder, from a person who knows nothing to a person who runs it. Level zero is for the owner who has heard the word AI a thousand times and never once had it explained — one feature film, no jargon, no homework. Level one is proof: four films following a real owner through ninety days, including the week it nearly fell apart. Level two is personal: five character films, each built around one specific worry — the drowning inbox, the business trapped in your head, the busy months with empty accounts, the fear of becoming a spammer, the fear of sounding like everyone else. Find the sentence that sounds like you, and that is your film. And level three has no film at all — four moves, in order, that turn a viewer into an operator. Every film on this ladder tells you what you will arrive knowing, what you will leave knowing, and exactly what to do when the credits roll. No one gets lost in this cinema.">
+  <div class="container">
+    <span class="eyebrow">🗺️ THE VIEWING PATH · EVERY FILM MAPPED TO WHAT YOU KNOW</span>
+    <h2>From knowing nothing to running it</h2>
+    <p class="section-lead" id="journey-intro"></p>
+    <h3 class="mt-2" style="font-size:1.02rem">Start with the sentence that sounds like you</h3>
+    <div class="jpick mt-1" id="journey-pick"></div>
+    <div id="journey-root"></div>
+  </div>
+</section>
+
 <section class="section container">
   <span class="eyebrow">FEATURE PRESENTATION</span>
   <div id="feature-slot" class="grid" style="grid-template-columns:1fr"></div>
@@ -142,6 +153,57 @@
   document.getElementById("feature-slot").innerHTML = posterHTML(feature, true);
   document.getElementById("chronicles-slot").innerHTML = chronicles.map(m => posterHTML(m, false)).join("");
   document.getElementById("character-slot").innerHTML = characters.map(m => posterHTML(m, false)).join("");
+})();
+
+/* The Viewing Path — data-driven from MOVIE_JOURNEY (see data/movies.js) */
+(function renderJourney() {
+  const J = window.MOVIE_JOURNEY;
+  if (!J) return;
+  const byId = id => window.MOVIES.find(m => m.id === id);
+
+  document.getElementById("journey-intro").textContent = J.intro;
+
+  // Concern quick-picker: level 0 + level 2 entry doors
+  const doors = [...J.stages[0].films, ...J.stages[2].films];
+  document.getElementById("journey-pick").innerHTML = doors.map(f => {
+    const m = byId(f.id);
+    return `<button type="button" class="jchip" onclick="Player.open('${f.id}')">
+      <em>“${f.concern}”</em>
+      <b>▶ ${m.poster.icon} ${m.title} · ~${m.minutes} min</b>
+    </button>`;
+  }).join("");
+
+  // The ladder
+  document.getElementById("journey-root").innerHTML = J.stages.map(st => `
+    <div class="jstage">
+      <div class="jstage-head">
+        <span class="jlevel">LEVEL ${st.level}</span>
+        <h3>“${st.name}”</h3>
+      </div>
+      <p class="jgoal">${st.goal}</p>
+      ${st.films.map(f => {
+        const m = byId(f.id);
+        return `
+        <div class="jfilm">
+          <div class="jplay">
+            <h4>${m.poster.icon} ${m.title}</h4>
+            <div class="jmeta">${m.phase} · ~${m.minutes} min · ${m.slides.length} scenes</div>
+            <button type="button" class="btn btn-primary btn-sm" onclick="Player.open('${m.id}')">▶ Play this film</button>
+          </div>
+          <div>
+            <div class="jknow"><span class="jlab">Your concern</span><em>“${f.concern}”</em></div>
+            <div class="jknow"><span class="jlab">You arrive</span>${f.arrive}</div>
+            <div class="jknow"><span class="jlab">You leave</span>${f.leave}</div>
+          </div>
+        </div>`;
+      }).join("")}
+      ${st.moves ? `<div class="jmoves">${st.moves.map(mv => `
+        <a class="jmove" href="${mv.href}">
+          <span class="jstep">${mv.step}</span>
+          <span><b>${mv.label}</b><span class="jmove-detail">${mv.detail}</span></span>
+        </a>`).join("")}</div>` : ""}
+      ${st.then ? `<div class="jthen">When the credits roll → <a class="btn btn-ghost btn-sm" href="${st.then.href}">${st.then.label}</a></div>` : ""}
+    </div>`).join("");
 })();
 
 /* Download a film's full PRODUCTION PACK: script + shot list with avatar

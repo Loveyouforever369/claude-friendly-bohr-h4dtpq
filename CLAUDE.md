@@ -232,6 +232,11 @@ spreadsheets and can email them. Deep audio narration everywhere via Web Speech 
 - Poster/renderer split by id prefix (mv-p vs mv-c) kept chronicles and
   character films in separate shelves while cinema-mode binge order (MOVIES
   array order) kept working for free.
+- Viewing Path pattern (user asked "from knowing nothing to knowing, extremely
+  organized"): MOVIE_JOURNEY data maps every film to level (0–3) + concern +
+  you-arrive + you-leave + next move, rendered as a ladder with concern
+  quick-pick chips that open the matching film directly. Organization IS
+  content here — each film row answers who it's for before it plays.
 
 **Went right (keep doing):**
 - Role-card pattern for agents (identity/context/job/standards/boundaries) — reused

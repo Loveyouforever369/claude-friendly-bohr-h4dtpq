@@ -586,3 +586,50 @@ footer.site-footer a { color: var(--text-secondary); font-size: 0.85rem; }
 .pb-pain { color: var(--text-secondary); font-style: italic; border-left: 3px solid var(--neon-violet); padding-left: 12px; margin: 10px 0 4px; }
 .pb-kpi { font-size: 0.85rem; color: var(--text-muted); margin-top: 10px; }
 .pb-where { font-size: 0.85rem; color: var(--text-muted); }
+
+/* ---------- The Viewing Path (Screening Room journey) ---------- */
+.jpick { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 12px; }
+.jchip {
+  text-align: left; cursor: pointer; font-family: var(--font-body);
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 13px 15px; color: var(--text-primary); transition: border-color .15s, transform .15s;
+  display: flex; flex-direction: column; gap: 7px; font-size: 0.9rem;
+}
+.jchip:hover { border-color: var(--border-bright); transform: translateY(-2px); }
+.jchip em { color: var(--text-secondary); font-style: italic; line-height: 1.45; }
+.jchip b { color: var(--neon-cyan); font-size: 0.8rem; letter-spacing: .04em; }
+.jstage { border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); padding: 22px 24px; margin-top: 20px; }
+.jstage-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.jstage-head h3 { font-size: 1.12rem; }
+.jlevel {
+  font-family: var(--font-display); font-size: 0.72rem; letter-spacing: .14em;
+  color: var(--neon-cyan); border: 1px solid var(--border-bright); border-radius: 999px;
+  padding: 4px 12px; white-space: nowrap;
+}
+.jgoal { color: var(--text-muted); font-size: 0.9rem; margin-top: 7px; }
+.jfilm { display: grid; grid-template-columns: 235px 1fr; gap: 18px; border-top: 1px dashed var(--border); padding-top: 16px; margin-top: 16px; }
+@media (max-width: 760px) { .jfilm { grid-template-columns: 1fr; } }
+.jplay h4 { font-size: 1rem; letter-spacing: .05em; }
+.jmeta { color: var(--text-muted); font-size: 0.76rem; margin: 5px 0 10px; }
+.jknow { margin-bottom: 10px; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.55; }
+.jknow em { color: var(--text-primary); }
+.jlab {
+  display: block; font-size: 0.66rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--neon-cyan); margin-bottom: 2px; font-weight: 600;
+}
+.jmoves { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin-top: 16px; }
+.jmove {
+  display: flex; gap: 12px; align-items: flex-start; text-decoration: none !important;
+  background: rgba(148,163,255,.04); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 14px; color: var(--text-primary); transition: border-color .15s;
+}
+.jmove:hover { border-color: var(--border-bright); }
+.jmove b { display: block; margin-bottom: 3px; }
+.jmove-detail { color: var(--text-muted); font-size: 0.83rem; line-height: 1.5; }
+.jstep {
+  flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(34,211,238,.12); border: 1px solid var(--border-bright);
+  color: var(--neon-cyan); font-family: var(--font-display); font-size: 0.8rem;
+}
+.jthen { margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--border); color: var(--text-secondary); font-size: 0.92rem; }

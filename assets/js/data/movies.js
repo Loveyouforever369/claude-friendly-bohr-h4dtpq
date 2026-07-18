@@ -1302,3 +1302,114 @@ window.MOVIES = [
     ]
   }
 ];
+
+/* ============================================================
+   THE VIEWING PATH — the films organized as one journey,
+   from a person who knows nothing to a person who runs it.
+   Every entry: whose concern this is, what you arrive knowing,
+   what you leave knowing, and the exact next move.
+   Film ids must exist in MOVIES above.
+   ============================================================ */
+
+window.MOVIE_JOURNEY = {
+  title: "From knowing nothing to running it",
+  intro: "Ten films, one ladder. Find the level that matches what you know tonight — or jump straight to the worry that sounds like yours. Every film tells you what you'll arrive knowing, what you'll leave knowing, and the exact next move when the credits roll.",
+  stages: [
+    {
+      level: 0,
+      name: "I know nothing about AI",
+      goal: "Understand what an AI Family even is — no jargon assumed, no homework required.",
+      films: [
+        {
+          id: "mv-intro",
+          concern: "Everyone keeps talking about AI and I honestly don't know where to start.",
+          arrive: "Knowing nothing. The film assumes zero background — it starts with an owner at midnight, not a technology.",
+          leave: "Knowing the difference between a chatbot and a hired agent, the 13 departments of the Family, and which specialists exist for which jobs."
+        }
+      ],
+      then: { label: "🧬 Scan your Business DNA — 12 questions, your gaps named", href: "dna.html" }
+    },
+    {
+      level: 1,
+      name: "I get the idea — prove it works on a real business",
+      goal: "Watch one owner go end-to-end: ninety days, four phases, nothing skipped — including the week it nearly failed.",
+      films: [
+        {
+          id: "mv-p1",
+          concern: "Sounds nice in theory. What does starting actually look like?",
+          arrive: "Curious but skeptical — you've seen AI demos, never an AI Monday morning.",
+          leave: "Knowing how a real owner finds the leaks first: the scan, the time audit, and the truth on paper before any tool is bought."
+        },
+        {
+          id: "mv-p2",
+          concern: "Where would the time even come from? I'm already underwater.",
+          arrive: "Convinced there's a problem, unconvinced there's a way out.",
+          leave: "Knowing how the first hires take the inbox, the calendar and the follow-up — and why hours come back in week one, not month six."
+        },
+        {
+          id: "mv-p3",
+          concern: "Fine for admin. But can it actually grow revenue?",
+          arrive: "Time reclaimed, ambition returning.",
+          leave: "Knowing how the marketing, sales and profit engines stack — content that compounds, follow-up that never sleeps, pricing with a spine."
+        },
+        {
+          id: "mv-p4",
+          concern: "Will it stick — or fall apart the week motivation dips?",
+          arrive: "Impressed, and rightly suspicious of montages.",
+          leave: "Knowing the boring machinery that makes it permanent: weekly retros, approval gates, the near-miss that justified them, and what 90 days actually buys."
+        }
+      ],
+      then: { label: "🚀 Open the Playbooks — pick your first deployment", href: "playbooks.html" }
+    },
+    {
+      level: 2,
+      name: "I understand it — but I have one specific worry",
+      goal: "Skip the theory. Watch the one specialist whose entire film answers your exact concern.",
+      films: [
+        {
+          id: "mv-c1",
+          concern: "I'm drowning in email. Things are slipping that I can't even see.",
+          arrive: "Nine hundred unread of your own, probably.",
+          leave: "Knowing Slate's triage system, the two-sweep daily rhythm, and how a buried deadline gets caught before it detonates."
+        },
+        {
+          id: "mv-c2",
+          concern: "Everything lives in my head. This business couldn't survive me being gone a week.",
+          arrive: "Proud of being indispensable, and quietly trapped by it.",
+          leave: "Knowing Forge's voice-memo extraction, what a real SOP contains, and how to pass the 48-hour absence test."
+        },
+        {
+          id: "mv-c3",
+          concern: "We're busy — so why is the bank account always tight?",
+          arrive: "Trusting your gut on pricing, which is exactly the problem.",
+          leave: "Knowing how Margin prices your own hours into every product, ranks offers honestly, and reprices a beloved loser without losing the love."
+        },
+        {
+          id: "mv-c4",
+          concern: "I need clients, but I refuse to become a spammer.",
+          arrive: "Allergic to selling — which is fine, because this isn't that.",
+          leave: "Knowing Harpoon's signal hunt: research first, ninety words maximum, one named detail — outreach that converts because it respects."
+        },
+        {
+          id: "mv-c5",
+          concern: "Won't AI content make my brand sound like everyone else's?",
+          arrive: "Rightly protective of the voice you spent years earning.",
+          leave: "Knowing Echo's voice-guide method — how your own words become the standard, and scale amplifies you instead of replacing you."
+        }
+      ],
+      then: { label: "🤖 Hire the starring agent — copy their prompt from the Family", href: "family.html" }
+    },
+    {
+      level: 3,
+      name: "I've watched enough — I'm ready to run it",
+      goal: "From viewer to operator. No film at this level — four moves, in order, all on this site.",
+      films: [],
+      moves: [
+        { step: 1, label: "Scan your Business DNA", detail: "12 questions. Your archetype, your gaps, the agents to deploy against them.", href: "dna.html" },
+        { step: 2, label: "Run the Time Audit", detail: "Your real week, priced at your rate — the baseline every result gets measured against.", href: "time-audit.html" },
+        { step: 3, label: "Pick one Playbook", detail: "Six deployment blueprints — choose the one aimed at your worst leak, and only one.", href: "playbooks.html" },
+        { step: 4, label: "Train with Module 1", detail: "The Academy takes you from first prompt to multi-agent workflows, scene by scene.", href: "academy.html" }
+      ]
+    }
+  ]
+};
