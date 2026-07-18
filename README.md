@@ -95,7 +95,7 @@ python3 -m http.server 8080
         └── data/
             ├── agents.js        # the AI Family (118 agents, 13 departments)
             ├── lessons.js       # 8 modules · 40 narrated scenes
-            └── movies.js        # 5 movies · 59 scenes (feature + 90-Day Chronicles)
+            └── movies.js        # 10 movies · 104 scenes (feature + Chronicles + Character Films)
 ```
 
 ---

@@ -213,6 +213,26 @@ spreadsheets and can email them. Deep audio narration everywhere via Web Speech 
   redeploy worked. *The artifact list is the durable record of preview URLs;
   never assume a lost session means a lost link.*
 
+**Character Films cycle (2026-07-13):**
+- New anthology pattern that worked: five shorts, each starring ONE canon agent
+  inside a NEW business with its own human supporting cast (humans are free
+  inventions; agents in cast cards are canon-checked by matching "starring/cameo"
+  roles against agents.js names AND roles). Every film ends on a title card
+  pointing at its matching playbook + the family page — movies sell the tools.
+- Word-count discipline, calibrated not assumed: before trimming narrations,
+  measured the EXISTING films (avg 98–116, max 141) — the stated ~95–110 target
+  is an ideal the canon itself exceeds. Trimmed only scenes ≥130 words. *Measure
+  house practice before enforcing house rules.*
+- Caught pre-existing drift while verifying: index badge said "99 narrated
+  scenes"; computed truth was 98. Hardcoded counts rot silently — the node
+  count script (movies+lessons+agents required together) is the cheap guard.
+- Splice, don't hand-edit: appended 45 scenes to the 3,000-line movies.js via a
+  python splice on the trailing `];` then re-required the file in node to prove
+  it still parses. Zero bracket surgery.
+- Poster/renderer split by id prefix (mv-p vs mv-c) kept chronicles and
+  character films in separate shelves while cinema-mode binge order (MOVIES
+  array order) kept working for free.
+
 **Went right (keep doing):**
 - Role-card pattern for agents (identity/context/job/standards/boundaries) — reused
   across lessons, movies, family page; keeps all content consistent.
