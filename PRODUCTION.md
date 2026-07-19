@@ -267,3 +267,44 @@ finish expensive (Veo/Seedance), one variable changed per generation.**
 4. VO: HeyGen/ElevenLabs licensed deep narrator (movies speak lower/slower — pitch ≤0.78 equivalent).
 5. CapCut: assemble over the teaser's title-card style; captions from narration; export MP4 + WebM per the dual-source rule.
 6. Wire into `movies.html` beside the film's poster; production pack (.xls) from the poster button carries the full per-scene script.
+
+---
+
+## Character voices — ElevenLabs pipeline (wired 2026-07-19)
+
+The repo now renders real per-scene narration audio from your ElevenLabs
+account. Everything is committed; only the credential and casting are yours.
+
+**One-time setup (≈10 minutes):**
+1. In your ElevenLabs account (the michaelparks011 subscription): Profile →
+   API Keys → create a key.
+2. Put it in the environment as `ELEVENLABS_API_KEY` — Claude Code → your
+   environment → Settings → Environment variables. NEVER paste it into chat,
+   files, or this public repo. (Note: the cloud sandbox's network policy
+   currently blocks `api.elevenlabs.io`; either allow that host in the
+   environment's network settings, or run the script on your own machine —
+   it needs only Node 18+, zero installs.)
+3. Cast the six voices: for each entry in `tools/voices.config.json`, pick a
+   Voice Library voice (search terms included) or build one in Voice Design
+   from the `direction` text, then paste its voice ID into the config.
+   `node tools/voice-elevenlabs.mjs --list-voices` prints your account's
+   voices with IDs.
+
+**Render narration:**
+```
+ELEVENLABS_API_KEY=... node tools/voice-elevenlabs.mjs --movie mv-c1
+```
+→ one MP3 per scene + `manifest.json` (text, word counts, casting) in the
+work dir. `--dry-run` previews the manifest with no key and no cost.
+Chronicles (`mv-intro`, `mv-p1..p4`) use the Academy narrator casting;
+each Character Film speaks in its own agent's voice.
+
+**Casting policy (locked, non-negotiable):** voices are original synthetic
+designs from the ElevenLabs Voice Library / Voice Design only. Never clone a
+real person's voice, never imitate a named actor or movie character — the
+Character Forge originals are the asset. Consent required, full stop.
+
+**Where it plugs in:** the video-render skill's audio stage accepts these
+MP3s in place of the synthesized score — concat scene files with 0.6 s gaps,
+duck the drone under them, and master per the skill. That is the path from
+"films with captions" to "films that speak in their characters' voices."

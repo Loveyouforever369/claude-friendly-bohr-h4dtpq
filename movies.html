@@ -174,9 +174,9 @@
   host.innerHTML =
     `<span class="eyebrow">FILM STUDY · THE TEACHING LAYER</span>
      <h3 style="margin:8px 0 4px">Watched it? Now run it.</h3>
-     <p class="muted" style="margin-bottom:10px">Every Character Film compresses into a runnable protocol, one governing rule, and a ten-minute drill — the same teaching layer that appears scene by scene inside the player (📚 strips). Open your film's study card:</p>` +
-    Object.entries(S).map(([id, st]) => {
-      const m = window.MOVIES.find(x => x.id === id);
+     <p class="muted" style="margin-bottom:10px">Every film in the library compresses into a runnable protocol, one governing rule, and a ten-minute drill — the same teaching layer that appears scene by scene inside the player (📚 strips). Open your film's study card:</p>` +
+    window.MOVIES.filter(m => S[m.id]).map(m => {
+      const id = m.id, st = S[id];
       return `
       <details class="acc">
         <summary><span class="num">${m.poster.icon}</span> ${m.title} — ${st.title} <span class="chev">▸</span></summary>

@@ -282,6 +282,22 @@ spreadsheets and can email them. Deep audio narration everywhere via Web Speech 
   which the src/href leftover check never sees — the builder now sweeps the whole
   page text for `assets/img/film-art/...jpg` and data-URIs them. *Any asset
   referenced from JS data needs its own sweep; attribute-regex passes miss it.*
+- Same session, teaching layer SATURATED: all 104 scenes across all 10 films now
+  carry `lesson:` fields (59 chronicle lessons injected via narration-prefix
+  anchors — the splice technique is 3-for-3), and FILM_STUDY covers every film.
+  renderStudy now iterates window.MOVIES order (not Object.entries) so the shelf
+  matches the viewing path. Chronicle study cards sell the TOOLS (dna/time-audit/
+  profit/family), character cards sell the playbooks — every film ends in a next move.
+- ElevenLabs wired (user has a subscription): `tools/voice-elevenlabs.mjs` +
+  `tools/voices.config.json` (per-character voice DIRECTION, blank voice_id slots,
+  consent policy in the config itself). Dry-run tested here; real synthesis needs
+  ELEVENLABS_API_KEY in env settings AND api.elevenlabs.io allowed — this sandbox's
+  gateway 403s ALL general HTTPS (control-probed example.com: also 403), so browsing
+  to elevenlabs.io or any web app on the user's behalf is impossible from here, and
+  account logins are human-only anyway. Script runs anywhere with Node 18+, zero
+  installs. Voice IDs are not secrets (fine in repo); the API key is (env only).
+- Higgsfield re-checked in the connector registry this session: still NO agent-side
+  path. Don't re-promise it; the bridge stays PRODUCTION.md packs + user's web app.
 
 **Went right (keep doing):**
 - Role-card pattern for agents (identity/context/job/standards/boundaries) — reused

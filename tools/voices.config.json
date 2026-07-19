@@ -1,0 +1,57 @@
+{
+  "_readme": [
+    "Voice casting for the AI Business Academy films — ElevenLabs edition.",
+    "POLICY (locked): voices are ORIGINAL synthetic designs from the ElevenLabs",
+    "Voice Library / Voice Design only. NEVER clone a real person's voice, and",
+    "never imitate a named actor or movie character — consent required, full stop.",
+    "",
+    "voice_id is blank until you cast it: open your ElevenLabs account, pick or",
+    "design a voice using the 'direction' text below, then paste its voice ID",
+    "here (voice IDs are not secrets; the API key is — that stays in the",
+    "ELEVENLABS_API_KEY environment variable and is never committed)."
+  ],
+  "model_id": "eleven_multilingual_v2",
+  "narrator": {
+    "label": "Academy narrator (chronicles, teasers, lessons)",
+    "direction": "Deep, gravelly, unhurried male storyteller in his sixties. Documentary gravity, warm not menacing. Lets pauses land after em-dashes. Library search terms: deep narrator, documentary, gravelly, cinematic.",
+    "voice_id": "",
+    "voice_settings": { "stability": 0.55, "similarity_boost": 0.8, "style": 0.35 }
+  },
+  "films": {
+    "mv-c1": {
+      "agent": "Slate",
+      "role": "Inbox Commander",
+      "direction": "Calm, precise, mid-register. Measured dispatcher cadence — every word logged, assigned, closed. Slightly clipped efficiency, never cold. Library search terms: calm, precise, professional, composed.",
+      "voice_id": "",
+      "voice_settings": { "stability": 0.6, "similarity_boost": 0.8, "style": 0.25 }
+    },
+    "mv-c2": {
+      "agent": "Forge",
+      "role": "SOP Writer",
+      "direction": "Low, warm workshop mentor. Patient and deliberate, like reading a well-worn manual aloud by a work light. Library search terms: warm, mature, mentor, steady.",
+      "voice_id": "",
+      "voice_settings": { "stability": 0.65, "similarity_boost": 0.8, "style": 0.3 }
+    },
+    "mv-c3": {
+      "agent": "Margin",
+      "role": "Unit Economics Analyst",
+      "direction": "Crisp, bright, exact. Quick but never rushed — the friendly accountant who enjoys the moment the numbers finally tell the truth. Library search terms: crisp, articulate, bright, confident.",
+      "voice_id": "",
+      "voice_settings": { "stability": 0.55, "similarity_boost": 0.8, "style": 0.3 }
+    },
+    "mv-c4": {
+      "agent": "Harpoon",
+      "role": "Outbound Hunter",
+      "direction": "Confident low-mid register, coiled energy, spare sentences. Says ninety words like each one cost money. Library search terms: confident, intense, low, controlled.",
+      "voice_id": "",
+      "voice_settings": { "stability": 0.5, "similarity_boost": 0.8, "style": 0.4 }
+    },
+    "mv-c5": {
+      "agent": "Echo",
+      "role": "Brand Voice Keeper",
+      "direction": "Warm, resonant, expressive and unhurried — a voice that sounds like it remembers eleven years of kiln journals. Library search terms: warm, expressive, resonant, storyteller.",
+      "voice_id": "",
+      "voice_settings": { "stability": 0.5, "similarity_boost": 0.85, "style": 0.45 }
+    }
+  }
+}
