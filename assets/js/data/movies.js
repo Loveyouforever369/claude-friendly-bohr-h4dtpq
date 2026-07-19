@@ -745,7 +745,7 @@ window.MOVIES = [
     title: "INBOX ZERO",
     minutes: 7,
     blurb: "Rosa Delgado runs a 24-hour towing company on four hours of sleep and nine hundred unread emails. Somewhere in that pile is a renewal deadline that could take her fleet off the road — and the story of Slate, the Inbox Commander, begins the night she stops digging alone.",
-    poster: { icon: "🗒️", grad: "linear-gradient(135deg,#0b1020,#0e2a4d 45%,#22d3ee)" },
+    poster: { icon: "🗒️", grad: "linear-gradient(135deg,#0b1020,#0e2a4d 45%,#22d3ee)", art: "assets/img/film-art/mv-c1.jpg" },
     chapters: ["The Pile", "The Hire", "Two Sweeps", "The Storm Test"],
     slides: [
       {
@@ -754,6 +754,7 @@ window.MOVIES = [
         title: "INBOX ZERO",
         sub: "Starring Slate, Inbox Commander — with Rosa Delgado of Delgado Towing.",
         visual: "🗒️",
+        lesson: "An unmanaged inbox isn't a mess — it's unpriced risk.",
         narration: "Every agent in the Family has a job description. This is a film about what one of those jobs looks like from the inside — told through one owner, one inbox, and one very bad Tuesday. Her name is Rosa Delgado. She runs six tow trucks, around the clock, in a city that never stops crashing into itself. Her drivers are excellent. Her dispatch board is legendary. Her inbox is a landfill. And buried somewhere in that landfill, a clock is running that Rosa doesn't know about. This is the story of Slate. Roll film."
       },
       {
@@ -766,6 +767,7 @@ window.MOVIES = [
           "Nine hundred unread — invoices, insurers, a city contract, spam, all one pile",
           "Her filing system: scroll until something looks like it's on fire"
         ],
+        lesson: "The radio rule applies to email: every item logged, assigned, closed — never just scrolled.",
         narration: "Rosa Delgado can route three wrecks, a repossession and a dead battery across six trucks without writing anything down. On the radio, she is untouchable. But every crash generates paper — insurance threads, city paperwork, body-shop confirmations — and all of it lands in one place. Nine hundred unread. Her system is the system most owners have: scroll at three in the morning until something looks like it's on fire, answer that, sleep four hours, repeat. The radio built her business. The inbox is quietly deciding whether she keeps it. Neither of them knows about the email from October ninth."
       },
       {
@@ -778,6 +780,7 @@ window.MOVIES = [
           "Below it: a warm lead from a nine-van fleet, never answered, gone quiet",
           "The inbox doesn't lose emails. It loses futures."
         ],
+        lesson: "The pile's real cost is invisible: deadlines and leads never announce themselves.",
         narration: "On October ninth, an adjuster named Evelyn Cho sent Rosa a renewal notice with a subject line engineered to be ignored. Inside it: the fleet policy terms had changed, new compliance documents were required, and the deadline was thirty days out. Twenty-two of those days are already gone. Three messages below it sits a quieter tragedy — a logistics manager with nine vans asking about a standing contract, never answered, now shopping elsewhere. This is the true cost of the pile. It doesn't lose emails. It loses futures. And it never tells you which ones it's losing."
       },
       {
@@ -789,6 +792,7 @@ window.MOVIES = [
           { avatar: "🎧", name: "Marco Delgado", role: "Day dispatcher, Rosa's brother", line: "Keeps the board clean by day; keeps telling Rosa the inbox will bury her." },
           { avatar: "📋", name: "Evelyn Cho", role: "Fleet insurance adjuster", line: "Sent the renewal notice twenty-two days ago. Her deadline doesn't negotiate." }
         ],
+        lesson: "Hire agents like staff: a name, a role, a quality bar — and a hard no-send rule.",
         narration: "Meet the cast. Rosa Delgado, who can command six trucks but not nine hundred emails. Her brother Marco, the day dispatcher, who has been saying for a year that the inbox is the only board in the building nobody runs. Evelyn Cho, the adjuster on the other end of a deadline that does not care how good Rosa is on the radio. And the specialist entering this story tonight: Slate, the Inbox Commander — an agent with one job description. Sort everything. Draft what needs answering, in Rosa's voice. Flag what smells like risk. And never, ever hit send alone."
       },
       {
@@ -801,6 +805,7 @@ window.MOVIES = [
           "Also surfaced: the nine-van lead, two unpaid invoices, a driver's expiring certification",
           "Rosa reads the drafts. Rosa approves. Rosa is still the commander."
         ],
+        lesson: "Triage taxonomy: reply-now · reply-today · delegate · archive. Four buckets end the doom-scroll.",
         narration: "It starts, like most rescues, undramatically. Marco pastes the backlog into Slate one screen at a time, and Slate does what it was hired to do: reply-now, reply-today, delegate, archive. Fourteen minutes in, it surfaces the October ninth email with a flag Rosa has never seen an inbox produce: urgent, risk, eight days remaining. Then the rest of the buried futures come up for air — the nine-van lead, two invoices worth a truck payment, a driver certification quietly expiring. Slate drafts the reply to Evelyn Cho in Rosa's voice. Rosa reads it twice, changes one word, and approves. The clock is still running. But now somebody's watching it."
       },
       {
@@ -813,6 +818,7 @@ window.MOVIES = [
           "Dawn joins the roster: a morning brief — three priorities, calendar traps, one number",
           "The radio rule, applied to email at last: nothing dispatches itself"
         ],
+        lesson: "Two 15-minute sweeps beat all-day checking — attention is a shift, not a state.",
         narration: "The install isn't software. It's a rhythm. Two sweeps a day — eight in the morning with coffee, six in the evening before the night shift takes the board. Slate pre-sorts, pre-drafts, pre-flags; Rosa approves, edits, or kills, fifteen minutes a sweep. A second specialist joins quietly: Dawn, the daily briefing officer, whose morning note fits on a phone screen — three priorities, one calendar trap, one number to watch. Marco laughs the first time he sees it, because it's just the dispatch board's rule finally applied to email: every job gets logged, every job gets assigned, and nothing — nothing — dispatches itself."
       },
       {
@@ -825,6 +831,7 @@ window.MOVIES = [
           "The 8 AM sweep: Slate has them sorted; eleven drafts waiting; two flags",
           "Total cost of the storm to the inbox: nineteen minutes"
         ],
+        lesson: "Judge systems in storms: forty-one emails, nineteen minutes, zero panic.",
         narration: "Every system meets its storm. Rosa's arrives three weeks later as freezing rain — fourteen wrecks before midnight, all six trucks rolling, the radio a wall of sound until dawn. The old Rosa would have surfaced on Thursday to find the week's wreckage in her inbox, and answered none of it. Instead, at eight sharp, exhausted and still in yesterday's jacket, she opens the sweep. Forty-one emails came in overnight. Slate has them held in formation: eleven drafts waiting for approval, two flagged risk, the rest filed. Nineteen minutes later the inbox is empty and Rosa is asleep. The storm never made it past the gate."
       },
       {
@@ -837,6 +844,7 @@ window.MOVIES = [
           "Rosa's email time: hours a day, down to two fifteen-minute sweeps",
           "The real dividend: she took a Sunday. Entirely off. First in three years."
         ],
+        lesson: "Scoreboard every rescue: deadline met, lead signed, hours down — and one full Sunday off.",
         narration: "Scoreboards keep stories honest, so here is Rosa's. The renewal was filed with six days to spare — Evelyn Cho, who has seen a hundred owners miss that deadline, wrote back four words: appreciate the quick turnaround. The nine-van fleet signed, a contract found on the first night of triage, worth more annually than every tool in the building. Email time fell from unmeasured hours to two bounded sweeps. But measure the real dividend in something rarer: three Sundays later, Rosa's phone stayed in a drawer from Saturday night to Monday morning, and the business did not notice. The pile is gone. The commander remains."
       },
       {
@@ -845,6 +853,7 @@ window.MOVIES = [
         title: "YOUR PILE HAS A CLOCK IN IT TOO",
         sub: "Slate's hire prompt is on the AI Family page. The Inbox Zero Rescue playbook runs the same 48-hour install Rosa got.",
         visual: "⬡",
+        lesson: "Your pile has a clock in it too. Triage finds it before it detonates.",
         narration: "Rosa Delgado is a composite — but the email from October ninth is real, because every unmanaged inbox has one. A deadline, a lead, a quiet expiry, sitting in the pile with a clock running. You don't know which email it is. That's the point. Slate's full hire prompt is waiting on the AI Family page, and the Inbox Zero Rescue playbook walks the same forty-eight-hour install Rosa ran: triage, drafts in your voice, two sweeps, and the standing rule that nothing sends itself. One film down. Four specialists to go. Next up: a garage, a hip surgery, and the keys."
       }
     ]
@@ -858,7 +867,7 @@ window.MOVIES = [
     title: "THE KEYS",
     minutes: 7,
     blurb: "Sal Buonanno's garage runs on forty years of knowledge that exists in exactly one place: Sal. When surgery takes him out for three weeks, an apprentice, a voice recorder, and Forge the SOP Writer have eleven days to get the business out of his head — before the head leaves the building.",
-    poster: { icon: "⚒️", grad: "linear-gradient(135deg,#0b1020,#3a2a0e 45%,#fbbf24)" },
+    poster: { icon: "⚒️", grad: "linear-gradient(135deg,#0b1020,#3a2a0e 45%,#fbbf24)", art: "assets/img/film-art/mv-c2.jpg" },
     chapters: ["The Head", "The Deadline", "The Extraction", "The 48-Hour Test"],
     slides: [
       {
@@ -867,6 +876,7 @@ window.MOVIES = [
         title: "THE KEYS",
         sub: "Starring Forge, SOP Writer — with Sal Buonanno of Buonanno & Sons Garage.",
         visual: "⚒️",
+        lesson: "\"It's all up here\" is a single point of failure wearing a compliment.",
         narration: "There's a phrase owners use with pride that should terrify them: it's all up here. Forty years of judgment, tapped against a temple. This is a film about what happens when up here has to leave the building. Sal Buonanno runs the garage his grandfather opened — Buonanno and Sons, though his own sons chose other cities long ago. Sal is the business. Which was fine, right up until a surgeon looked at his hip and gave him a date. Eleven days out. This is the story of Forge, the SOP Writer. And a set of keys."
       },
       {
@@ -879,6 +889,7 @@ window.MOVIES = [
           "Connie runs the books and keeps a list titled THINGS ONLY SAL KNOWS. It has 61 entries.",
           "The best mechanic in the county is also its most dangerous single point of failure"
         ],
+        lesson: "Count the asks: forty interruptions a day is the true price of undocumented skill.",
         narration: "Watch Sal work and you understand why the county sends him what nobody else can fix. He diagnoses a transmission by sound the way other people recognize a song. But watch the shop around him and you see the other thing: Theo, two years an apprentice and genuinely good, stopping forty times a day to ask; Connie, who runs the books and keeps a half-joking list on her clipboard titled things only Sal knows — sixty-one entries and growing. Every business has assets. Sal's most valuable one walks out the door at six every night, uninsured, unbacked-up, and lately, limping."
       },
       {
@@ -891,6 +902,7 @@ window.MOVIES = [
           "Sal's plan: 'I'll answer the phone from the bed.' Connie's counter: 'You'll answer sixty-one questions a day.'",
           "The real deadline isn't the surgery. It's the extraction."
         ],
+        lesson: "Deadlines don't create fragility — they reveal it.",
         narration: "The surgeon gives Sal a date the way surgeons do — kindly, and without alternatives. Three weeks out, minimum, starting the fourteenth. Sal's first plan is every owner's first plan: he'll run the shop from the recovery bed, by phone. Connie does the math out loud at the kitchen table. Sixty-one entries on the list, Theo interrupted forty times a day, the Okonkwo fleet contract — nine vans, the thing that keeps winter paid for — mid-cycle through all of it. That's not recovery, she says, that's dispatch with anesthesia. The surgery isn't the deadline. The deadline is getting forty years out of Sal's head in eleven days."
       },
       {
@@ -902,6 +914,7 @@ window.MOVIES = [
           { avatar: "🧰", name: "Theo Vance", role: "Apprentice mechanic", line: "Good hands, growing judgment — and about to run the shop with a binder." },
           { avatar: "🔔", name: "Chime", role: "Onboarding Designer · cameo", line: "Builds Theo's first-week path so the binder teaches instead of overwhelms." }
         ],
+        lesson: "Extraction is a team sport: the expert speaks, the agent structures, the apprentice tests.",
         narration: "The cast, before the clock starts. Sal Buonanno, who must do the hardest thing an expert ever does — say the quiet parts out loud. Theo Vance, about to discover the difference between helping in a shop and holding one. Connie, whose clipboard list becomes the mission map. And two specialists reporting for duty: Forge, the SOP Writer, whose job is turning voice memos full of judgment into steps, checks, and escalation rules anyone can follow — and, in a supporting role, Chime, the onboarding designer, who takes Forge's binder and turns Theo's terrifying first solo week into a path. Eleven days. Sixty-one entries. Begin."
       },
       {
@@ -914,6 +927,7 @@ window.MOVIES = [
           "The magic is in the mumbles — 'if it smells sweet, stop' becomes a written warning that saves engines",
           "Nine days: the sixty-one entries become thirty-one SOPs. The rest, Sal admits, were habits, not knowledge."
         ],
+        lesson: "Talk, don't type: narrate the job while your hands do it — structure comes later.",
         narration: "The extraction method is built for a man who hates paperwork: don't write, talk. Sal props his phone on the toolbox and narrates while his hands work — every job, every judgment call, every superstition that turns out to be engineering. Forge takes each rambling memo and returns structure: what triggers this job, the steps in order, the checks between them, when to stop and escalate, what done looks like. The gold is in the mumbles. If it smells sweet, stop — five words Sal has said for decades — becomes a written warning about coolant that will someday save an engine Theo hasn't met yet. Nine days in, sixty-one entries have become thirty-one procedures. The other thirty, Sal admits, were just habits wearing knowledge's clothes."
       },
       {
@@ -926,6 +940,7 @@ window.MOVIES = [
           "Forge revises same day; Chime sequences Theo's solo week — easy jobs first, fleet van mid-week",
           "The escalation rule, written and taped to the office door: when in doubt, stop and call. No hero mechanics."
         ],
+        lesson: "A dry-run in silence finds what the expert forgot to say out loud.",
         narration: "Day ten is the dry run, and it is agony for exactly one person. Theo works a complete brake job from the written procedure alone while Sal stands six feet away under strict orders to say nothing. Silence, it turns out, is a diagnostic tool: it finds two gaps by lunch — a torque spec that lived so deep in Sal's hands he'd never said it aloud, and a supplier quirk only Connie knew. Forge revises both procedures before the shop closes. Chime sequences the solo weeks like a training camp: routine jobs Monday, the fleet van Wednesday, nothing exotic until Sal can hobble in. And on the office door, the rule that makes it all safe: when in doubt, stop and call. No hero mechanics."
       },
       {
@@ -938,6 +953,7 @@ window.MOVIES = [
           "Okonkwo's van 6 throws the sweet smell. Theo stops. The SOP catches what a rushed guess would've missed.",
           "Sal's phone: not sixty-one questions a day. Four calls, total, in week one."
         ],
+        lesson: "Escalation rules make delegation safe: when in doubt, stop and call.",
         narration: "The surgery happens Tuesday. Wednesday morning, for the first time in thirty-one years, the bay doors open without Sal Buonanno inside them. Week one: fourteen jobs completed to standard, and one escalation call — which is not a failure of the system but the system working, because it was the right call to make. Then Okonkwo's van six comes in running hot, and the shop fills with a faint sweet smell. Theo stops. Right there, mid-job, exactly as page eleven commands, and finds the failing head gasket a rushed guess would have cooked into a dead engine. Sal's phone, braced for sixty-one questions a day, rings four times all week. He complains to Connie that nobody needs him. He is smiling when he says it."
       },
       {
@@ -950,6 +966,7 @@ window.MOVIES = [
           "The business survived its founder's absence. That sentence changed what it's worth.",
           "Sal has a new job title, unofficial: chief judgment officer. The wrenches have understudies now."
         ],
+        lesson: "A business that survives your absence is worth more than one that needs you.",
         narration: "Sal comes back on a cane three weeks later to a shop that didn't burn down — which sounds like a small thing and is actually the largest thing that has ever happened to the business. Every fleet deadline met. Zero comebacks. Two new customers, referred by Okonkwo, who told a friend his mechanic's shop runs so tight the owner can get surgery and nothing slips. The binder has a name now — the standard — and Theo adds to it weekly. A business that survives its founder's absence is worth something a one-man genius show never is: it's transferable. Sellable, someday. Inheritable, maybe. Sal still does the impossible diagnoses. But the possible ones finally have understudies."
       },
       {
@@ -958,6 +975,7 @@ window.MOVIES = [
         title: "COULD YOUR BUSINESS SURVIVE YOUR ABSENCE?",
         sub: "Forge's hire prompt is on the AI Family page. The Ops SOP Forge playbook runs Sal's exact extraction — voice memos and all.",
         visual: "⬡",
+        lesson: "The keys are only yours if you can hand them to someone.",
         narration: "Here's the uncomfortable question this film was built to ask: if a surgeon handed you a date eleven days out, what would leave the building with you? Sal got a deadline. Most owners just get the slow version — the vacation never taken, the sale price that evaporates, the apprentice who leaves because everything requires asking. Forge's hire prompt is on the AI Family page, and the Ops SOP Forge playbook runs Sal's exact extraction: say it while your hands do it, structure it, dry-run it, tape the escalation rule to the door. The keys are only yours if you can hand them to someone. Next film: a bakery, a beloved croissant, and the math nobody wanted to see."
       }
     ]
@@ -971,7 +989,7 @@ window.MOVIES = [
     title: "THE FAMOUS LOAF",
     minutes: 7,
     blurb: "Hearth & Stone's laminated croissant has a line out the door every Saturday — and it's been quietly bankrupting the bakery for two years. Margin, the Unit Economics Analyst, prices the one ingredient Amara and Josef never counted: themselves. A film about loving your product enough to do the math.",
-    poster: { icon: "📐", grad: "linear-gradient(135deg,#0b1020,#4d1a35 45%,#f472b6)" },
+    poster: { icon: "📐", grad: "linear-gradient(135deg,#0b1020,#4d1a35 45%,#f472b6)", art: "assets/img/film-art/mv-c3.jpg" },
     chapters: ["The Line Out the Door", "The Uncounted Ingredient", "The Ranking", "The Reprice"],
     slides: [
       {
@@ -980,6 +998,7 @@ window.MOVIES = [
         title: "THE FAMOUS LOAF",
         sub: "Starring Margin, Unit Economics Analyst — with Amara Osei & Josef Lind of Hearth & Stone.",
         visual: "📐",
+        lesson: "Popularity is not profitability — audit the applause.",
         narration: "Some businesses fail from products nobody wants. This film is about the opposite disease — the product everybody wants, that loses money every single time it sells. Hearth and Stone is the bakery every neighborhood deserves: brick oven, flour in the air, and a laminated sourdough croissant so good there's a line down the block every Saturday by seven. Amara and Josef built their reputation on it. What they've never built is the math underneath it. This is the story of Margin, the Unit Economics Analyst — and the bravest spreadsheet in this whole academy. Roll film."
       },
       {
@@ -992,6 +1011,7 @@ window.MOVIES = [
           "Josef starts lamination at 3 AM; Amara runs the oven from 4; Dot has held the counter for 17 years",
           "The question they ask at close every week: 'Where does it all go?'"
         ],
+        lesson: "Busy is the best disguise a failing number ever wore.",
         narration: "By six fifty-eight on a Saturday there are thirty people outside Hearth and Stone, and by noon the croissant trays will have turned over six times. Three hundred forty croissants, gone. By every visible measure this is a triumph: revenue up nine percent, reviews glowing, Dot at the counter greeting regulars by name and order. So explain the other number — the checking account, tighter this year than last. Josef starts laminating at three in the morning. Amara takes the oven at four. And every Saturday at close, they ask the question owners ask instead of doing math: where does it all go? Busy, it turns out, is the best disguise a failing number ever wore."
       },
       {
@@ -1004,6 +1024,7 @@ window.MOVIES = [
           "Missing: the oven bottleneck that pushes everything else later, and the wholesale orders it delays",
           "The most expensive ingredient in the famous croissant is the couple that owns the bakery"
         ],
+        lesson: "Cost sheets lie by omission: price the owner's hours, or you've priced nothing.",
         narration: "The costing sheet taped inside the pantry door says the croissant costs a dollar sixty-one to make and sells for four seventy-five, and if that were true this would be a very short film. Here's what the sheet leaves out. Fourteen hours a week of lamination, folding, and shaping — skilled work that only Josef does, all of it starting at three in the morning. The oven bottleneck the croissant program causes, which pushes the wholesale bread late, which is the actual profitable line. Two years of declining a stand-mixer upgrade because cash felt thin. The recipe counts butter by the gram. It has never once counted the bakers."
       },
       {
@@ -1015,6 +1036,7 @@ window.MOVIES = [
           { avatar: "🥐", name: "Josef Lind", role: "Co-owner, laminator-in-chief", line: "Fourteen hours a week at 3 AM, priced into the croissant at exactly zero." },
           { avatar: "🧾", name: "Meter", role: "Pricing Strategist · cameo", line: "Scripts the reprice — the letter, the number, and the nerve to send it." }
         ],
+        lesson: "Finding the truth (Margin) and charging for it (Meter) are two different jobs.",
         narration: "The cast. Amara Osei, who runs the ovens, the wholesale line, and every number in the building except the one that matters most. Josef Lind, whose three a.m. lamination shift is priced into the famous croissant at exactly zero dollars. Dot, seventeen years at the counter, who will have opinions about what's coming. And the specialists: Margin, the Unit Economics Analyst, starring — whose one job is ranking every product by true profit per hour of the owners' lives — and Meter, the pricing strategist, in a late cameo, because finding the truth is act two. Charging for it is act three."
       },
       {
@@ -1027,6 +1049,7 @@ window.MOVIES = [
           "Wholesale bread: quiet hero, 4× the croissant's return per hour. Cakes: solid. Coffee: tiny margin machine.",
           "The famous croissant, honestly priced: minus 38 cents per unit. The line out the door loses money."
         ],
+        lesson: "Rank every offer by profit per owner-hour — your time is a cost, not a donation.",
         narration: "It happens at the prep table on a Tuesday night, flour still in the air. Ninety days of sales go in, every product, and this time labor goes in too — every hour, priced at what they'd pay a stranger to do it. Margin returns the ranking nobody wanted. Wholesale bread, the unglamorous rye that no one photographs: the quiet hero, four times the return per owner-hour. The celebration cakes: solid. The coffee program: a tiny relentless margin machine. And the famous croissant — the identity of the bakery, the line out the door, the thing that made them — at minus thirty-eight cents a unit. Three hundred forty times every Saturday. Josef reads it twice and says, very quietly: we pay them to take it."
       },
       {
@@ -1039,6 +1062,7 @@ window.MOVIES = [
           "Amara's reframe: the croissant isn't the problem. The price is. Undercharging is a choice, not a fate.",
           "Options on the table: reprice, resize the program, or retire it. Only one is unacceptable: pretending."
         ],
+        lesson: "Test the halo before you protect it — sixty-one percent bought nothing else.",
         narration: "What follows is the scene every owner recognizes: the argument with the spreadsheet. Josef's first instinct is loyalty — the croissant brings people in, you can't put a price on reputation. So they test the halo instead of assuming it: Margin cross-checks the tickets, and sixty-one percent of croissant buyers buy nothing else. The halo is mostly myth. It's Amara who finds the reframe: the croissant was never the problem. The price is. Underpricing skilled three a.m. labor isn't humility — it's a decision, made by default, every Saturday for two years. You're allowed to love your product. You're not allowed to lie about it. Three options go on the table. The only banned one is pretending."
       },
       {
@@ -1051,6 +1075,7 @@ window.MOVIES = [
           "Dot's condition: she delivers the news personally. 'My regulars get truth from me, not a sign.'",
           "Freed oven hours go to the quiet hero: wholesale bread picks up two new restaurant accounts"
         ],
+        lesson: "Reprice with the true story, never an apology.",
         narration: "The decision honors both the product and the math. The croissant stays — repriced at six twenty-five, its run capped at two hundred forty, because scarcity that used to be an accident is honest now. Meter drafts the letter for the counter, and it contains no apology; it tells the true story instead — the three a.m. start, the fourteen hours of folding, what real butter costs now, what it means to make a thing properly. Dot sets one condition: she tells the regulars herself, face to face, because her people get truth from her, not from a sign. And the oven hours the smaller run frees up flow straight downhill to the quiet hero — wholesale bread picks up two new restaurant accounts within the month."
       },
       {
@@ -1063,6 +1088,7 @@ window.MOVIES = [
           "Total bakery profit up; Josef's lamination shift starts at 4:30 now, not 3:00",
           "New house rule, taped where the old costing sheet hung: nothing sells here that doesn't pay the bakers"
         ],
+        lesson: "Profit up on lower revenue is not a typo. It's the lesson.",
         narration: "Ninety days later the Saturday line is shorter, and the bakery is stronger, and both of those facts are the same fact. Croissant volume fell twenty-one percent — and for the first time in its famous life, every single unit sold makes money. Three regulars complained. Two hundred didn't, and most of them repeated Dot's own line back to her: about time you charged properly for that. Total profit is up on lower revenue — a sentence Amara reads aloud twice because it sounds like a typo and is actually the whole lesson. Josef laminates at four thirty now instead of three. And where the old costing sheet hung, a new rule, in Amara's handwriting: nothing sells here that doesn't pay the bakers."
       },
       {
@@ -1071,6 +1097,7 @@ window.MOVIES = [
         title: "WHAT'S YOUR FAMOUS LOAF?",
         sub: "Margin's hire prompt is on the AI Family page. The Cash & Pricing Autopsy playbook runs the same honest ranking — owner hours included.",
         visual: "⬡",
+        lesson: "Love your product enough to do the math on it.",
         narration: "Every business has a famous loaf — the beloved offer nobody's priced honestly, the flagship that might be a leak wearing a crown. You find out the way Amara and Josef did: ninety days of numbers, every product, and your own hours counted at a wage you'd actually pay. Margin's hire prompt is on the AI Family page, and the Cash and Pricing Autopsy playbook runs the exact Tuesday-night ranking — then hands you to Meter for the reprice letter, if the math says so. Love your product enough to do the math. Next film: an engineer who'd rather recalculate a bridge than make a sales call — and the ninety words that changed his firm."
       }
     ]
@@ -1084,7 +1111,7 @@ window.MOVIES = [
     title: "NINETY WORDS",
     minutes: 7,
     blurb: "Ben Ashworth can calculate exactly when a bridge will fail — and can't send one sales email. With the firm's founder retiring and the pipeline empty, Harpoon the Outbound Hunter teaches the most reluctant salesman in engineering that precision beats volume, respect beats spam, and ninety words beat four thousand addresses.",
-    poster: { icon: "🎯", grad: "linear-gradient(135deg,#0b1020,#1a1a4d 45%,#a78bfa)" },
+    poster: { icon: "🎯", grad: "linear-gradient(135deg,#0b1020,#1a1a4d 45%,#a78bfa)", art: "assets/img/film-art/mv-c4.jpg" },
     chapters: ["The Handshake Ledger", "The 4,000-Address Temptation", "The Signal Hunt", "The Reply"],
     slides: [
       {
@@ -1093,6 +1120,7 @@ window.MOVIES = [
         title: "NINETY WORDS",
         sub: "Starring Harpoon, Outbound Hunter — with Ben Ashworth of Ashworth Structural.",
         visual: "🎯",
+        lesson: "Selling expertise is engineering: load paths, tolerances, and no guessing.",
         narration: "Ben Ashworth can tell you, to a tolerance of millimeters, how much load a fifty-year-old bridge deck can carry. Ask him to sell that skill and he will suddenly remember an urgent calculation elsewhere. This is a film about the work brilliant people won't do — and what happens when the person who always did it for them retires. It's about pipelines, the human kind. It's about the difference between hunting and spraying. And it's about ninety words, sent to the right person, about the right crack, at the right time. This is the story of Harpoon. Roll film."
       },
       {
@@ -1105,6 +1133,7 @@ window.MOVIES = [
           "Gerald retires in four months. The pipeline after August: one inspection and a maybe.",
           "Ben's sales strategy to date: do excellent work and hope excellence is loud"
         ],
+        lesson: "Map your revenue's load path — and ask what happens when it retires.",
         narration: "For thirty years, Ashworth Structural never needed a sales department because it had Gerald Fisk. Gerald, who founded the firm, knew every county engineer, school-board facilities chief and warehouse developer in three hundred miles — and every project the firm ever built arrived through one of his handshakes. Now Gerald is retiring in four months, the way founders do: gradually, then suddenly. Ben, his best engineer and chosen successor, opens the project ledger one Tuesday and does the structural analysis on his own firm. Past August: one scheduled inspection, one maybe. The load path that held the business up for thirty years is being removed. Nothing has been designed to replace it."
       },
       {
@@ -1117,6 +1146,7 @@ window.MOVIES = [
           "Priya, the office manager, reads it once: 'You'd never open this. Why would they?'",
           "Her counter-move: a folder she's kept for years, labeled ALMOST — every near-miss client and why"
         ],
+        lesson: "Your ALMOST folder outvalues any purchased list — near-misses come with reasons attached.",
         narration: "Desperation writes checks judgment has to cancel, and Ben's arrives at midnight: a purchased list, four thousand so-called decision-makers for forty dollars, and a template that begins Dear Sir slash Madam, Ashworth Structural offers comprehensive engineering solutions. He nearly sends it. What stops him is Priya Nair, the office manager, who reads the draft once and asks the only question that matters: would you open this? You, Ben — would you read past the first line? Then she puts a folder on his desk that she has quietly kept for six years. It's labeled ALMOST. Inside: every client who nearly hired them and didn't, every stalled conversation, every bridge inspection that went to a bigger firm — and why. Four thousand strangers, or thirty-one almosts. Choose your ammunition."
       },
       {
@@ -1128,6 +1158,7 @@ window.MOVIES = [
           { avatar: "🗂️", name: "Priya Nair", role: "Office manager, keeper of ALMOST", line: "Six years of near-miss clients, filed with reasons. The firm's real pipeline." },
           { avatar: "📡", name: "Radar", role: "Lead Scorer · cameo", line: "Ranks the ALMOST folder by fit and timing — so Ben's ten hours go to the hottest ten." }
         ],
+        lesson: "Score before you send: fit × timing × reachability picks the ten that matter.",
         narration: "The cast. Ben Ashworth, who must learn that selling engineering is engineering — load paths, tolerances, and no guessing. Priya Nair, whose ALMOST folder turns out to be the most valuable document in the building. Gerald Fisk, retiring, whose last gift is an introduction done right. And the specialists: Harpoon, the Outbound Hunter, starring — whose method is research first, respect always, ninety words maximum — and Radar, the lead scorer, in a cameo that matters: thirty-one almosts ranked by fit and timing, because Ben has ten hours a week for this, and the whole discipline is spending them on the right ten conversations."
       },
       {
@@ -1140,6 +1171,7 @@ window.MOVIES = [
           "Radar ranks the 31 almosts: fit × timing × reachability — the top ten get everything",
           "Number one: Marisol Vega, county engineer — 61 aging bridge decks and a federal reporting deadline in June"
         ],
+        lesson: "Demand broadcasts in public: inspection schedules, bond votes, stalled permits.",
         narration: "Harpoon's first rule reads like it came off a drafting table: no message leaves this office until we can name the recipient's current project, their pressure, and their deadline. So the hunt starts in public, where the signals were broadcasting all along — county inspection schedules, a school district's bond vote, a developer's permit stalled on a structural question. All published. All readable. All ignored until now. Radar ranks the thirty-one almosts by fit, timing and reachability, and the top of the list writes itself: Marisol Vega, county engineer, sixty-one aging bridge decks and a federal reporting deadline in June that her current firm is visibly behind on. Ben doesn't need four thousand strangers. He needs her Tuesday afternoon."
       },
       {
@@ -1152,6 +1184,7 @@ window.MOVIES = [
           "The detail: the Route 9 crossing's expansion joint — its condition rating public, its repair window closing",
           "Every draft is staged for Ben's approval. The agent aims; the engineer fires."
         ],
+        lesson: "One observed detail + one relevant capability + one small ask. Under ninety words.",
         narration: "Ben's first draft is four hundred twelve words and includes the firm's founding date. Harpoon returns it with the sentence that becomes shop law: that's a brochure — hunt. The discipline is brutal and freeing: one observed detail that proves you did the work, one capability relevant to that detail, one small ask. Under ninety words, total. The final message names the Route nine crossing's expansion joint — condition rating public, repair window closing before winter — notes that Ashworth has load-rated eleven decks of the same vintage, and asks for fifteen minutes before her June deadline. No attachments. No brochure. Ben reads it forty times, changes one comma, and presses send himself. The agent aims. The engineer fires."
       },
       {
@@ -1164,6 +1197,7 @@ window.MOVIES = [
           "The sequence continues gently: 2 emails, 1 call, 1 site walk — every touch drafted, every touch approved",
           "Meanwhile: ten conversations open across the top ten. Four meetings. Zero spam flags."
         ],
+        lesson: "Talk about their bridge, not your firm — respect is the conversion engine.",
         narration: "The reply lands twenty-two minutes later, and Priya prints it for the wall: you're the first person to mention that joint who doesn't already work for me — can you do Thursday? The meeting runs long for the best reason: Ben never once talks about his firm. He talks about her sixty-one decks, her June deadline, the way a small firm can turn condition reports around in days instead of quarters. Fifteen minutes becomes ninety. Harpoon's follow-up sequence is patient — a summary, a useful precedent, one call, one site walk — and every touch crosses Ben's desk for approval. Across the top ten, the same discipline opens ten conversations, four meetings, zero spam flags. The ALMOST folder is becoming a ledger of appointments."
       },
       {
@@ -1176,6 +1210,7 @@ window.MOVIES = [
           "The Tuesday ritual survives: ten hours, ten best conversations, ninety-word discipline, Ben approving every send",
           "The ledger after August, revisited: seven projects and a waiting list"
         ],
+        lesson: "Replace the founder's handshakes with a ritual, not another irreplaceable person.",
         narration: "In June, the county awards Ashworth Structural the full sixty-one-deck inspection cycle — the largest contract in the firm's history since Gerald's handshake era, won by an engineer who six months ago couldn't send a sales email. Gerald's retirement gift is five warm introductions done the old way, and Ben finally sees it: the old way was always Harpoon's way — know their world, name their problem, ask for something small. Gerald just did it at lunch counters instead of inboxes. The Tuesday ritual is permanent now. Ten hours, the ten best conversations, ninety words of discipline, every send approved by hand. The ledger past August reads seven projects and a waiting list. The load path has been replaced. The structure holds."
       },
       {
@@ -1184,6 +1219,7 @@ window.MOVIES = [
         title: "WHO'S IN YOUR ALMOST FOLDER?",
         sub: "Harpoon's hire prompt is on the AI Family page. The Lead Response Sprint playbook builds your scored list and your ninety-word discipline.",
         visual: "⬡",
+        lesson: "Hunting is research plus respect. Volume is neither.",
         narration: "Somewhere in your business is an ALMOST folder, even if nobody's been brave enough to label it — the near-clients, the stalled conversations, the people whose problems you could name if you looked. Volume outreach treats them like four thousand strangers. Hunting treats them like thirty-one Tuesdays. Harpoon's hire prompt is on the AI Family page, and the Lead Response Sprint playbook builds the whole discipline: the scored list, the signal research, the ninety-word drafts that wait for your approval. Respect converts better than reach. One film remains: a potter, a stolen voice, and the post about a failure that outsold everything."
       }
     ]
@@ -1197,7 +1233,7 @@ window.MOVIES = [
     title: "IN HER OWN VOICE",
     minutes: 7,
     blurb: "A growth consultant made Lena Moreau's ceramics studio sound like everyone else's — and the sales followed the soul out the door. Echo, the Brand Voice Keeper, rebuilds her voice from the one place it never left: eleven years of kiln journals. A film about the algorithm, the glaze that failed, and sounding like yourself at scale.",
-    poster: { icon: "📣", grad: "linear-gradient(135deg,#0b1020,#0e3a2a 45%,#34d399)" },
+    poster: { icon: "📣", grad: "linear-gradient(135deg,#0b1020,#0e3a2a 45%,#34d399)", art: "assets/img/film-art/mv-c5.jpg" },
     chapters: ["The Borrowed Voice", "The Kiln Journals", "The Unfashionable Post", "The Voice, Kept"],
     slides: [
       {
@@ -1206,6 +1242,7 @@ window.MOVIES = [
         title: "IN HER OWN VOICE",
         sub: "Starring Echo, Brand Voice Keeper — with Lena Moreau of Kilnhouse Ceramics.",
         visual: "📣",
+        lesson: "Loud and unmistakable are different goals. Choose before you scale.",
         narration: "The most valuable asset Lena Moreau owns doesn't appear on any balance sheet. It's a voice — eleven years of it — the particular way she talks about clay and fire and patience that made four thousand strangers care about mugs from a garage kiln in a river town. This is a film about how she lost that voice by hiring someone to amplify it. About the difference between being loud and being unmistakable. And about the agent whose entire job is making sure you sound like yourself at scale. This is the story of Echo. Roll film."
       },
       {
@@ -1218,6 +1255,7 @@ window.MOVIES = [
           "Ninety days of RUN don't walk 🏃 and POV: your morning coffee deserves better",
           "Reach up 30%. Sales down 18%. And Mrs. Whitfield's nine-word review: 'It doesn't sound like you anymore, dear.'"
         ],
+        lesson: "Reach without resonance sells nothing: metrics up, meaning down.",
         narration: "The consultant came recommended, with case studies and a proven calendar, and for ninety days Kilnhouse Ceramics posted like everyone else on the internet. Run, don't walk. POV: your morning coffee deserves better. Trending audio over time-lapse throwing, urgency hooks over the slow footage of glaze going on. The metrics said it worked — reach up thirty percent. The bank account said otherwise — sales down eighteen, and the collectors who preorder whole kiln loads had gone quiet. The review that ends the experiment isn't from an analyst. It's Mrs. Whitfield, who owns eleven Kilnhouse pieces, at the Saturday market, in nine gentle words: it doesn't sound like you anymore, dear. Lena reads her own feed that night like a stranger's. Because it is one."
       },
       {
@@ -1230,6 +1268,7 @@ window.MOVIES = [
           "Zoe's realization: the voice was never lost. It was just never allowed onto the feed.",
           "Raw material for a rebuild: not trends — transcripts of a woman talking to fire for a decade"
         ],
+        lesson: "Your voice is already written down somewhere — find where it lives before you invent one.",
         narration: "The rescue starts with a drawer. Zoe — Lena's niece, studio assistant, and the one who has to post all this — is looking for a receipt and finds eleven years of kiln journals instead. Every firing logged. Every failure autopsied in Lena's blunt, funny, tender shorthand. Cone six lied to me today. The celadon ran like it had somewhere to be. Buyer wants 'something blue' — so does everyone; blue is doing fine. Zoe reads for two hours on the studio floor and arrives at the sentence that reframes everything: the voice was never lost. It's been in this drawer the whole time. It just never got hired for the feed. What Kilnhouse needs isn't a better strategy. It's a keeper."
       },
       {
@@ -1241,6 +1280,7 @@ window.MOVIES = [
           { avatar: "📲", name: "Zoe Moreau", role: "Niece & studio assistant", line: "Found the journals. Now posts in Lena's voice with Echo checking every caption." },
           { avatar: "🖼️", name: "Marcus Hale", role: "Gallery curator", line: "Stopped reading the feed during the guru era. About to start again." }
         ],
+        lesson: "A voice keeper's job: extract the rules you already follow, then guard them.",
         narration: "The cast. Lena Moreau, who must learn that scaling a voice and surrendering it are different projects. Zoe, who becomes the studio's publisher the day she stops asking what's trending and starts asking what Aunt Lena would actually say. Marcus Hale, the gallery curator who quietly unfollowed during the guru era — his return will be the story's verdict. Mrs. Whitfield, whose nine words started everything. And the specialist at the wheel: Echo, the Brand Voice Keeper, whose method is the opposite of invention — read everything Lena ever wrote, extract the voice she already owns, write it into a guide, and then guard it in every caption, every email, every description that leaves the studio."
       },
       {
@@ -1253,6 +1293,7 @@ window.MOVIES = [
           "Banned list, from Lena's own patterns: urgency hooks, 'run don't walk', emoji storms, fake scarcity",
           "The test: Zoe drafts, Echo checks against the guide, Lena approves. Ten seconds a caption."
         ],
+        lesson: "Codify the voice: always-phrases, never-phrases, and specificity as proof you were there.",
         narration: "Echo reads everything — eleven years of journals, the pre-guru captions, two podcast transcripts where Lena forgot she was being recorded, which is where people sound most like themselves. What comes back is uncanny: a voice guide full of rules Lena followed for a decade without once writing them down. Fire is a collaborator, never an enemy. Failures get autopsies, not apologies. Numbers are always specific — cone six, thirteen hours, third firing — because specificity proves you were there. And a banned list drawn from her own patterns: no urgency hooks, no run-don't-walk, no manufactured scarcity. The workflow takes ten seconds a caption: Zoe drafts, Echo checks against the guide, Lena approves. The keeper is on duty."
       },
       {
@@ -1265,6 +1306,7 @@ window.MOVIES = [
           "The journal-voice answer, drafted by Zoe with Echo: a full autopsy — photos of the failures, what cone six did, what she'll change",
           "Lena approves it at the kitchen table with her thumb over the post button for a long minute"
         ],
+        lesson: "Failures get autopsies, not apologies — honesty is a format, not a risk.",
         narration: "The test arrives, as tests do, inside a disaster. A firing fails — the new copper glaze crawls on forty mugs, a month of throwing reduced to texture like dried riverbed. The old playbook is clear: hide it, post backlog, protect the pretty grid. Zoe drafts the opposite in the journal voice, with Echo holding the line — a full autopsy. Photographs of the worst pieces, unflinching. What the cone did. What the copper wanted that she didn't give it. What changes next firing, in three plain sentences. The caption ends the way the journals always end: the kiln doesn't owe me anything — it just tells the truth at two thousand degrees. Lena sits with her thumb over the button for a long minute. Then she posts the failure."
       },
       {
@@ -1277,6 +1319,7 @@ window.MOVIES = [
           "Twelve of the forty 'ruined' mugs sell in a day as the Riverbed Series — flaw named, story attached",
           "Marcus Hale, returned: 'The feed finally sounds like the pots look. Call me about spring.'"
         ],
+        lesson: "Witness outsells perfection: the autopsy beat the trend machine four to one.",
         narration: "The failure post outperforms everything the trend machine ever produced — shared four times more than the guru era's best day, but the numbers are the least of it. Read the comments and the difference is species, not degree: potters asking about the cone schedule, a ceramics teacher requesting permission to use the autopsy in class, collectors writing this is why we trust you. Twelve of the forty ruined mugs sell within a day — renamed the Riverbed Series, flaw documented, story attached — because it turns out people don't buy perfection from a garage kiln; they buy witness. And one direct message that Zoe screenshots for the wall: Marcus Hale, the curator who left. The feed finally sounds like the pots look. Call me about a spring show."
       },
       {
@@ -1289,6 +1332,7 @@ window.MOVIES = [
           "Zoe runs the feed in minutes a day; Lena approves; Echo keeps; nothing ships off-voice",
           "The spring show sells out. The wall text is three kiln-journal entries, framed."
         ],
+        lesson: "Scale was never the enemy of soul. Surrender was.",
         narration: "Six months later, Kilnhouse passes six thousand followers — growth the guru would call slow, and the ledger calls real, because these hundred are worth more than the old era's thousand. The voice guide governs everything that leaves the studio now: captions, the monthly newsletter, wholesale emails, even the wall text for the spring show at Marcus's gallery — which is, in the end, just three kiln-journal entries, framed, beside the pots they describe. The show sells out. The workflow never grew heavier: Zoe drafts in minutes, Echo keeps the line, Lena approves with her morning coffee. That's the whole secret this film has to offer. Scale was never the enemy of soul. Surrender was. Lena Moreau got loud without borrowing a single word."
       },
       {
@@ -1297,6 +1341,7 @@ window.MOVIES = [
         title: "SOUND LIKE YOURSELF. EVERYWHERE. AT ONCE.",
         sub: "Echo's hire prompt is on the AI Family page. The Content & Brand Engine playbook builds your voice guide from your own words — then keeps it.",
         visual: "⬡",
+        lesson: "Sound like yourself, everywhere, at once. That is the whole brief.",
         narration: "Your voice is already written down — in your sent folder, your best proposals, the way you explain your work to someone who cares. Echo's job is to find it, formalize it, and then guard it in every caption, email and page that ships, so scale amplifies you instead of replacing you. The hire prompt is on the AI Family page; the Content and Brand Engine playbook builds the guide from your own words and installs the ten-second keeper check. And that's the anthology — five owners, five specialists, one rule held all the way through: agents draft, humans approve, and nothing ships without the person whose name is on the door. The Screening Room lights come up. Your family is waiting."
       }
     ]
@@ -1412,4 +1457,79 @@ window.MOVIE_JOURNEY = {
       ]
     }
   ]
+};
+
+/* ============================================================
+   FILM STUDY — the teaching layer behind each Character Film.
+   Every film's story compresses into a runnable protocol, one
+   governing rule, and a 10-minute drill. Rendered on movies.html
+   under the Character Films shelf; exported with production packs.
+   ============================================================ */
+
+window.FILM_STUDY = {
+  "mv-c1": {
+    title: "Slate's Inbox Command protocol",
+    protocol: [
+      "Create four buckets: reply-now · reply-today · delegate · archive — no fifth bucket, ever",
+      "Batch the backlog through your agent one screen at a time; drafts land in your voice, flagged by risk",
+      "Install two 15-minute sweeps (morning coffee, end of day) — outside them, the inbox is closed",
+      "Add a daily brief: top three priorities, one calendar trap, one number to watch",
+      "Log every flagged risk with a date — buried clocks get owners, not folders"
+    ],
+    rule: "Agents draft. You approve. Nothing sends itself.",
+    drill: "Tonight, 10 minutes: sort your 25 newest emails into the four buckets. Count the true reply-nows — for most owners it's under five.",
+    sell: { label: "Run the Inbox Zero Rescue playbook", href: "playbooks.html#inbox-rescue" }
+  },
+  "mv-c2": {
+    title: "Forge's knowledge-extraction protocol",
+    protocol: [
+      "Pick the process people interrupt you about most — that's the highest-interest debt",
+      "Voice-memo yourself doing it once; narrate decisions, not just steps",
+      "Structure the memo into the SOP contract: trigger · inputs · steps · checks · escalate-when · done",
+      "Dry-run it on someone else while you stay silent — every question they ask is a missing line",
+      "Tape the escalation rule where everyone works: when in doubt, stop and call"
+    ],
+    rule: "If it isn't written, tested and escalation-safe, it isn't knowledge — it's a hostage situation.",
+    drill: "Today, 8 minutes: record one voice memo of your most-asked-about task, hands working while you talk.",
+    sell: { label: "Run the Ops SOP Forge playbook", href: "playbooks.html#sop-forge" }
+  },
+  "mv-c3": {
+    title: "Margin's honest-pricing protocol",
+    protocol: [
+      "Pull 90 days of sales for every product or service — no favorites exempted",
+      "Cost each one INCLUDING owner hours at a wage you'd pay a stranger",
+      "Rank by profit per owner-hour, coldest to warmest",
+      "Bottom 20%: reprice, shrink, or retire — pretending is the only banned option",
+      "Announce changes with the true story, never an apology"
+    ],
+    rule: "True margin = price − materials − fees − (owner minutes × a fair rate). If you didn't count your hours, you haven't priced it.",
+    drill: "Napkin math, 10 minutes: your best seller, with your own hours priced at $50/hr. Is it still your best seller?",
+    sell: { label: "Run the Cash & Pricing Autopsy playbook", href: "playbooks.html#cash-autopsy" }
+  },
+  "mv-c4": {
+    title: "Harpoon's precision-outreach protocol",
+    protocol: [
+      "Build the ALMOST list: every near-client, stalled conversation and lost bid — with the reason attached",
+      "Score each by fit × timing × reachability; only the top ten get your hours",
+      "Research in public first: their projects, their pressures, their deadlines",
+      "Write the 90-word note: one observed detail + one relevant capability + one small ask",
+      "Every message waits for your approval — the agent aims, you fire"
+    ],
+    rule: "Ninety words to the right person beats four thousand to strangers. Respect is the conversion engine.",
+    drill: "Tonight: write ONE 90-word note to a real almost-client, naming one specific thing you observed. Send it after tomorrow's morning review, not before.",
+    sell: { label: "Run the Lead Response Sprint playbook", href: "playbooks.html#lead-response" }
+  },
+  "mv-c5": {
+    title: "Echo's voice-guide protocol",
+    protocol: [
+      "Gather your own words: sent folder, best proposals, anywhere you explained your work to someone who cared",
+      "Extract the rules you already follow: five always-phrases, five never-phrases, the specifics you cite",
+      "Write the one-page voice guide; ban borrowed urgency (run-don't-walk, fake scarcity) explicitly",
+      "New workflow: agent drafts → guide check → you approve. Ten seconds a caption",
+      "When something fails publicly, autopsy it in your voice — witness outsells perfection"
+    ],
+    rule: "Scale amplifies whatever you feed it. Feed it your voice, not a borrowed one.",
+    drill: "10 minutes: reread your five best sent emails. Write down three phrases that are unmistakably you — that's the seed of the guide.",
+    sell: { label: "Run the Content & Brand Engine playbook", href: "playbooks.html#content-engine" }
+  }
 };

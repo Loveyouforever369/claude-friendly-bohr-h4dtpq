@@ -66,12 +66,14 @@ window.Player = (function () {
 
   function slideHTML(s, i) {
     const mood = s.mood ? " mood-" + s.mood : "";
+    const lesson = s.lesson ? `<div class="slide-lesson">📚 <b>The lesson:</b> ${s.lesson}</div>` : "";
     if (s.type === "title") {
       return `<div class="player-slide slide-title${mood}" data-i="${i}">
         <div class="slide-kicker">${s.kicker || ""}</div>
         <h3>${s.title}</h3>
         ${s.sub ? `<div class="title-sub">${s.sub}</div>` : ""}
-        ${s.visual ? `<div class="slide-visual" style="position:static;margin-top:18px;opacity:.85">${s.visual}</div>` : ""}
+        ${s.visual ? `<div class="slide-visual" style="position:static;margin-top:12px;opacity:.85">${s.visual}</div>` : ""}
+        ${lesson}
       </div>`;
     }
     if (s.type === "cast") {
@@ -86,12 +88,14 @@ window.Player = (function () {
             <div class="cast-line">${c.line}</div>
           </div>`).join("")}
         </div>
+        ${lesson}
       </div>`;
     }
     return `<div class="player-slide${mood}" data-i="${i}">
       <div class="slide-kicker">${s.kicker || ""}</div>
       <h3>${s.title}</h3>
       <ul>${(s.bullets || []).map(b => `<li>${b}</li>`).join("")}</ul>
+      ${lesson}
       ${s.visual ? `<div class="slide-visual">${s.visual}</div>` : ""}
     </div>`;
   }

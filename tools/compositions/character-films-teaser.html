@@ -65,6 +65,9 @@
   .price { position: absolute; top: 200px; left: 0; right: 0; text-align: center; font-size: 84px; font-weight: 800; font-variant-numeric: tabular-nums; }
   .memo-bars { position: absolute; top: 210px; left: 0; right: 0; display: flex; justify-content: center; align-items: flex-end; gap: 6px; height: 90px; }
   .mbar { width: 9px; border-radius: 4px; background: #fbbf24; }
+  /* art mode: clean key-art frames for poster stills (no chrome, no text bands) */
+  #stage.art-mode .caption, #stage.art-mode .starring, #stage.art-mode .letterbox,
+  #stage.art-mode .film-title, #stage.art-mode #fade { display: none !important; }
 </style>
 </head>
 <body>
@@ -316,6 +319,9 @@ window.seek = function (t) {
   }
 };
 window.seek(0);
+window.setArtMode = function (on) {
+  document.getElementById("stage").classList.toggle("art-mode", !!on);
+};
 </script>
 </body>
 </html>

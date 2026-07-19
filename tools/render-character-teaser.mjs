@@ -71,6 +71,22 @@ async function main() {
     return;
   }
 
+  /* --stills: clean key-art frames per film (art mode strips text bands) */
+  if (process.argv.includes("--stills")) {
+    const HERO = [["mv-c1", 10.0], ["mv-c2", 17.5], ["mv-c3", 25.0], ["mv-c4", 33.5], ["mv-c5", 41.0]];
+    await page.evaluate(() => window.setArtMode(true));
+    for (const [id, t] of HERO) {
+      await page.evaluate(tt => window.seek(tt), t);
+      await page.waitForTimeout(60);
+      const png = join(OUT, `art-${id}.png`);
+      await page.screenshot({ path: png });
+      ff(["-y", "-i", png, "-vf", "scale=860:-2", "-q:v", "4", join(OUT, `art-${id}.jpg`)]);
+      console.log("key art", id);
+    }
+    await browser.close();
+    return;
+  }
+
   /* ---- frames ---- */
   const N = Math.round(DUR * FPS);
   console.log(`capturing ${N} frames @ ${FPS}fps …`);

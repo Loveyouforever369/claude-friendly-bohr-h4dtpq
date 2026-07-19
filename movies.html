@@ -109,6 +109,7 @@
   </div>
   <p class="muted mb-2">50-second official teaser — a real MP4 rendered frame-by-frame by <code>tools/render-character-teaser.mjs</code> with a synthesized score, one act per film. Want the photoreal versions? <code>PRODUCTION.md</code> now carries paste-ready Higgsfield/Veo/Kling identity blocks and shot lists for all five films.</p>
   <div id="character-slot" class="grid grid-2 mt-2"></div>
+  <div id="study-slot" class="mt-2"></div>
 </section>
 
 <section class="section container">
@@ -148,7 +149,7 @@
     return `
       <div class="card poster glow-card">
         <span class="poster-badge">${m.phase.toUpperCase()}</span>
-        <div class="poster-art"><div class="glow" style="background:${m.poster.grad}"></div><span>${m.poster.icon}</span></div>
+        <div class="poster-art${m.poster.art ? " has-art" : ""}"${m.poster.art ? ` style="background-image:url('${m.poster.art}')"` : ""}><div class="glow" style="background:${m.poster.grad}"></div><span>${m.poster.icon}</span></div>
         <h3 style="font-size:${big ? "1.5rem" : "1.15rem"};letter-spacing:.08em">${m.title}</h3>
         <div class="poster-meta"><span>🎬 ${m.slides.length} scenes</span><span>🎧 ~${m.minutes} min</span><span>📖 ${m.chapters.length} chapters</span></div>
         <p>${m.blurb}</p>
@@ -163,6 +164,34 @@
   document.getElementById("feature-slot").innerHTML = posterHTML(feature, true);
   document.getElementById("chronicles-slot").innerHTML = chronicles.map(m => posterHTML(m, false)).join("");
   document.getElementById("character-slot").innerHTML = characters.map(m => posterHTML(m, false)).join("");
+})();
+
+/* Film Study shelf — data-driven from FILM_STUDY (see data/movies.js) */
+(function renderStudy() {
+  const S = window.FILM_STUDY;
+  const host = document.getElementById("study-slot");
+  if (!S || !host) return;
+  host.innerHTML =
+    `<span class="eyebrow">FILM STUDY · THE TEACHING LAYER</span>
+     <h3 style="margin:8px 0 4px">Watched it? Now run it.</h3>
+     <p class="muted" style="margin-bottom:10px">Every Character Film compresses into a runnable protocol, one governing rule, and a ten-minute drill — the same teaching layer that appears scene by scene inside the player (📚 strips). Open your film's study card:</p>` +
+    Object.entries(S).map(([id, st]) => {
+      const m = window.MOVIES.find(x => x.id === id);
+      return `
+      <details class="acc">
+        <summary><span class="num">${m.poster.icon}</span> ${m.title} — ${st.title} <span class="chev">▸</span></summary>
+        <div class="acc-body">
+          <h4>The protocol</h4>
+          <ol>${st.protocol.map(p => `<li>${p}</li>`).join("")}</ol>
+          <div class="study-rule"><b>The rule:</b> ${st.rule}</div>
+          <div class="study-drill"><b>10-minute drill:</b> ${st.drill}</div>
+          <p style="margin-top:12px">
+            <a class="btn btn-ghost btn-sm" href="${st.sell.href}">${st.sell.label} →</a>
+            <button type="button" class="btn btn-ghost btn-sm" onclick="Player.open('${id}')">▶ Rewatch the film</button>
+          </p>
+        </div>
+      </details>`;
+    }).join("");
 })();
 
 /* The Viewing Path — data-driven from MOVIE_JOURNEY (see data/movies.js) */
@@ -237,7 +266,7 @@ function movieScript(id) {
   const script = [
     ["AI BUSINESS ACADEMY — PRODUCTION PACK · " + m.title],
     ["Series", m.phase], ["Runtime", "~" + m.minutes + " min"], ["Chapters", m.chapters.join(" · ")], [],
-    ["Scene", "Chapter", "Scene title", "On-screen text/points", "Narration (VO script)"]
+    ["Scene", "Chapter", "Scene title", "On-screen text/points", "Narration (VO script)", "Lesson (teaching layer)"]
   ];
   const shots = [
     ["SHOT LIST — one row per scene. Avatar clips: HeyGen. B-roll: Veo/Runway with the prompt column."], [],
@@ -245,7 +274,7 @@ function movieScript(id) {
   ];
   m.slides.forEach((s, i) => {
     const onscreen = (s.bullets || (s.cast || []).map(c => c.name + " — " + c.role)).join(" • ") || (s.sub || "");
-    script.push([i + 1, s.chapter || "", s.title, onscreen, s.narration]);
+    script.push([i + 1, s.chapter || "", s.title, onscreen, s.narration, s.lesson || ""]);
     shots.push([i + 1, s.type || "standard", s.mood || "cyan", avatarDir(s), brollPrompt(s),
       Math.round(s.narration.split(/\s+/).length / 2.4)]);
   });
@@ -260,8 +289,19 @@ function movieScript(id) {
     ["Assembly", "CapCut/Descript: avatar clips + b-roll + on-screen text column as titles. Export H.264 1080p, CRF 21-23, ≤50MB per film for GitHub Pages."],
     ["Full guide", "See PRODUCTION.md in the repository."]
   ];
-  Sheets.downloadXLS(m.title.toLowerCase().replace(/\W+/g, "-") + "-production-pack.xls",
-    [{ name: "Script", rows: script }, { name: "Shot List", rows: shots }, { name: "Voice & Style", rows: voice }]);
+  const sheets = [{ name: "Script", rows: script }, { name: "Shot List", rows: shots }, { name: "Voice & Style", rows: voice }];
+  const st = window.FILM_STUDY && window.FILM_STUDY[m.id];
+  if (st) {
+    sheets.push({ name: "Film Study", rows: [
+      ["FILM STUDY — " + st.title], [],
+      ["THE PROTOCOL"],
+      ...st.protocol.map((p, i) => ["Step " + (i + 1), p]), [],
+      ["THE RULE", st.rule],
+      ["10-MINUTE DRILL", st.drill],
+      ["NEXT MOVE", st.sell.label + " — " + st.sell.href]
+    ]});
+  }
+  Sheets.downloadXLS(m.title.toLowerCase().replace(/\W+/g, "-") + "-production-pack.xls", sheets);
 }
 </script>
 </body>

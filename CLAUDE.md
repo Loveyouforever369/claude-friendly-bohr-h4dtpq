@@ -258,6 +258,31 @@ spreadsheets and can email them. Deep audio narration everywhere via Web Speech 
   grammar, so photoreal versions are one paste away in the user's accounts.
   HyperFrames connector = claude.ai chat only, after the user authorizes it.
 
+**Teaching layer cycle (2026-07-19):**
+- The teaching layer is DATA, not pages: a per-scene `lesson:` field (movies.js) +
+  `window.FILM_STUDY` (protocol/rule/drill/sell per film) render everywhere through
+  one player chip (`.slide-lesson`) and one accordion IIFE (movies.html renderStudy).
+  Adding depth to a film = editing data only. Export rails picked both up for free
+  (Lesson column in the Script sheet + a Film Study sheet).
+- Wrong (check calibration): strict bounding-box overlap checks FAILED renders the
+  eyeball called fine — the caption element's top is a transparent gradient, and the
+  decorative `.slide-visual` is background art house style deliberately lets content
+  cross. *Assert against opaque/critical regions only; demote decorative overlaps to
+  info. And settle-wait longer than the .5s slide fade before screenshotting — a
+  mid-fade shot shows ghost content from the previous slide and misleads the eyeball.*
+- Real fixes the checks did earn: title-card chip needed clearance (title-slide
+  visual shrunk via clamp, hidden below 600px viewport height — same pattern as the
+  cast-line media query) and the chip needed an opaque backdrop + z-index 2 to stay
+  readable over background art (still under the caption band at z6).
+- Key-art pipeline: composition art-mode (setArtMode strips captions/letterbox) →
+  `--stills` mode screenshots → 860px jpgs in assets/img/film-art/ → `poster.art`
+  field → `.poster-art.has-art` (cover bg, gradient wash at .22, icon shrinks to a
+  corner mark). Posters went from gradient+emoji to real frames from the film.
+- Preview-builder gotcha: art paths live inside INLINED JS STRINGS (movies.js data),
+  which the src/href leftover check never sees — the builder now sweeps the whole
+  page text for `assets/img/film-art/...jpg` and data-URIs them. *Any asset
+  referenced from JS data needs its own sweep; attribute-regex passes miss it.*
+
 **Went right (keep doing):**
 - Role-card pattern for agents (identity/context/job/standards/boundaries) — reused
   across lessons, movies, family page; keeps all content consistent.

@@ -95,6 +95,10 @@ function buildPage(name) {
   html = html.replace(/^\s*<source src="assets\/video\/[\w.-]+" type="video\/\w+">\n?/gm, "");
   html = html.replace(/poster="(assets\/video\/[\w.-]+\.jpg)"/g, (_, p) => `poster="${dataUri(p)}"`);
 
+  // Film key art lives inside inlined JS data strings (poster.art in movies.js),
+  // not in src/href attributes — sweep the whole page for those paths too
+  html = html.replace(/assets\/img\/film-art\/[\w-]+\.jpg/g, p => dataUri(p));
+
   // Nav shim last, just inside </body>
   html = html.replace("</body>", NAV_SHIM + "\n</body>");
 

@@ -567,6 +567,13 @@ footer.site-footer a { color: var(--text-secondary); font-size: 0.85rem; }
 }
 .poster .poster-art .glow { position: absolute; inset: 0; opacity: .9; }
 .poster .poster-art span { position: relative; filter: drop-shadow(0 0 18px rgba(255,255,255,.35)); }
+/* Key-art posters: rendered film frame as backdrop; gradient becomes a soft wash, icon shrinks to a corner mark */
+.poster .poster-art.has-art { background-size: cover; background-position: center; }
+.poster .poster-art.has-art .glow { opacity: .22; }
+.poster .poster-art.has-art span {
+  position: absolute; right: 10px; bottom: 8px; font-size: 1.4rem;
+  filter: drop-shadow(0 0 10px rgba(0,0,0,.85));
+}
 .poster .poster-badge {
   position: absolute; top: 26px; right: 26px; z-index: 2;
   font-family: var(--font-display); font-size: .62rem; letter-spacing: .18em;
@@ -633,3 +640,32 @@ footer.site-footer a { color: var(--text-secondary); font-size: 0.85rem; }
   color: var(--neon-cyan); font-family: var(--font-display); font-size: 0.8rem;
 }
 .jthen { margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--border); color: var(--text-secondary); font-size: 0.92rem; }
+
+/* ---------- Player teaching strip + film study shelf ---------- */
+.slide-lesson {
+  display: inline-block; margin-top: 16px; max-width: 720px;
+  padding: 9px 16px; border: 1px solid rgba(34,211,238,.4);
+  border-left: 3px solid var(--neon-cyan); border-radius: 10px;
+  background: linear-gradient(rgba(34,211,238,.09), rgba(34,211,238,.09)), rgba(6,10,22,.88);
+  color: var(--text-secondary);
+  font-size: 0.86rem; line-height: 1.5; text-align: left;
+  position: relative; z-index: 2; /* readable over the decorative .slide-visual, still under the caption band (z 6) */
+}
+.slide-lesson b { color: var(--neon-cyan); font-weight: 700; letter-spacing: .04em; }
+.slide-title .slide-lesson { margin-inline: auto; }
+/* Title cards gained the lesson chip: shrink the decorative emoji so the column
+   clears the caption band at 16:9, drop it entirely on short viewports */
+.player-slide.slide-title .slide-visual { font-size: clamp(2.2rem, 6vw, 3.4rem); }
+@media (max-height: 600px) {
+  .player-slide.slide-title .slide-visual { display: none; }
+}
+.study-rule {
+  border-left: 3px solid var(--neon-violet); background: rgba(167,139,250,.08);
+  border-radius: 0 10px 10px 0; padding: 10px 14px; margin: 14px 0;
+  color: var(--text-primary); font-size: 0.92rem;
+}
+.study-drill {
+  border: 1px dashed var(--border-bright); border-radius: 10px;
+  padding: 10px 14px; margin: 12px 0; color: var(--text-secondary); font-size: 0.9rem;
+}
+.study-drill b { color: var(--neon-green); }
