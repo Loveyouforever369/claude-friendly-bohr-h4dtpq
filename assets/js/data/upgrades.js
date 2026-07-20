@@ -8,7 +8,7 @@
 
 window.SKILL_UPGRADES = [
   {
-    date: "2026-07", agent: "Scout", avatar: "🧭", dept: "Growth & Marketing",
+    date: "2026-07", agent: "Scout", avatar: "🔭", dept: "Growth & Marketing",
     skill: "Latent-demand mining (the complaint method)",
     learned: "From the 2026 solo-operator playbook plus a 100-post study of real owner threads: 100 people complaining about the same thing in 100 different places is a market gap, not noise. Hunt Reddit, Maps reviews, Facebook groups and YouTube comments — then score each gap on three signals: visible pain, a reachable buyer, and a result you can test.",
     use: "Give Scout your niche and it returns a complaint map: the top recurring gripes verbatim, where they cluster, and which ones pass the three-signal test as products or services you could ship this month."
