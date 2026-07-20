@@ -175,6 +175,25 @@ spreadsheets and can email them. Deep audio narration everywhere via Web Speech 
   iframes don't persist localStorage, so ratings only work on the live Pages URL.
   Owner-only pages also stay out of the main nav (linked directly instead).
 
+**Solo-operator + consolidation cycle (2026-07-20):**
+- EVERYTHING.md is now the ONE pasteable file (user asked for a single organized
+  file): inventory + all 22 posts with real links inlined + YouTube metadata +
+  outreach templates + calendar. When new posts/videos ship, update EVERYTHING.md
+  too — it must never lag the per-topic docs it consolidates.
+- Wrong: verify script + kit copy both said `radar.html` from memory — the page is
+  `future.html` (and the DNA quiz is `dna.html`, not index). *`ls *.html` before
+  referencing any page path in copy or tests; concept names drift from filenames.*
+- movies.html never reaches Playwright `networkidle` (video preloads hold the
+  network) — media-heavy pages need `waitUntil: 'load'` + a short timeout instead.
+- WebSearch has a session quota (hit it mid-research) — Exa MCP (`web_search_exa`,
+  `web_fetch_exa`) is the working fallback and its server-side fetch also reaches
+  YouTube pages the sandbox proxy blocks.
+- Zapier MCP "Tool permission stream closed" errors resolve on a single retry.
+  VERIFIED 2026-07-20: the user's Zapier now has YouTube enabled with 7 actions —
+  first real automated-posting path; drill in and confirm an upload action before
+  ever promising a post. (Zapier `selected_api` values stay internal; show only
+  app names to the user.)
+
 **Went right (keep doing):**
 - Role-card pattern for agents (identity/context/job/standards/boundaries) — reused
   across lessons, movies, family page; keeps all content consistent.
