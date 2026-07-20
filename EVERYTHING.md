@@ -27,7 +27,7 @@ this file consolidates all of them.)
 | Owner profile | `/profile.html` | Your business profile — personalizes the academy |
 | Owners' Network | `/community.html` | Profiles wall, 8 answered owner worries, NEW 2026 Complaint Map |
 | Review Station | `/review.html` | Owner-only: rate all 22 posts before delivery (not in nav — direct link) |
-| Videos (rendered in-repo) | `assets/video/` | 3 finished films: trailer 46s, ROI reel 32s, Chronicles teaser 42s |
+| Videos (rendered in-repo) | `assets/video/` | 4 finished films: trailer 46s, ROI reel 32s, Chronicles teaser 42s, vertical Solo Steps 40s |
 
 Add `?src=yt`, `?src=fb`, `?src=ig`, `?src=li`, `?src=x` to any link to track where clicks come from.
 
@@ -146,7 +146,7 @@ Owners: what actually WORKED for you with AI? Real numbers only — hours saved,
 dollars found. Best stories get featured on our Owners' Network wall (with your
 photo and your business's name in lights): `/community.html`
 
-**15 · Shorts/Reels/TikTok — `solo-steps.mp4` (vertical, in production):**
+**15 · Shorts/Reels/TikTok — `solo-steps.mp4` (vertical 9:16, RENDERED — in `assets/video/`):**
 The Solo Operator Playbook in 40 seconds. 4 steps. Full module free — link in bio.
 
 **16 · X — thread starter:**
@@ -245,7 +245,8 @@ hour one · every post names ONE agent.
 ## 6 · SETUP STATUS & WHAT NEEDS YOU
 
 - ✅ Site live on GitHub Pages (auto-deploys on every push).
-- ✅ 3 videos rendered and in the repo; vertical `solo-steps.mp4` is next in the pipeline.
+- ✅ 4 videos rendered and in the repo — including the vertical 9:16 `solo-steps.mp4`
+  (40s, on the Screening Room's new Shorts Shelf), ready to post as a Short/Reel/TikTok.
 - ✅ **FIRST REAL POST IS LIVE**: the trailer was uploaded to your YouTube through
   Zapier on 2026-07-20 — https://www.youtube.com/watch?v=hGd8ZSYPtWg (public,
   Section 2A metadata). Post #1 of the calendar is done; ROI reel and Chronicles

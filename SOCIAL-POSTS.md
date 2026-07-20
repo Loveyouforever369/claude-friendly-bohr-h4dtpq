@@ -97,7 +97,7 @@ photo and your business's name in lights): [link/community.html]"
 Built from the 2026 solo-operator study + the 100-post owner complaint corpus.
 Rate them first at review.html (they're loaded there as W2 cards).
 
-**15 · Shorts/Reels/TikTok — native upload** `solo-steps.mp4` (vertical 9:16)
+**15 · Shorts/Reels/TikTok — native upload** `solo-steps.mp4` (vertical 9:16 — ✅ rendered 2026-07-20, on movies.html)
 "The Solo Operator Playbook in 40 seconds. 4 steps. Full module free — link in bio."
 
 **16 · X/Twitter — thread starter**
