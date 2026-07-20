@@ -10,7 +10,7 @@ post. Site link: https://loveyouforever369.github.io/claude-friendly-bohr-h4dtpq
 
 ---
 
-**1 · YouTube — upload** `meet-the-family-trailer.mp4`
+**1 · YouTube — upload** `meet-the-family-trailer.mp4` — ✅ POSTED 2026-07-20 via Zapier: https://www.youtube.com/watch?v=hGd8ZSYPtWg
 Title/desc/tags: in MARKETING.md (Video 1). Pin comment: "Which of the 118 agents
 would you hire first? The full roster is free on the site — link above."
 

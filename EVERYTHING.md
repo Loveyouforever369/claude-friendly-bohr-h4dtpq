@@ -246,9 +246,16 @@ hour one · every post names ONE agent.
 
 - ✅ Site live on GitHub Pages (auto-deploys on every push).
 - ✅ 3 videos rendered and in the repo; vertical `solo-steps.mp4` is next in the pipeline.
-- ✅ Zapier: your account now shows **YouTube connected with 7 enabled actions** —
-  automated posting from a Claude session is genuinely possible once we confirm an
-  upload action is among them.
+- ✅ **FIRST REAL POST IS LIVE**: the trailer was uploaded to your YouTube through
+  Zapier on 2026-07-20 — https://www.youtube.com/watch?v=hGd8ZSYPtWg (public,
+  Section 2A metadata). Post #1 of the calendar is done; ROI reel and Chronicles
+  teaser follow on the 1-per-day cadence.
+- ✅ Zapier → YouTube confirmed working end-to-end (upload, find, playlist,
+  thumbnail, reports actions enabled).
+- 🔲 You (1 min): verify the channel at youtube.com/verify — until then YouTube
+  refuses custom thumbnails ("doesn't have permissions"); once verified we can set
+  `trailer-poster.jpg` on the live video and all future uploads. Add tags via
+  YouTube Studio meanwhile (Section 2A list).
 - 🔲 You (~20 min, one time): YouTube channel "AI Business Academy"
   (@AIBusinessAcademyHQ) + Facebook Business Page, same name/art. Accounts require
   human identity — no way around that.

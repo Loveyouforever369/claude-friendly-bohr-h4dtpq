@@ -194,6 +194,20 @@ spreadsheets and can email them. Deep audio narration everywhere via Web Speech 
   ever promising a post. (Zapier `selected_api` values stay internal; show only
   app names to the user.)
 
+**First real YouTube post (2026-07-20, same day):**
+- SHIPPED: the trailer went live on the user's YouTube via Zapier
+  (https://www.youtube.com/watch?v=hGd8ZSYPtWg). The working recipe: params =
+  title + video (public URL) + description + privacy_status ONLY. The full param
+  set (tags list, thumbnail, boolean strings) crashed Zapier's params-resolver
+  with AI_NoObjectGeneratedError. *Keep Zapier write-action params minimal;
+  add rich metadata afterward in YouTube Studio.*
+- Zapier hydrates file params from public URLs server-side — the gh-pages video
+  URL worked even though this sandbox can't reach *.github.io itself.
+- Custom thumbnails fail with "doesn't have permissions" until the channel is
+  phone-verified (youtube.com/verify) — YouTube-side gate, not a bug; don't retry.
+- Respect our own cadence rule even when automation makes spamming easy: 1 video/
+  day/platform — the other two videos wait for their calendar slot.
+
 **Went right (keep doing):**
 - Role-card pattern for agents (identity/context/job/standards/boundaries) — reused
   across lessons, movies, family page; keeps all content consistent.
