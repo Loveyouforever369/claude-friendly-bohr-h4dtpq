@@ -89,3 +89,55 @@ photo and your business's name in lights): [link/community.html]"
 - Reply to every comment in hour one; Halo's tone: grateful, specific, zero defensiveness.
 - Week 3+: recycle winners with new hooks; retire anything under 2% engagement.
 - Every post names ONE character. The Family is the brand.
+
+---
+
+# 📱 Wave 2 — Solo Operator + Complaint-Answer posts (8 posts)
+
+Built from the 2026 solo-operator study + the 100-post owner complaint corpus.
+Rate them first at review.html (they're loaded there as W2 cards).
+
+**15 · Shorts/Reels/TikTok — native upload** `solo-steps.mp4` (vertical 9:16)
+"The Solo Operator Playbook in 40 seconds. 4 steps. Full module free — link in bio."
+
+**16 · X/Twitter — thread starter**
+"The 2026 solo AI operator model, in 4 steps: 1) Don't brainstorm — hunt complaints.
+100 people griping about the same thing in 100 places = your market gap. 2) Ship
+rough + paid. 3) Charge 10–30% of the RESULT's value. 4) Distribution is the
+business. 🧵" (thread → academy module 9 → time audit → link)
+
+**17 · LinkedIn — study quote**
+"'I thought I was busy. Turns out I was just active.' A 2026 study of 100 top owner
+posts found the real problem in 80% wasn't workload — it was the owner doing work
+someone else should do. Free 10-minute Time Audit: [link/time-audit.html?src=li]"
+
+**18 · Facebook — stat card**
+"Owners lose 33 workdays a year to financial worry alone (2026 survey). 40% have
+considered quitting. The fix isn't hustle, it's visibility: a 13-week cash forecast
+Stream builds in 10 minutes. Free: [link/profit.html?src=fb]"
+
+**19 · Reddit — HELP-FIRST reply (not an ad; see OUTREACH.md rules)**
+Only where an owner describes the follow-up chase: "The pattern under this is what
+researchers call skills waste — the owner doing $15/hr chasing. What worked for us:
+write down every chase from last week, hand the bottom three to a drafted-followup
+system, keep approval. Happy to share the checklist if useful."
+
+**20 · Instagram — 5-slide carousel**
+"5 drains hiding inside 'I'm overwhelmed'" — skills waste 80% / unwritten process
+59% / follow-up chase 22% / misdiagnosis 30% / admin-instead-of-marketing. One
+agent named per slide. Last slide → community.html complaint map.
+
+**21 · Pinterest — evergreen pin**
+"100 complaints = 1 business. The latent-demand method, step by step."
+→ [link/academy.html] (Module 9)
+
+**22 · Threads**
+"Free feedback is polite. Paid feedback is honest. Ship the thinnest version
+someone will pay for — it's ready the moment one person votes with a credit card."
+
+## Study shelf (found while researching — watch queue)
+Similar solo-operator videos located 2026-07: Anik Singal "One Person Solo Business
+Using AI"; Jordan Welch "$0 to $1M 1-Person AI Business"; Dan Koe "$1M One-Person
+Business Faster With AI"; One Person Business "FULL GUIDE"; Dan Martell "$10M Solo
+AI Business (Zero Code)"; Goutham Jay "How I Use AI as a Solopreneur"; Patrick Dang
+"1-Person Business With Claude AI in 30 Days". Mine each for one playbook page.
