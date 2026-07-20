@@ -8,6 +8,30 @@
 
 window.SKILL_UPGRADES = [
   {
+    date: "2026-07", agent: "Scout", avatar: "🧭", dept: "Growth & Marketing",
+    skill: "Latent-demand mining (the complaint method)",
+    learned: "From the 2026 solo-operator playbook plus a 100-post study of real owner threads: 100 people complaining about the same thing in 100 different places is a market gap, not noise. Hunt Reddit, Maps reviews, Facebook groups and YouTube comments — then score each gap on three signals: visible pain, a reachable buyer, and a result you can test.",
+    use: "Give Scout your niche and it returns a complaint map: the top recurring gripes verbatim, where they cluster, and which ones pass the three-signal test as products or services you could ship this month."
+  },
+  {
+    date: "2026-07", agent: "Ladder", avatar: "🪜", dept: "Sales Office",
+    skill: "Value pricing + the recurring conversion",
+    learned: "Most solo operators undercharge 5–10×. Price at 10–30% of what the RESULT is worth to the buyer (hours saved × their rate, money made, pain avoided) — never at what the file cost to make. Then convert one-time buyers to recurring: PDF → quarterly update, template → monthly library, best customers → ongoing version.",
+    use: "Hand Ladder any offer and it returns a value-priced band plus the specific recurring version of the same product, with the upgrade email drafted."
+  },
+  {
+    date: "2026-07", agent: "Census", avatar: "📊", dept: "Research & Insights",
+    skill: "The owner complaint taxonomy",
+    learned: "A 2026 study of 100 top small-business posts found the real patterns under the surface gripes: skills waste in 80% (the owner doing work someone else should do), process gaps in 59% (nothing written down until it fails), manual follow-up chasing in 22%, and in 30% of threads the commenters re-diagnosed the owner's problem as something structural the owner couldn't see from inside.",
+    use: "Paste your three biggest frustrations and Census classifies them against the taxonomy — then routes each one to the agent whose job it actually is."
+  },
+  {
+    date: "2026-07", agent: "Reel", avatar: "🎬", dept: "Content Studio",
+    skill: "Vertical 9:16 render pipeline",
+    learned: "The in-repo video pipeline (seekable HTML → frame capture → ffmpeg) now produces vertical 1080×1920 Shorts/Reels/TikTok masters, not just 16:9 — step-based ad videos with big captions sized for phone screens and sub-40-second runtimes.",
+    use: "Ask Reel for a 'vertical steps cut' of any topic: it scripts 5–6 step cards, renders the master in both MP4 and WebM, and hands you the platform-native captions to post with it."
+  },
+  {
     date: "2026-07", agent: "Reel", avatar: "🎬", dept: "Content Studio",
     skill: "Seedance director grammar",
     learned: "Studied the 2026 ultra-realistic AI short-film workflow: write technical shot lists (never prose), always specify camera movement (or the model defaults to static 'surveillance' framing), and reserve the final 15–20 words of every prompt for lighting + camera.",

@@ -40,7 +40,7 @@
 <header class="hero container" style="padding-bottom:20px">
   <span class="eyebrow">🎛 OWNER'S REVIEW STATION · WAVE 1</span>
   <h1>Rate the content <span class="gradient-text">before we deliver it</span></h1>
-  <p class="tagline">All 14 launch posts below. Star each one (1–5), add notes on anything to change, then hit "Email my ratings" — the next wave gets tuned to what you score highest. Ratings save on this device as you go.</p>
+  <p class="tagline">Every launch post below — Wave 1 plus the new Wave 2 (solo-operator steps + complaint-answer posts). Star each one (1–5), add notes on anything to change, then hit "Email my ratings" — the next wave gets tuned to what you score highest. Ratings save on this device as you go.</p>
   <div class="btn-row">
     <a class="btn btn-ghost btn-sm" href="movies.html">▶ Watch the 3 videos first</a>
   </div>
@@ -48,7 +48,7 @@
 
 <section class="section container" style="max-width:900px;padding-top:10px">
   <div id="summary-bar">
-    <span>Rated: <b id="sum-count">0</b>/14</span>
+    <span>Rated: <b id="sum-count">0</b>/<span id="sum-total">0</span></span>
     <span>Average: <b id="sum-avg">—</b></span>
     <span>5★ picks: <b id="sum-five">0</b></span>
     <button class="btn btn-primary btn-sm" onclick="sendRatings()" style="margin-left:auto">📧 Email my ratings</button>
@@ -76,7 +76,15 @@ const POSTS = [
   { p: "Facebook", a: "poll", t: "Be honest, owners: what eats your week? 🗳️ A) Email + follow-ups B) Quotes & invoices C) Social content D) 'Where did the money go'. Whatever you picked — there's an agent for it, and the 10-minute Time Audit proves the hours." },
   { p: "LinkedIn", a: "text only", t: "Sam runs a 6-person sign shop. Revenue up 22%, and closer to collapse than ever — because everything routed through Sam's memory. 90 days later: quotes same-day, cash forecast on the wall, home by 7. The whole playbook is 4 free short films." },
   { p: "FB + IG", a: "characters.html link card", t: "We built a tool that turns your business's DNA into a CHARACTER — name, backstory, voice, and the exact prompt that brings it to life in any AI app. A bookshop's lantern-cat. A gym's iron bulldog. What would yours be? Forge free." },
-  { p: "Everywhere", a: "community.html link card", t: "Owners: what actually WORKED for you with AI? Real numbers only — hours saved, dollars found. Best stories get featured on our Owners' Network wall (with your photo and your business's name in lights)." }
+  { p: "Everywhere", a: "community.html link card", t: "Owners: what actually WORKED for you with AI? Real numbers only — hours saved, dollars found. Best stories get featured on our Owners' Network wall (with your photo and your business's name in lights)." },
+  { w: 2, p: "Shorts / Reels / TikTok", a: "solo-steps.mp4 (vertical)", t: "The Solo Operator Playbook in 40 seconds — 4 steps: mine the complaints, ship the thinnest paid version, price the result, distribution is the business. Full module free in the academy." },
+  { w: 2, p: "X / Twitter", a: "thread (4 tweets)", t: "The 2026 solo AI operator model, in 4 steps: 1) Don't brainstorm — hunt complaints. 100 people griping about the same thing in 100 places = your market gap. 2) Ship rough + paid. 3) Charge 10–30% of the RESULT's value. 4) Distribution is the business. 🧵" },
+  { w: 2, p: "LinkedIn", a: "text only", t: "\"I thought I was busy. Turns out I was just active.\" A 2026 study of 100 top owner posts found the real problem in 80% of them wasn't workload — it was the owner doing work someone else should do. Our free 10-minute Time Audit shows you exactly which hours those are." },
+  { w: 2, p: "Facebook", a: "stat card", t: "Owners lose 33 workdays a year to financial worry alone — more than a month of productive time (2026 survey). 40% have considered quitting. The fix isn't hustle, it's visibility: a 13-week cash forecast that takes Stream 10 minutes to build. Free in the Profit Lab." },
+  { w: 2, p: "Reddit (help-first)", a: "comment template", t: "[Reply, not ad — only where an owner describes the follow-up chase:] The pattern under this is what researchers call skills waste — the owner doing $15/hr chasing. What worked for us: write down every chase you did last week, hand the bottom three to a drafted-followup system, keep approval. Happy to share the checklist if useful." },
+  { w: 2, p: "Instagram carousel", a: "5 slides", t: "5 drains hiding inside 'I'm overwhelmed' — 1) Skills waste (80% of owners), 2) Unwritten processes (59%), 3) The follow-up chase (22%), 4) Misdiagnosis (30% pointed at the wrong target), 5) Admin-instead-of-marketing. Each slide names the agent that absorbs it." },
+  { w: 2, p: "Pinterest", a: "evergreen pin", t: "100 complaints = 1 business. How to find your market gap by reading Reddit, Maps reviews and Facebook groups — the latent-demand method, step by step. (Pins to the Solo Operator module.)" },
+  { w: 2, p: "Threads", a: "text only", t: "Free feedback is polite. Paid feedback is honest. Ship the thinnest version someone will pay for — it's ready the moment one person votes with a credit card." }
 ];
 
 function load() { try { return JSON.parse(localStorage.getItem("aba_ratings") || "{}"); } catch (e) { return {}; } }
@@ -90,6 +98,7 @@ function render() {
       <div class="rv-head">
         <span class="pill-num">${i + 1}</span>
         <span class="rv-plat">${post.p}</span>
+        <span class="rv-plat" style="color:var(--neon-gold,#fbbf24)">W${post.w || 1}</span>
         <span class="rv-attach">📎 ${post.a}</span>
       </div>
       <div class="rv-text">${post.t}</div>
@@ -115,6 +124,7 @@ function render() {
 
 function summary() {
   const R = load();
+  document.getElementById("sum-total").textContent = POSTS.length;
   const rated = Object.values(R).filter(r => r.stars);
   document.getElementById("sum-count").textContent = rated.length;
   document.getElementById("sum-avg").textContent = rated.length

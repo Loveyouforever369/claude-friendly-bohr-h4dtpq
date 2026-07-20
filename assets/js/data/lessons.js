@@ -577,5 +577,74 @@ window.LESSONS = [
         narration: "Picture day ninety-one. Your calendar holds creation, decisions and relationships — the admin lives with the agents. Your business runs on evidence and systems instead of adrenaline and memory. Your market position is quietly terrifying to competitors: you ship faster, know more, and never miss a follow-up. And your options have multiplied — grow it, franchise the systemized version, or sell a business that finally runs without you, at the premium that buyers pay for exactly that. One warning and one promise. The warning: the frontier moves monthly, so owners who stop learning get lapped by owners who don't. The promise: you're now in the small percentage who act instead of watch. Check the Future Radar on this site monthly, keep one experiment always running, and go build something remarkable."
       }
     ]
+  },
+  {
+    id: "m9",
+    phase: "Phase 4 · Scale",
+    title: "The Solo Operator Model",
+    minutes: 9,
+    blurb: "The one-person AI business model rewriting startup math in 2026: find latent demand, ship the thinnest paid version, price the result, and treat distribution as the business.",
+    slides: [
+      {
+        kicker: "Module 9 · Lesson Intro",
+        title: "One person. One laptop. A different math.",
+        visual: "🧑‍🚀",
+        bullets: [
+          "Traditional business: hire more to do more — margins fall to 10–20%",
+          "Solo AI operator: a $200–$1,000/mo stack replaces a small team",
+          "Reported operating margins: 70–90% on digital products",
+          "The head of a leading AI lab says the first one-person billion-dollar company is coming"
+        ],
+        narration: "Sage here, with the model rewriting startup math in twenty twenty-six. Every traditional business hits two bottlenecks: the cost of people, and their hours. Want more output? Hire more. Margins sink to ten or twenty percent, and you spend your days managing instead of building. The solo AI operator breaks that. For a few hundred dollars a month, AI writes the product, designs the visuals, answers the customers, and drafts the marketing. Operators running this model report margins of seventy to ninety percent — because what they sell is digital, and digital sells infinitely at zero extra cost. This isn't an improved model. It's a different one."
+      },
+      {
+        kicker: "Step 1 · Scout leads",
+        title: "Find latent demand — mine the complaints",
+        visual: "🔎",
+        bullets: [
+          "Don't brainstorm. Hunt demand that already exists",
+          "100 people complaining about the same thing in 100 places = a market gap",
+          "Search Reddit, Maps reviews, Facebook groups, YouTube comments",
+          "Pick a niche where you've LIVED the problem — you speak the language"
+        ],
+        narration: "Scout takes step one. Most people spend months brainstorming what to build, then build something nobody wants. Winners don't brainstorm — they go looking for demand that already exists. It's called latent demand: hidden in plain sight, where people already struggle with bad tools. Before Facebook built Marketplace, forty percent of all group posts were people buying and selling anyway. The demand existed; someone just built the obvious thing. Your job is detective work, not creative work. Read Reddit threads, Maps reviews, group posts. When a hundred people complain about the same thing in a hundred different places, that's not noise. That's your market gap."
+      },
+      {
+        kicker: "Step 2 · Forge leads",
+        title: "Ship the thinnest version someone will pay for",
+        visual: "🔨",
+        bullets: [
+          "Rough with paying customers beats polished with none",
+          "Six months of building in secret = six months of guessing",
+          "Free feedback is polite. Paid feedback is honest.",
+          "It's ready the moment one person votes with a credit card"
+        ],
+        narration: "Forge takes step two, and it's the one most people get backwards. They build in secret for six months, launch, and discover the market wanted something slightly different. Six months gone. The solo model ships something rough within days — and charges money for it immediately. Listen carefully: a free user who dislikes your product just stops using it. A paying customer who dislikes it sends you an angry email, and that email is the most valuable feedback you will ever receive, because it tells you exactly what to fix first. Free feedback is polite. Paid feedback is honest. Your product is ready the moment one person votes with a credit card."
+      },
+      {
+        kicker: "Step 3 · Ladder & Margin lead",
+        title: "Price the result, then make it recurring",
+        visual: "💰",
+        bullets: [
+          "You're not selling a file — you're selling time saved and pain avoided",
+          "Charge 10–30% of what the result is worth to the buyer",
+          "A guide that lands a $100K job is a $97 product, not a $7 one",
+          "Turn one-time buyers into monthly: updates, libraries, ongoing versions"
+        ],
+        narration: "Ladder and Margin take step three, where most operators undercharge by five to ten times. When you sell a digital product, you are not selling the file. You are selling the hours the buyer saves, the money they make, and the pain they avoid. A thirty-page guide that helps someone land a hundred-thousand-dollar job is not a seven-dollar product — it's ninety-seven, maybe more. Find what the result is worth, then charge ten to thirty percent of it. Then comes the compounding move: recurring revenue. Turn the one-time PDF into a quarterly update. Turn the template into a monthly library. Every customer you add stacks on the last one. That's where the big numbers live."
+      },
+      {
+        kicker: "Step 4 · Echo & Reel lead",
+        title: "Distribution IS the business",
+        visual: "📡",
+        bullets: [
+          "Build the audience before you need it — even when nobody's watching",
+          "Faceless content works: consistent niche posts pointing at ONE offer",
+          "60–90 days of daily posting builds a real following — no camera required",
+          "Honest math: first $1K is the hardest; nobody gets rich in 30 days"
+        ],
+        narration: "Echo and Reel close with the step that separates hobbies from businesses: distribution. The product is just the thing your distribution sells. The famous template seller didn't win on product quality — he'd been posting daily for years before he charged a dollar, so thousands already trusted him. And here's what most people miss: he never showed his face once. Faceless content — consistent, niche-specific, pointing at one offer — builds a following in sixty to ninety days, with AI drafting the scripts. Now the honest close. Nobody gets rich in thirty days; anyone selling that is lying. The first thousand dollars is the hardest. Then it compounds. Post today anyway."
+      }
+    ]
   }
 ];
