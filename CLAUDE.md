@@ -208,6 +208,18 @@ spreadsheets and can email them. Deep audio narration everywhere via Web Speech 
 - Respect our own cadence rule even when automation makes spamming easy: 1 video/
   day/platform — the other two videos wait for their calendar slot.
 
+**Solo Steps vertical render (2026-07-20, later):**
+- Right: 4th derivation of the render template and first VERTICAL master
+  (1080×1920) — same pipeline, zero failures, ~90s total render for 40s of video.
+  The scratchpad node_modules (playwright + @ffmpeg-installer) SURVIVES between
+  sessions — reuse it; never reinstall.
+- Right: pre-render canon check caught avatar drift — upgrades.js had Scout as 🧭
+  while the roster (agents.js, the single source of truth) says 🔭. *Grep
+  agents.js for the avatar every time an agent appears in new content.*
+- The artifact-preview bundle excludes video files by design; media additions like
+  the Shorts Shelf are live on Pages immediately but appear in the artifact only
+  after the next bundle rebuild. The Pages URL is the canonical demo.
+
 **Went right (keep doing):**
 - Role-card pattern for agents (identity/context/job/standards/boundaries) — reused
   across lessons, movies, family page; keeps all content consistent.
